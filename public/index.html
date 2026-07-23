@@ -16,13 +16,13 @@ body {
 }
 @media only screen {
 	body {
-		margin: 2em auto;
-		max-width: 900px;
+		margin: 0;
 		color: rgb(55, 53, 47);
 	}
 }
 
 body {
+	color: rgb(55, 53, 47);
 	line-height: 1.5;
 	white-space: pre-wrap;
 }
@@ -55,24 +55,24 @@ h3 strong {
 }
 
 .page-title {
-	font-size: 2.5rem;
+	font-size: 2.6rem;
 	font-weight: 700;
 	margin-top: 0;
 	margin-bottom: 0.75em;
 }
 
 h1 {
-	font-size: 1.875rem;
+	font-size: 1.975rem;
 	margin-top: 1.875rem;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin-top: 1.5rem;
 }
 
 h3 {
-	font-size: 1.25rem;
+	font-size: 1.35rem;
 	margin-top: 1.25rem;
 }
 
@@ -165,7 +165,7 @@ img {
 }
 
 .collection-content {
-	font-size: 0.875rem;
+	font-size: 0.975rem;
 }
 
 .collection-content td {
@@ -189,7 +189,7 @@ img {
 
 .table_of_contents-item {
 	display: block;
-	font-size: 0.875rem;
+	font-size: 0.975rem;
 	line-height: 1.3;
 	padding-inline: 0.125rem;
 	padding-block: 0.375rem;
@@ -339,7 +339,7 @@ ol > li {
 
 .simple-table {
 	margin-top: 1em;
-	font-size: 0.875rem;
+	font-size: 0.975rem;
 	empty-cells: show;
 }
 .simple-table td {
@@ -421,25 +421,50 @@ img.icon {
 	text-align: center;
 }
 
-.page-cover-image {
+.hero {
+	margin-bottom: 2rem;
+}
+
+.hero-cover {
+	height: 335px;
+	background: #f6f1eb url("Lozhkin%20Alexander/background.png") center top / cover no-repeat;
+}
+
+.hero-inner {
+	width: min(calc(100% - 40px), 720px);
+	margin: -80px auto 0;
+	position: relative;
+}
+
+.hero-avatar {
+	width: 120px;
+	height: 120px;
+	margin: 0 0 36px;
+	border-radius: 16px;
 	display: block;
-	object-fit: cover;
+}
+
+.hero-avatar img {
+	display: block;
 	width: 100%;
-	max-height: 30vh;
+	height: 100%;
+	object-fit: cover;
+	border-radius: inherit;
 }
 
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
+.hero .page-title {
+	font-size: 2.1rem;
+	line-height: 1.1;
+	margin: 0 0 14px;
 }
 
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
+.hero-intro {
+	font-size: 1.975rem;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 0;
+	max-width: 100%;
+	white-space: normal;
 }
 
 .link-to-page {
@@ -474,6 +499,72 @@ p {
 	padding: 0;
 	border-radius: 0;
 	text-align: center;
+}
+
+.page-body > :not(.image) {
+	width: min(calc(100% - 40px), 720px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-body > .image {
+	width: min(calc(100% - 40px), 880px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-body > .image a,
+.page-body > .image img {
+	display: block;
+}
+
+.page-body > .image img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+@media only screen and (max-width: 767px) {
+	h1 {
+		font-size: 1.725rem;
+	}
+
+	.hero {
+		margin-bottom: 1.5rem;
+	}
+
+	.hero-cover {
+		height: 280px;
+		background-position: center top;
+	}
+
+	.hero-inner {
+		margin-top: -78px;
+	}
+
+	.hero-avatar {
+		width: 122px;
+		height: 122px;
+		margin-bottom: 40px;
+	}
+
+	.hero .page-title {
+		font-size: 2.225rem;
+		margin-bottom: 16px;
+	}
+
+	.hero-intro {
+		font-size: 1.6rem;
+		line-height: 1.2;
+	}
+
+	.column-list {
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.column {
+		width: 100% !important;
+	}
 }
 
 .code,
@@ -764,15 +855,17 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="376e1b36-867a-8078-b7f9-edd2aee9e2c9" class="page sans" data-notion-page-icon="attachment:820cbcc6-ce60-41eb-b98d-b4dfac1142fe:my_photo.png"><header><img class="page-cover-image" src="https://app.notion.com/images/page-cover/texturelabs_paper_253S.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Lozhkin%20Alexander/my_photo.png"/></div><h1 class="page-title" dir="auto">Lozhkin Alexander</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><h4 id="390e1b36-867a-806a-b5b9-de719259da9d" class="" dir="auto">I’m a Product Design Lead with 13+ years of experience across fintech, e-commerce, and data-heavy products, including 6 years building and leading teams. I’ve worked across B2B and B2C, in both startups and large-scale products used by tens of millions of people.</h4><figure id="38fe1b36-867a-8090-bc9d-eeb9e2f71ea6" class="link-to-page"><a href="https://app.notion.com/p/Lozhkin-Alexander-CV-38fe1b36867a8090bc9deeb9e2f71ea6?pvs=21" data-notion-page-id="38fe1b36-867a-8090-bc9d-eeb9e2f71ea6" data-notion-space-id="ea0dba88-e6b0-4f65-a656-37b474fe9cbc"><span class="icon" data-emoji="📄"></span>Lozhkin Alexander (CV)</a></figure><p id="394e1b36-867a-8027-8655-f01b67680aa6" class="" dir="auto">
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="376e1b36-867a-8078-b7f9-edd2aee9e2c9" class="page sans" data-notion-page-icon="attachment:820cbcc6-ce60-41eb-b98d-b4dfac1142fe:my_photo.png"><header class="hero"><div class="hero-cover"></div><div class="hero-inner"><div class="hero-avatar"><img src="Lozhkin%20Alexander/my_photo.png" alt="Lozhkin Alexander"/></div><h1 class="page-title" dir="auto">Lozhkin Alexander</h1><p class="hero-intro" dir="auto">I’m a Product Design Lead with 13+ years of experience across fintech, e-commerce, and data-heavy products, including 6 years building and leading teams. I’ve worked across B2B and B2C, in both startups and large-scale products used by tens of millions of people.</p></div></header><div class="page-body">
 </p><h1 id="394e1b36-867a-803c-8255-e30234dca329" class="" dir="auto">Azerbaijan marketplace vision 2027</h1><p id="394e1b36-867a-809b-9f88-ff9fe3df0569" class="" dir="auto"><a href="https://birmarket.az/">Birmarket</a> is the largest marketplace in Azerbaijan, with around 1.5 million monthly active users. This concept explores the product vision and visual direction for the next two years. My role was to identify key user pain points in current product, rethink core user flows and navigation, and design the main screens and overall brand direction.</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="🔒" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="394e1b36-867a-80ba-9d2c-f264d899c570" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="🔒"></span></div><div style="width:100%"><p id="394e1b36-867a-8038-8c1d-cacca1b13ba6" class="" dir="auto">This project is under NDA, drop me a line to schedule a demo</p></div></aside><p id="395e1b36-867a-8007-bd3b-ed98b439f2e5" class="" dir="auto">
 </p><figure id="377e1b36-867a-806e-b0c2-d98b1044ac14" class="image" data-notion-image="Lozhkin%20Alexander/Birmarket_tiser.png" dir="ltr"><a href="Lozhkin%20Alexander/Birmarket_tiser.png"><img style="width:912px" src="Lozhkin%20Alexander/Birmarket_tiser.png"/></a></figure><p id="394e1b36-867a-80ff-818f-da197ad31d98" class="" dir="auto">
 </p><h1 id="394e1b36-867a-801f-93fe-ea901ca4ef63" class="" dir="auto">Digital wallet in a conservative country</h1><p id="394e1b36-867a-8032-b466-fbdf0a5160e9" class="" dir="auto"><strong>m10</strong> is a local digital wallet built for a relatively small market of Azerbaijan, with the challenge of speaking to two very different audiences at once: a more conservative adult users and Gen Z.</p><p id="394e1b36-867a-80cf-878d-d92c7786a2d2" class="" dir="auto">We deliberately avoided complex solutions. The interface relied on simple transitions, and we chose not to use effects like blur because a large share of users were still on older phones. Instead, we focused on creating delight through illustration, thoughtful flows, and an experience that felt clear and effortless. The result was a very simple product with a distinct personality, one that resonated with both audiences.</p><p id="395e1b36-867a-80ab-8475-c4d54cdfdd5a" class="" dir="auto">
 </p><figure id="395e1b36-867a-80a6-9d30-e9275c2abf0d" class="image" data-notion-image="Lozhkin%20Alexander/Main.png" dir="ltr"><a href="Lozhkin%20Alexander/Main.png"><img style="width:912px" src="Lozhkin%20Alexander/Main.png"/></a></figure><figure id="394e1b36-867a-808e-b2d8-fced7c635aae" class="image" data-notion-image="Lozhkin%20Alexander/edv.png" dir="ltr"><a href="Lozhkin%20Alexander/edv.png"><img style="width:912px" src="Lozhkin%20Alexander/edv.png"/></a></figure><figure id="394e1b36-867a-8082-bcd6-cadc424f5963" class="image" data-notion-image="Lozhkin%20Alexander/cash_loan.png" dir="ltr"><a href="Lozhkin%20Alexander/cash_loan.png"><img style="width:912px" src="Lozhkin%20Alexander/cash_loan.png"/></a></figure><figure id="394e1b36-867a-80b6-a677-d69b6a9e1368" class="image" data-notion-image="Lozhkin%20Alexander/Bakikart.png" dir="ltr"><a href="Lozhkin%20Alexander/Bakikart.png"><img style="width:912px" src="Lozhkin%20Alexander/Bakikart.png"/></a></figure><figure id="394e1b36-867a-80d2-947f-dce3b6f93efd" class="image" data-notion-image="Lozhkin%20Alexander/History.png" dir="ltr"><a href="Lozhkin%20Alexander/History.png"><img style="width:912px" src="Lozhkin%20Alexander/History.png"/></a></figure><p id="395e1b36-867a-8097-a7ac-c562ae0c4b37" class="" dir="auto">
-</p><h1 id="394e1b36-867a-80db-8e50-dbc63062a038" class="" dir="auto">Digital card that gives you nothin but fun</h1><p id="394e1b36-867a-8080-9665-f1dcfb27b17b" class="" dir="auto">We had strict business restrictions: no cashback, no special perks, and no big discounts. So instead of building the value around rewards, we focused on the experience itself: making the application flow smooth, the card design feel special, and the whole product genuinely enjoyable to use.</p><p id="3a5e1b36-867a-807f-9f26-f4151c28790c" class="" dir="auto"><a href="https://www.behance.net/gallery/243206111/m10-Digital-card?lo=214f417ed76a52f3feb6db49362250f7c9b04a9484c7ebc1f69ddaa6a17cd601">Link</a></p><figure id="377e1b36-867a-80cd-85f7-d0fb4134f7a5" class="image" data-notion-image="Lozhkin%20Alexander/card.png" dir="ltr"><a href="Lozhkin%20Alexander/card.png"><img style="width:912px" src="Lozhkin%20Alexander/card.png"/></a></figure><p id="395e1b36-867a-806a-99a3-df196ed6a107" class="" dir="auto">
-</p><h1 id="394e1b36-867a-804a-97b5-c63c35b69c0f" class="" dir="auto"><strong>Brand Illustration Guidelines</strong></h1><p id="394e1b36-867a-8024-86f4-de59ac189715" class="" dir="auto">We used an illustration style that felt fresh for the local market, with references to national memes, folk tales, and everyday customs.</p><p id="3a5e1b36-867a-80cb-9bff-f1112bd1c2ab" class="" dir="auto"><a href="https://dribbble.com/shots/27361693-m10-Illustration-Style-Guide?utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=m10%20Illustration%20Style%20Guide&amp;utm_medium=Social_Share&amp;utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=m10%20Illustration%20Style%20Guide&amp;utm_medium=Social_Share">Link</a></p><figure id="394e1b36-867a-8036-843e-f3af84dd5c24" class="image" data-notion-image="Lozhkin%20Alexander/Illustration_Style_Guide.png" dir="ltr"><a href="Lozhkin%20Alexander/Illustration_Style_Guide.png"><img style="width:912px" src="Lozhkin%20Alexander/Illustration_Style_Guide.png"/></a></figure><p id="394e1b36-867a-8050-bbf2-cc347659f3fc" class="" dir="auto">
-</p><h1 id="376e1b36-867a-8014-ad61-d7d09d9e095a" class="block-color-default" data-notion-highlight="default" dir="auto">Marketplace — online &amp; offline purchase experience </h1><p id="394e1b36-867a-80cc-864f-ff945a0b59df" class="" dir="auto">Yandex Market is one of the largest e-commerce platforms in the region, with 30M+ monthly active users. I owned the end-to-end purchase experience across cart, checkout, delivery and post-purchase.</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="🔒" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="395e1b36-867a-80c8-ae1f-e92518289069" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="🔒"></span></div><div style="width:100%"><p id="395e1b36-867a-80eb-836c-e505882ef8d2" class="" dir="auto">Drop me a line to schedule a demo</p></div></aside><figure id="376e1b36-867a-8086-b668-cdab18720af3" class="image" data-notion-image="Lozhkin%20Alexander/market.png" dir="ltr"><a href="Lozhkin%20Alexander/market.png"><img style="width:320.9921875px" src="Lozhkin%20Alexander/market.png"/></a></figure><p id="395e1b36-867a-809a-886c-d61754e5abac" class="" dir="auto">
-</p><hr id="395e1b36-867a-80db-b08c-d32ce91577ca" dir="auto"/><h1 id="395e1b36-867a-80c1-b90b-c264729af3ac" class="" dir="auto">Playground </h1><div id="39ee1b36-867a-805f-af4a-fd230f9aaa9f" class="column-list" data-notion-column-list="" dir="auto"><div id="39ee1b36-867a-801c-af63-f81a43eb73d4" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><h3 id="376e1b36-867a-8041-a27c-e41230a79bf3" class="block-color-default" data-notion-highlight="default" dir="auto"><strong><a href="https://dribbble.com/shots/27360715-Live-analytics-for-Dota-2-tournaments?utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=Live%20analytics%20for%20Dota%202%20tournaments&amp;utm_medium=Social_Share&amp;utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=Live%20analytics%20for%20Dota%202%20tournaments&amp;utm_medium=Social_Share">Live analytics for Dota 2 tournaments</a></strong></h3><p id="395e1b36-867a-80ce-b4e6-d44a06f7eda6" class="" dir="auto">Made the tournament easier to follow and more enjoyable to watch when viewers clearly understand what’s happening on screen</p><figure id="376e1b36-867a-80ec-8e1f-dedcb1022e8a" class="image" data-notion-image="Lozhkin%20Alexander/dota.png" dir="ltr"><a href="Lozhkin%20Alexander/dota.png"><img style="width:320.9921875px" src="Lozhkin%20Alexander/dota.png"/></a></figure><p id="39ee1b36-867a-805b-981f-f62ee9b0c32e" class="" dir="auto">
-</p><h3 id="395e1b36-867a-8043-acb7-c73709e7cab1" class="" dir="auto">Glinka is an online music school </h3><p id="395e1b36-867a-8049-bde0-c9ed51bceb58" class="" dir="auto">I designed a video lesson tool similar to Zoom, but tailored for music education. Its main feature was clear control over noise suppression, so it wouldn’t distort the sound or get in the way of listening to music. I liked how we managed to bring the sound waves from the logo into the interface</p><figure id="395e1b36-867a-8083-8727-fc3f8943932b" class="image" data-notion-image="Lozhkin%20Alexander/Lesson.png" dir="ltr"><a href="Lozhkin%20Alexander/Lesson.png"><img style="width:704px" src="Lozhkin%20Alexander/Lesson.png"/></a></figure><figure id="395e1b36-867a-80ef-a37d-f49cc88d4dea" class="image" data-notion-image="Lozhkin%20Alexander/Frame_98.png" dir="ltr"><a href="Lozhkin%20Alexander/Frame_98.png"><img style="width:704px" src="Lozhkin%20Alexander/Frame_98.png"/></a></figure></div><div id="39ee1b36-867a-80bf-a478-dfe61ece0ea5" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><h3 id="395e1b36-867a-8047-bbfd-ccf4a72f1bec" class="" dir="auto"><strong>Stream Widget Builder</strong></h3><p id="395e1b36-867a-80c9-bafb-f7b749ff987d" class="" dir="auto">I had always wanted to design a tool for designers — something in the spirit of Figma. This project finally gave me that chance.</p><p id="395e1b36-867a-809e-8ef6-f3071c7ede67" class="" dir="auto">I designed a builder for interactive Twitch widgets, allowing agencies to create and manage tournament overlays without relying on developers for every change</p><figure id="395e1b36-867a-80b6-a69a-d4f1a7d9574e" class="image" data-notion-image="Lozhkin%20Alexander/image.png" dir="ltr"><a href="Lozhkin%20Alexander/image.png"><img style="width:703.984375px" src="Lozhkin%20Alexander/image.png"/></a></figure></div></div><p id="395e1b36-867a-8012-848b-f5815c0698b8" class="" dir="auto">
+</p><h1 id="394e1b36-867a-80db-8e50-dbc63062a038" class="" dir="auto">Digital card that gives you nothin but fun</h1><p id="394e1b36-867a-8080-9665-f1dcfb27b17b" class="" dir="auto">We had strict business restrictions: no cashback, no special perks, and no big discounts. So instead of building the value around rewards, we focused on the experience itself: making the application flow smooth, the card design feel special, and the whole product genuinely enjoyable to use.</p><p id="3a5e1b36-867a-807f-9f26-f4151c28790c" class="" dir="auto"><a href="https://www.behance.net/gallery/243206111/m10-Digital-card?lo=214f417ed76a52f3feb6db49362250f7c9b04a9484c7ebc1f69ddaa6a17cd601">Case on Behance</a></p><figure id="377e1b36-867a-80cd-85f7-d0fb4134f7a5" class="image" data-notion-image="Lozhkin%20Alexander/card.png" dir="ltr"><a href="Lozhkin%20Alexander/card.png"><img style="width:912px" src="Lozhkin%20Alexander/card.png"/></a></figure><p id="395e1b36-867a-806a-99a3-df196ed6a107" class="" dir="auto">
+</p><h1 id="394e1b36-867a-804a-97b5-c63c35b69c0f" class="" dir="auto"><strong>Brand Illustration Guidelines</strong></h1><p id="394e1b36-867a-8024-86f4-de59ac189715" class="" dir="auto">We used an illustration style that felt fresh for the local market, with references to national memes, folk tales, and everyday customs.</p><p id="3a5e1b36-867a-80cb-9bff-f1112bd1c2ab" class="" dir="auto"><a href="https://dribbble.com/shots/27361693-m10-Illustration-Style-Guide?utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=m10%20Illustration%20Style%20Guide&amp;utm_medium=Social_Share&amp;utm_source=Clipboard_Shot&amp;utm_campaign=leshey&amp;utm_content=m10%20Illustration%20Style%20Guide&amp;utm_medium=Social_Share">Case on Dribbble</a></p><figure id="394e1b36-867a-8036-843e-f3af84dd5c24" class="image" data-notion-image="Lozhkin%20Alexander/Illustration_Style_Guide.png" dir="ltr"><a href="Lozhkin%20Alexander/Illustration_Style_Guide.png"><img style="width:912px" src="Lozhkin%20Alexander/Illustration_Style_Guide.png"/></a></figure><p id="394e1b36-867a-8050-bbf2-cc347659f3fc" class="" dir="auto">
 </p><hr id="395e1b36-867a-80c7-b896-fe665a4b2c0e" dir="auto"/><p id="395e1b36-867a-80fb-9514-df12621daca8" class="" dir="auto">© Alexander Lozhkin 2026</p><p id="397e1b36-867a-806d-81f5-ee2fd3deb620" class="" dir="auto">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span><script>
+document.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach((link) => {
+	link.setAttribute('target', '_blank');
+	link.setAttribute('rel', 'noopener noreferrer');
+});
+</script></body></html>
