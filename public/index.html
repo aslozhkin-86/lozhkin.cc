@@ -9,20 +9,21 @@ html {
 	-webkit-print-color-adjust: exact;
 }
 
+:root {
+	--text-color: rgb(55, 53, 47);
+	--content-width: 720px;
+	--image-width: 880px;
+	--page-gutter: 40px;
+}
+
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
-@media only screen {
-	body {
-		margin: 0;
-		color: rgb(55, 53, 47);
-	}
-}
 
 body {
-	color: rgb(55, 53, 47);
+	color: var(--text-color);
 	font-size: 1.2rem;
 	line-height: 1.5;
 	white-space: pre-wrap;
@@ -44,7 +45,6 @@ h2,
 h3 {
 	letter-spacing: -0.01em;
 	line-height: 1.2;
-	font-weight: 600;
 	margin-bottom: 0;
 }
 
@@ -52,7 +52,7 @@ h3 {
 h1 strong,
 h2 strong,
 h3 strong {
-	font-weight: 600;
+	font-weight: inherit;
 }
 
 .page-title {
@@ -64,16 +64,19 @@ h3 strong {
 
 h1 {
 	font-size: 1.975rem;
+	font-weight: 700;
 	margin-top: 1.875rem;
 }
 
 h2 {
 	font-size: 1.6rem;
+	font-weight: 600;
 	margin-top: 1.5rem;
 }
 
 h3 {
 	font-size: 1.35rem;
+	font-weight: 600;
 	margin-top: 1.25rem;
 }
 
@@ -432,7 +435,7 @@ img.icon {
 }
 
 .hero-inner {
-	width: min(calc(100% - 40px), 720px);
+	width: min(calc(100% - var(--page-gutter)), var(--content-width));
 	margin: -80px auto 0;
 	position: relative;
 }
@@ -464,7 +467,6 @@ img.icon {
 	font-weight: 400;
 	line-height: 1.2;
 	margin: 0;
-	max-width: 100%;
 	white-space: normal;
 }
 
@@ -503,13 +505,13 @@ p {
 }
 
 .page-body > :not(.image) {
-	width: min(calc(100% - 40px), 720px);
+	width: min(calc(100% - var(--page-gutter)), var(--content-width));
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .page-body > .image {
-	width: min(calc(100% - 40px), 880px);
+	width: min(calc(100% - var(--page-gutter)), var(--image-width));
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -525,6 +527,10 @@ p {
 }
 
 @media only screen and (max-width: 767px) {
+	body {
+		font-size: 1.1rem;
+	}
+
 	h1 {
 		font-size: 1.725rem;
 	}
