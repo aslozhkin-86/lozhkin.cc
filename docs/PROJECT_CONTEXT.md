@@ -5,7 +5,7 @@
 - This repository is Alexander Lozhkin's personal portfolio website.
 - Use the name **Lozhkin PDP — personal portfolio website** when referring to it in other tasks.
 - The local project root is `/Users/alex/Documents/Lozhkin PDP/lozhkin-site`; editable site code is in `source/`.
-- Publish completed site changes to GitHub and `lozhkin.cc` as part of the task unless the user asks to keep them local or as a draft. Keep local source and GitHub in sync after publication.
+- Work locally by default. Do not push to GitHub, publish, deploy, or update `lozhkin.cc` unless the user explicitly requests it.
 - Update this document and the publishing guide in the same task whenever architecture, directories, dependencies, development commands, build, hosting, or publishing changes. Remove stale instructions.
 
 ## Product and Visual Direction
