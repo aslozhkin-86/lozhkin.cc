@@ -1,0 +1,205 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  color: var(--portfolio-color-text);
+  background-color: var(--portfolio-color-board);
+  background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
+  background-size: 34.205px 34.205px;
+  background-position: 4.448px 8.038px;
+}
+
+.divider {
+  position: absolute;
+  z-index: 0;
+  top: 40px;
+  left: 50%;
+  width: 205px;
+  height: 40px;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.title {
+  position: absolute;
+  z-index: 0;
+  top: 152px;
+  left: calc(50% - 6px);
+  width: min(740px, calc(100% - 32px));
+  margin: 0;
+  color: var(--portfolio-color-text);
+  font-family: var(--portfolio-contrast-big-family);
+  font-size: var(--portfolio-contrast-big-size);
+  font-weight: var(--portfolio-contrast-big-weight);
+  line-height: var(--portfolio-contrast-big-line-height);
+  letter-spacing: var(--portfolio-contrast-big-letter-spacing);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.icons {
+  position: absolute;
+  inset: 0;
+  top: 32px;
+  pointer-events: none;
+}
+
+.company {
+  top: var(--icon-y);
+  left: var(--icon-x);
+}
+
+.image img { object-fit: contain; }
+
+.company .companyTooltip {
+  width: 310px;
+  max-width: min(310px, calc(100vw - 32px));
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.tooltipTitle {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
+
+.tooltipTags,
+.tooltipDescription {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.tooltipTags { opacity: 0.5; }
+
+.popover { display: none; }
+
+.section[data-dragging="true"],
+.section[data-dragging="true"] .company {
+  cursor: url("/hero/cursors/drag.svg") 45 45, grabbing;
+}
+
+@media (max-width: 999px), (hover: none), (pointer: coarse) {
+  .section {
+    height: auto;
+    min-height: 0;
+    padding: 128px 0 48px;
+  }
+
+  .title {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    font-size: var(--portfolio-mobile-section-title-size);
+    line-height: var(--portfolio-mobile-section-title-line-height);
+    transform: none;
+  }
+
+  .icons {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 92px);
+    column-gap: clamp(12px, 4vw, 20px);
+    row-gap: 24px;
+    width: max-content;
+    margin: 32px auto 0;
+    transform: none;
+  }
+
+  .company {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: grid;
+    width: 92px;
+    height: 92px;
+    place-items: center;
+    transform: translate(var(--scatter-x, 0), var(--scatter-y, 0));
+  }
+
+  .company:nth-child(1) { --scatter-x: -5px; --scatter-y: 4px; }
+  .company:nth-child(2) { --scatter-x: 1px; --scatter-y: -3px; }
+  .company:nth-child(3) { --scatter-x: 5px; --scatter-y: 2px; }
+  .company:nth-child(4) { --scatter-x: -2px; --scatter-y: -4px; }
+  .company:nth-child(5) { --scatter-x: 4px; --scatter-y: 4px; }
+  .company:nth-child(6) { --scatter-x: -3px; --scatter-y: -2px; }
+
+  .image {
+    position: relative;
+    width: var(--icon-width);
+    height: var(--icon-height);
+  }
+
+  .company .companyTooltip { display: none; }
+
+  .popover {
+    position: absolute;
+    z-index: 2147483647;
+    width: calc(100vw - 80px);
+    transform: translate(-50%, -100%);
+    animation: popoverAppear 180ms ease both;
+    display: flex;
+    max-height: calc(100dvh - 80px);
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 24px;
+    color: var(--portfolio-color-white);
+    background: var(--portfolio-color-black);
+    font-family: var(--font-family-sans);
+    letter-spacing: -0.02em;
+  }
+
+  .popover .tooltipTitle { padding-right: 40px; }
+
+  .popupClose {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .popupClose:focus-visible {
+    border-radius: 50%;
+    outline: 2px solid var(--portfolio-color-white);
+    outline-offset: -3px;
+  }
+
+  .section[data-dragging="true"],
+  .section[data-dragging="true"] .company { cursor: pointer; }
+}
+
+@keyframes popoverAppear {
+  from { opacity: 0; transform: translate(-50%, calc(-100% + 8px)); }
+  to { opacity: 1; transform: translate(-50%, -100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popover { animation-duration: 1ms; }
+}

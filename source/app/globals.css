@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/portfolio-tokens.css";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LORE";
+  src: url("/fonts/LORE-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/eb-garamond-500.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Clip horizontal overflow without making body a sticky scroll container. */
+  overflow-x: clip;
+  background: #fff;
+  color: var(--color-black);
+  font-family: var(--font-family-sans);
+}
+
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    min-height: 100svh;
+  }
+}

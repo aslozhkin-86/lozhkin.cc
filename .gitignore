@@ -1,0 +1,10 @@
+.DS_Store
+.env*
+!**/.env.example
+source/node_modules/
+source/dist/
+source/.next/
+source/.vinext/
+source/.wrangler/
+source/tsconfig.tsbuildinfo
+source/output/

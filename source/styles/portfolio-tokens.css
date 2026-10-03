@@ -1,0 +1,25 @@
+:root {
+  /* Type and color values taken from the linked Figma portfolio frames. */
+  --portfolio-color-white: #ffffff;
+  --portfolio-color-black: #222222;
+  --portfolio-color-link: #010bf0;
+  --portfolio-color-board: #f8e7d9;
+  --portfolio-color-board-dot: rgb(0 0 0 / 20%);
+
+  --portfolio-color-background: var(--portfolio-color-white);
+  --portfolio-color-text: var(--portfolio-color-black);
+
+  --portfolio-body-weight: 500;
+  --portfolio-body-letter-spacing: -0.02em;
+
+  --portfolio-contrast-big-family: var(--font-family-serif);
+  --portfolio-contrast-big-size: 44px;
+  --portfolio-contrast-big-weight: 500;
+  --portfolio-contrast-big-line-height: 52px;
+  --portfolio-contrast-big-letter-spacing: -0.02em;
+  --portfolio-mobile-section-title-size: clamp(26px, 7.6vw, 40px);
+  --portfolio-mobile-section-title-line-height: 1.15;
+
+  --portfolio-hover-radius: 8px;
+  --portfolio-corner-shape: squircle;
+}

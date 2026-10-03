@@ -1,0 +1,149 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 48px 0 64px;
+  overflow: hidden;
+  color: var(--portfolio-color-text);
+  background-color: var(--portfolio-color-board);
+  background-image: radial-gradient(
+    circle,
+    var(--portfolio-color-board-dot) 1.14px,
+    transparent 1.3px
+  );
+  background-position: 4.448px 8.038px;
+  background-size: 34.205px 34.205px;
+}
+
+.title {
+  width: min(1040px, calc(100% - 64px));
+  margin: 0 auto;
+  font-family: var(--portfolio-contrast-big-family);
+  font-size: var(--portfolio-contrast-big-size);
+  font-weight: var(--portfolio-contrast-big-weight);
+  line-height: var(--portfolio-contrast-big-line-height);
+  letter-spacing: var(--portfolio-contrast-big-letter-spacing);
+  text-align: center;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 42vw, 540px);
+  margin-top: 48px;
+}
+
+.restack {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-family-marker);
+  font-size: 32px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.talkLink {
+  display: block;
+  position: relative;
+  z-index: 20;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 24px auto 0;
+  color: var(--portfolio-color-link);
+  font-family: var(--font-family-marker);
+  font-size: 19px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.talkLinkAccent {
+  position: relative;
+  display: inline-block;
+}
+
+.talkUnderline {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  width: 94px;
+  height: 6px;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.talkLink:hover { opacity: 0.65; }
+
+.restack:focus-visible,
+.talkLink:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid currentcolor;
+  outline-offset: 4px;
+}
+
+.section[data-dragging="true"] { cursor: url("/hero/cursors/drag.svg") 45 45, grabbing; }
+
+.section .speakingCard {
+  transition: transform var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+}
+
+.section .cardSurface {
+  border: 0;
+  transition:
+    filter 180ms ease,
+    transform var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+}
+
+.cardImage {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.section .speakingCard[data-dragging="true"] { transition: none; }
+.section .speakingCard[data-dragging="true"] .cardSurface { transition: none; }
+
+@media (max-width: 760px) {
+  .section {
+    padding: 44px 0 72px;
+  }
+
+  .title {
+    width: calc(100% - 32px);
+    font-size: var(--portfolio-mobile-section-title-size);
+    line-height: var(--portfolio-mobile-section-title-line-height);
+  }
+
+  .gallery {
+    height: clamp(480px, 110vw, 560px);
+    margin-top: 32px;
+  }
+
+  .restack {
+    left: calc(50% - 10px);
+  }
+
+  .talkLink {
+    margin-top: 32px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .section[data-dragging="true"] { cursor: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .talkLink { transition-duration: 1ms; }
+  .section .speakingCard,
+  .section .cardSurface {
+    transition-delay: 0ms;
+    transition-duration: 1ms;
+  }
+}

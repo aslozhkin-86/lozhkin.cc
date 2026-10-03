@@ -1,0 +1,112 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  color: var(--portfolio-color-text);
+  background-color: var(--portfolio-color-board);
+  background-image: radial-gradient(
+    circle,
+    var(--portfolio-color-board-dot) 1.14px,
+    transparent 1.3px
+  );
+  background-position: 4.448px 8.038px;
+  background-size: 34.205px 34.205px;
+}
+
+.frame {
+  width: 100%;
+  padding: clamp(48px, 7svh, 80px) 24px 54px;
+  background-color: var(--portfolio-color-board);
+  background-image: radial-gradient(
+    circle,
+    var(--portfolio-color-board-dot) 1.14px,
+    transparent 1.3px
+  );
+  background-position: 4.448px 8.038px;
+  background-size: 34.205px 34.205px;
+  text-align: center;
+}
+
+.deck {
+  display: grid;
+  gap: 20px;
+  width: min(360px, 100%);
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  min-height: 480px;
+  padding: 32px 30.5px 40px;
+  border: 1.5px solid var(--portfolio-color-text);
+  border-radius: 40px;
+  background: var(--portfolio-color-white);
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--portfolio-color-link);
+  font-family: var(--font-family-marker);
+  font-size: 30.536px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.copy {
+  margin: 30px 0 0;
+  font-family: var(--font-family-sans);
+  font-size: 17px;
+  font-weight: var(--portfolio-body-weight);
+  line-height: 24px;
+  letter-spacing: var(--portfolio-body-letter-spacing);
+  text-align: left;
+}
+
+.copy p { margin: 0; }
+.copy p + p { margin-top: 0.5lh; }
+
+/* Progressive enhancement: without JS, every card remains in reading order.
+   This scroll-only deck deliberately leaves touch scrolling native. */
+.section[data-animated="true"] { height: calc(var(--frame-height, 100svh) + 300svh); }
+
+.section[data-animated="true"] .frame {
+  display: grid;
+  align-content: center;
+  position: sticky;
+  top: var(--pin-top, 0px);
+  min-height: 100svh;
+  overflow: clip;
+}
+
+.section[data-animated="true"] .deck {
+  padding-bottom: 30px;
+  gap: 0;
+}
+
+.section[data-animated="true"] .card {
+  grid-area: 1 / 1;
+  transform: translate3d(0, var(--card-y, 0px), 0);
+  will-change: transform;
+}
+
+@media (max-width: 760px) {
+  .frame { padding: 40px 16px 40px; }
+
+}
+
+@media (max-width: 374px) {
+  .card { padding-inline: 24px; }
+  .copy { font-size: 16px; line-height: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section[data-animated="true"] { height: auto; }
+  .section[data-animated="true"] .frame { position: static; min-height: 0; }
+  .section[data-animated="true"] .deck { gap: 20px; padding-bottom: 0; }
+  .section[data-animated="true"] .card {
+    grid-area: auto;
+    transform: none;
+    will-change: auto;
+  }
+}

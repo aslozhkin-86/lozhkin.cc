@@ -1,0 +1,112 @@
+.root {
+  position: absolute;
+  z-index: var(--icon-z);
+  width: var(--icon-width);
+  height: var(--icon-height);
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: url("/hero/cursors/hover.svg") 45 45, grab;
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+  transform:
+    translate(var(--icon-anchor-x, 0), var(--icon-anchor-y, 0))
+    translate(var(--drag-x), var(--drag-y));
+}
+
+.visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: rotate(var(--icon-rotation, 0deg));
+  transform-origin: center;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.visual img { object-fit: contain; }
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  display: flex;
+  width: max-content;
+  max-width: 200px;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 24px;
+  corner-shape: var(--portfolio-corner-shape);
+  opacity: 0;
+  visibility: hidden;
+  color: var(--portfolio-color-white);
+  background: #222;
+  font-family: var(--font-family-sans);
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  white-space: normal;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 140ms ease, transform 180ms ease, visibility 0s linear 180ms;
+}
+
+.root:focus-visible .visual {
+  filter: brightness(1.07) drop-shadow(0 0 4px var(--portfolio-color-background));
+}
+
+.root:focus-visible,
+.root[data-open="true"] {
+  z-index: 2147483647;
+}
+
+.root:focus-visible .tooltip,
+.root[data-open="true"] .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 140ms;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .root:hover { z-index: 2147483647; }
+
+  .root:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition-delay: 140ms;
+  }
+
+  .root:hover .visual {
+    filter: brightness(1.07);
+    transform: rotate(calc(var(--icon-rotation, 0deg) + 1.2deg)) scale(1.012);
+  }
+}
+
+.root[data-dragging="true"] .visual {
+  filter: brightness(1.08) drop-shadow(0 8px 12px rgb(0 0 0 / 15%));
+  transform: rotate(calc(var(--icon-rotation, 0deg) + 2deg)) scale(1.018);
+  transition: none;
+}
+
+.root[data-dragging="true"] .tooltip,
+.root[data-tooltip-suppressed="true"] .tooltip {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+
+@media (max-width: 999px), (hover: none), (pointer: coarse) {
+  .root {
+    cursor: pointer;
+    touch-action: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual,
+  .tooltip { transition-duration: 1ms; }
+}
