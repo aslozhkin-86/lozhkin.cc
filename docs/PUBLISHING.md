@@ -2,8 +2,10 @@
 
 The GitHub repository `aslozhkin-86/lozhkin.cc` is the only project repository. Edit files under `source/`. The `public/` folder is generated and must not be edited by hand.
 
+Publish each completed site change as part of the task without waiting for a separate request. If the user asks to keep a change local or as a draft, do not publish it. Update this guide in the same task whenever the publishing workflow or hosting architecture changes.
+
 1. Make the change in `source/`. Use the local dev server when the change affects layout or behavior.
-2. Run `./scripts/publish.sh "Describe the site change"` from the repository root. It builds the site, refreshes `public/`, checks the generated output, commits the source and published files together, and pushes `main`.
+2. Run `./scripts/publish.sh "Describe the site change"` from the repository root. For source changes, it builds the site and refreshes `public/`. It checks and commits the source, published files, and project documentation together, then pushes `main`. Documentation-only changes skip the build.
 3. Check `https://lozhkin.cc/` after the hosting service updates. The checkout and GitHub match immediately after the push.
 
 Run `cd source && pnpm test` when a change warrants the rendered-page checks. The publish command uses the build and static-output checks, so routine copy and spacing edits do not need an extra test pass.

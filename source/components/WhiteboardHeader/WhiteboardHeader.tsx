@@ -99,7 +99,7 @@ function CardContent({ id }: { id: CardId }) {
           </ul>
           <a className={styles.readMoreLink} href="#approach"
             onPointerDown={stopCardDrag} draggable={false}>
-            <span>How I work ↓</span>
+            <span>How I work</span>
             <Image src="/hero/redesign/read-more-underline.svg" alt=""
               width={103.6} height={10.6003} draggable={false} />
           </a>

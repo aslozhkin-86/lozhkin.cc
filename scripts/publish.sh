@@ -14,18 +14,16 @@ if [[ -z "$message" ]]; then
   exit 1
 fi
 
-if [[ -z "$(git status --porcelain -- source)" && "${2:-}" != "--force" ]]; then
-  echo "No source changes to publish. Add --force to rebuild anyway."
-  exit 0
+if [[ -n "$(git status --porcelain -- source)" || "${2:-}" == "--force" ]]; then
+  (cd source && pnpm run build)
+  node scripts/sync-static.mjs
 fi
 
-(cd source && pnpm run build)
-node scripts/sync-static.mjs
-git add -A source public
-git diff --cached --check -- source public
-if git diff --cached --quiet -- source public; then
+git add -A AGENTS.md README.md docs scripts source public
+git diff --cached --check -- AGENTS.md README.md docs scripts source public
+if git diff --cached --quiet -- AGENTS.md README.md docs scripts source public; then
   echo "No site changes to publish."
   exit 0
 fi
-git commit -m "$message" -- source public
+git commit -m "$message" -- AGENTS.md README.md docs scripts source public
 git push origin main
