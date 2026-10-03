@@ -1,10 +1,9 @@
 # Lozhkin PDP — personal portfolio website
 
-This is the single source repository for [lozhkin.cc](https://lozhkin.cc/).
+This is the single project and Git repository for [lozhkin.cc](https://lozhkin.cc/).
 
 - `source/` contains the editable React, TypeScript, CSS, and image files.
-- `public/` contains the generated site currently published at lozhkin.cc. Do not edit it by hand.
-- A push to `main` that changes `source/` automatically rebuilds `public/` in GitHub Actions.
+- `public/` contains the generated site served at lozhkin.cc. Do not edit it by hand.
 
 ## Work locally
 
@@ -16,12 +15,12 @@ pnpm install
 pnpm run dev
 ```
 
-For a production build and a short rendered-page check:
-
-```sh
-pnpm test
-```
-
 ## Publish
 
-Commit and push edits under `source/` to `main`. GitHub Actions builds and commits the published files automatically. After it finishes, pull `main` to get the generated commit locally. See [docs/PUBLISHING.md](docs/PUBLISHING.md) for details.
+From the repository root, run one command after editing `source/`:
+
+```sh
+./scripts/publish.sh "Describe the site change"
+```
+
+The script builds the site, replaces `public/`, commits the source and generated files together, and pushes `main`. For the uncommon case where only the published files need rebuilding, append `--force`. See [docs/PUBLISHING.md](docs/PUBLISHING.md).
