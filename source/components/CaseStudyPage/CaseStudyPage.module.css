@@ -1,0 +1,105 @@
+.page { --case-page-gap: 24px; min-height: 100svh; padding: var(--case-page-gap); overflow: clip; background: var(--portfolio-color-board); color: var(--portfolio-color-text); }
+
+.panel {
+  display: flow-root;
+  position: relative;
+  width: 100%;
+  min-height: calc(100svh - 2 * var(--case-page-gap));
+  overflow: clip;
+  overscroll-behavior: contain;
+  border-radius: 32px;
+  background: var(--portfolio-color-white);
+  animation: panelIn 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.hero {
+  animation: contentIn 180ms 70ms both;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 100px);
+  min-height: calc(100svh - 2 * var(--case-page-gap));
+  padding: clamp(80px, 6vw, 120px) clamp(40px, 5.3vw, 112px);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-family-marker);
+  font-size: clamp(30px, 3.05vw, 64px);
+  font-weight: 400;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.06;
+  object-fit: cover;
+  transform: rotate(-2deg);
+}
+
+.company { margin: 0 0 16px; font-family: var(--font-family-sans); font-size: var(--portfolio-body-bold-size); font-weight: var(--portfolio-body-bold-weight); line-height: var(--portfolio-body-bold-line-height); }
+.heroImage[data-image-aspect="original"] { aspect-ratio: auto; }
+
+.imagePlaceholder { width: 100%; aspect-ratio: 16 / 9; background: var(--portfolio-color-placeholder); }
+.panel[data-layout="article"] .hero {
+  width: min(1100px, calc(100% - 96px));
+  min-height: 0;
+  margin: 60px auto 0;
+  padding: 0 0 48px;
+  grid-template-columns: minmax(0, 439fr) minmax(0, 627fr);
+  gap: 44px;
+  border-bottom: 1px solid var(--portfolio-color-placeholder);
+}
+.panel[data-layout="article"] .title { font-size: clamp(30px, 3.125vw, 40px); line-height: 1.25; }
+.articleBody {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: min(860px, calc(100% - 96px));
+  margin: 48px auto 0;
+  padding-bottom: 80px;
+  font-family: var(--font-family-sans);
+  font-size: 17px;
+  font-weight: var(--portfolio-body-weight);
+  line-height: 24px;
+  letter-spacing: var(--portfolio-body-letter-spacing);
+}
+.articleSection { display: flex; flex-direction: column; gap: 16px; }
+.articleSection > :not(.imagePlaceholder) { width: min(600px, 100%); margin: 0 auto; }
+.articleSection h2 { font-size: var(--portfolio-body-bold-size); font-weight: var(--portfolio-body-bold-weight); line-height: var(--portfolio-body-bold-line-height); }
+.articleSection strong { font-weight: var(--portfolio-body-bold-weight); }
+.articleSection ul, .articleSection ol { padding-left: 24px; }
+.articleSection ul { list-style: disc; }
+.articleSection ol { list-style: decimal; }
+.articleSection li + li { margin-top: 12px; }
+.articleSection > .imagePlaceholder { margin: 24px 0; }
+.copyright { margin: 40px 0 0; text-align: center; font-size: 17px; line-height: 24px; }
+
+
+@keyframes panelIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes contentIn { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 760px) {
+  .page { --case-page-gap: 8px; }
+  .panel { border-radius: 24px; }
+  .close { top: 12px; right: 12px; }
+  .hero { grid-template-columns: minmax(0, 1fr); align-content: start; gap: 36px; min-height: calc(100svh - 16px); padding: 84px 24px 40px; }
+  .title { font-size: clamp(28px, 7.5vw, 44px); line-height: 1.25; }
+  .panel[data-layout="article"] .hero { width: calc(100% - 48px); grid-template-columns: minmax(0, 1fr); margin-top: 84px; gap: 32px; padding-bottom: 32px; }
+  .panel[data-layout="article"] .title { font-size: clamp(28px, 7.5vw, 40px); }
+  .articleBody { width: calc(100% - 48px); margin-top: 32px; padding-bottom: 40px; }
+  .articleSection > .imagePlaceholder { margin: 16px 0; }
+  .copyright { margin-top: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .panel, .hero { animation: none; } }

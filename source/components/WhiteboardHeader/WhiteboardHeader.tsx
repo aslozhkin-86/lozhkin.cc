@@ -97,12 +97,6 @@ function CardContent({ id }: { id: CardId }) {
             <li>I start at the whiteboard, where we can get bolder together.</li>
             <li>I discover, build, and learn — and cut what doesn’t help.</li>
           </ul>
-          <a className={styles.readMoreLink} href="#approach"
-            onPointerDown={stopCardDrag} draggable={false}>
-            <span>How I work</span>
-            <Image src="/hero/redesign/read-more-underline.svg" alt=""
-              width={103.6} height={10.6003} draggable={false} />
-          </a>
         </>
       )}
     </>
@@ -195,6 +189,7 @@ export function WhiteboardHeader() {
         ariaLabel="Draggable card stack"
         cards={cards}
         cardClassName={styles.heroCard}
+        contentClassName={styles.heroContent}
         controller={stack}
         dataKind="card"
         getStyle={(_, cardIndex): DraggableCardStyle => ({

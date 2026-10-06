@@ -5,12 +5,18 @@
   --portfolio-color-link: #010bf0;
   --portfolio-color-board: #f8e7d9;
   --portfolio-color-board-dot: rgb(0 0 0 / 20%);
+  --portfolio-color-placeholder: #d9d9d9;
 
   --portfolio-color-background: var(--portfolio-color-white);
   --portfolio-color-text: var(--portfolio-color-black);
 
   --portfolio-body-weight: 500;
   --portfolio-body-letter-spacing: -0.02em;
+  --portfolio-body-bold-family: var(--font-family-sans);
+  --portfolio-body-bold-size: 17px;
+  --portfolio-body-bold-weight: 700;
+  --portfolio-body-bold-line-height: 24px;
+  --portfolio-body-bold-letter-spacing: -0.02em;
 
   --portfolio-contrast-big-family: var(--font-family-serif);
   --portfolio-contrast-big-size: 44px;

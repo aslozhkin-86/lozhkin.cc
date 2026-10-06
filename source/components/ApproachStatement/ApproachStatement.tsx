@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
+import { DraggableCardStack, useCardStack, type DraggableCardStyle } from "../DraggableCardStack";
+import { useLayerOrder } from "../interaction/useLayerOrder";
 import styles from "./ApproachStatement.module.css";
 
 const cards = [
@@ -27,98 +29,56 @@ const cards = [
   },
 ] as const;
 
+const deckCards = cards.map(card => ({ ...card, label: card.title }));
+const cardIds = cards.map(card => card.id);
+type CardId = (typeof cards)[number]["id"];
+
 export function ApproachStatement() {
   const sectionRef = useRef<HTMLElement>(null);
-  const frameRef = useRef<HTMLDivElement>(null);
-
+  const [revealed, setRevealed] = useState(false);
+  const layers = useLayerOrder([...cardIds].reverse());
+  const stack = useCardStack(cardIds, { onCycle: id => layers.sendToBack(id as CardId) });
   useEffect(() => {
-    const section = sectionRef.current;
-    const frame = frameRef.current;
-    if (!section || !frame) return;
-
-    const elements = Array.from(
-      section.querySelectorAll<HTMLElement>("[data-approach-card]"),
-    );
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let animationFrame: number | null = null;
-
-    const update = () => {
-      animationFrame = null;
-      section.dataset.animated = String(!reducedMotion.matches);
-      if (reducedMotion.matches) return;
-
-      const frameHeight = frame.offsetHeight;
-      section.style.setProperty("--frame-height", `${frameHeight}px`);
-      // On short screens, scroll the outer spacing away before pinning the
-      // deck. The cards retain their readable size instead of being cropped.
-      const pinTop = Math.min(0, window.innerHeight - frameHeight);
-      frame.style.setProperty("--pin-top", `${pinTop}px`);
-      const travel = Math.max(1, section.offsetHeight - frameHeight);
-      const progress = Math.min(1, Math.max(0,
-        (pinTop - section.getBoundingClientRect().top) / travel,
-      ));
-      const entryDistance = Math.max(frameHeight, elements[0].offsetHeight + (elements.length - 1) * 10);
-
-      elements.forEach((card, index) => {
-        // Hold the introduction at the start and Cycle at the end so every card has
-        // reading time. The same scroll sequence works in both directions.
-        const arrival = index === 0 ? 1 : Math.min(1, Math.max(0,
-          progress * (elements.length - 1 + 0.8) - 0.4 - (index - 1),
-        ));
-        card.style.setProperty("--card-y", `${index * 10 + (1 - arrival) * entryDistance}px`);
-      });
-    };
-
-    function requestUpdate() {
-      if (animationFrame !== null) return;
-      animationFrame = window.requestAnimationFrame(update);
-    }
-
-    update();
-    const resizeObserver = new ResizeObserver(requestUpdate);
-    resizeObserver.observe(frame);
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-    reducedMotion.addEventListener("change", requestUpdate);
-
-    return () => {
-      if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
-      resizeObserver.disconnect();
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      reducedMotion.removeEventListener("change", requestUpdate);
-      delete section.dataset.animated;
-    };
+    if (sectionRef.current) sectionRef.current.dataset.enhanced = "true";
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry?.isIntersecting) { setRevealed(true); observer.disconnect(); }
+    }, { threshold: 0.1 });
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
-
+  function restack() { stack.resetStack(); layers.resetOrder(); }
   return (
-    <section
-      aria-label="Approach"
-      className={styles.section}
-      id="approach"
-      ref={sectionRef}
-    >
-      <div className={styles.frame} ref={frameRef}>
-        <div className={styles.deck}>
-          {cards.map((card) => (
-            <article
-              aria-labelledby={`approach-${card.id}-title`}
-              className={styles.card}
-              data-approach-card={card.id}
-              key={card.id}
-            >
-              <h2 className={styles.cardTitle} id={`approach-${card.id}-title`}>
-                {card.title}
-              </h2>
-              <div className={styles.copy}>
-                {card.copy.split("\n\n").map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+    <section aria-label="Approach" className={styles.section} id="approach" ref={sectionRef} data-revealed={revealed}>
+      <div className={styles.deck}>
+        <DraggableCardStack
+          ariaLabel="Draggable approach cards"
+          cards={deckCards}
+          controller={stack}
+          dataKind="approach-card"
+          cardClassName={styles.card}
+          surfaceClassName={styles.surface}
+          getStyle={(_, index): DraggableCardStyle => ({
+            "--index": index,
+            "--card-rotation": `${[-2, 1, -1, 2][index]}deg`,
+            "--stack-card-width": "min(310px, 24.5vw)",
+            "--stack-card-aspect": "3 / 4",
+            "--mobile-card-width": "min(360px, calc(100vw - 64px))",
+            "--mobile-card-top": "30px",
+            "--mobile-card-anchor-y": "0px",
+            "--mobile-card-left": "calc(50% - 15px)",
+            "--mobile-stack-x": `${index * 10}px`,
+            "--mobile-stack-y": `${index * -10}px`,
+          })}
+          getZIndex={id => layers.zIndex(id as CardId)}
+          onBringToFront={id => layers.bringToFront(id as CardId)}
+          onRestack={restack}
+          renderCard={card => <div data-approach-card={card.id}>
+            <h2 className={styles.cardTitle} id={`approach-${card.id}-title`}>{card.title}</h2>
+            <div className={styles.copy}>{card.copy.split("\n\n").map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+          </div>}
+        />
       </div>
+      <button className={styles.restack} onClick={restack} type="button">Restack</button>
     </section>
   );
 }

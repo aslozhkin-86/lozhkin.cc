@@ -1,4 +1,3 @@
-import { ApproachStatement } from "@/components/ApproachStatement";
 import { CompanyHistory } from "@/components/CompanyHistory";
 import { OtherProjects } from "@/components/OtherProjects";
 import { PortfolioFooter } from "@/components/PortfolioFooter";
@@ -14,7 +13,6 @@ export default function Home() {
         <CompanyHistory />
         <ProjectList />
         <SpeakingSection />
-        <ApproachStatement />
         <OtherProjects />
       </main>
       <PortfolioFooter />

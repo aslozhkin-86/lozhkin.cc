@@ -14,7 +14,7 @@ for (const file of ["index.html", "index.rsc", "404.html"]) {
 }
 
 const html = await readFile(join(prerender, "index.html"), "utf8");
-if (!html.includes('data-approach-card="intro"') || html.includes("/Users/")) {
+if (!html.includes('aria-label="Draggable card stack"') || html.includes("/Users/")) {
   throw new Error("Static HTML is incomplete or contains a local file path.");
 }
 

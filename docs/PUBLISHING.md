@@ -11,3 +11,5 @@ Work locally by default. Push to GitHub and publish only when the user explicitl
 Run `cd source && pnpm test` when a change warrants the rendered-page checks. The publish command uses the build and static-output checks, so routine copy and spacing edits do not need an extra test pass.
 
 The site is static. It has no database, preview password, or separate test-domain deployment. The former `card-portfolio` and `portfolio-site` folders are not part of this workflow.
+
+The static-output check verifies the current Hero card stack. Keep that check aligned with the published homepage if its sections change. Unpublished case drafts must stay outside this public repository.

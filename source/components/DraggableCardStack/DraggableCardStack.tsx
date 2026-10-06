@@ -19,6 +19,7 @@ type DraggableCardStackProps<T extends DraggableCardItem> = {
   ariaLabel: string;
   cardClassName?: string;
   cards: readonly T[];
+  contentClassName?: string;
   controller: CardStackController;
   dataKind: string;
   getStyle: (card: T, index: number) => DraggableCardStyle;
@@ -33,6 +34,7 @@ export function DraggableCardStack<T extends DraggableCardItem>({
   ariaLabel,
   cardClassName,
   cards,
+  contentClassName,
   controller,
   dataKind,
   getStyle,
@@ -107,7 +109,9 @@ export function DraggableCardStack<T extends DraggableCardItem>({
             }}
           >
             <div className={`${styles.surface} ${surfaceClassName ?? ""}`}>
-              {renderCard(card)}
+              {contentClassName
+                ? <div className={contentClassName}>{renderCard(card)}</div>
+                : renderCard(card)}
             </div>
           </article>
         );

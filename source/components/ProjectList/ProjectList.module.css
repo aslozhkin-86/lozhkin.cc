@@ -46,6 +46,30 @@
   user-select: none;
 }
 
+.caseLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+button.caseLink {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.details button.caseLink { width: auto; }
+
+.caseLink:hover { filter: brightness(1.07); }
+.caseLink:focus-visible {
+  outline: 2px solid var(--portfolio-color-link);
+  outline-offset: 8px;
+}
+
 .details {
   width: min(336px, 100%);
   font-family: var(--font-family-marker);
@@ -54,6 +78,8 @@
   line-height: normal;
   letter-spacing: -0.02em;
 }
+
+.details .caseLink { color: var(--portfolio-color-link); }
 
 .details p { margin: 0; }
 .details p + p { margin-top: 4px; }

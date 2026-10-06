@@ -107,14 +107,14 @@ export function SpeakingSection() {
             "--stack-card-width": "min(280px, 22vw)",
             "--stack-card-radius": "32px",
             "--card-left": `${card.x / 1280 * 100}%`,
-            "--card-top": `${card.y}px`,
+            "--card-top": `${card.y - 45}px`,
             "--card-rotation": hasRevealed ? `${card.rotation}deg` : "0deg",
             "--stack-x": hasRevealed
               ? "0px"
               : `calc(50vw - ${card.x / 1280 * 100}vw - min(140px, 11vw) + ${cardIndex * 10}px)`,
             "--stack-y": hasRevealed
               ? "0px"
-              : `${180 - card.y - cardIndex * 10}px`,
+              : `${225 - card.y - cardIndex * 10}px`,
             "--reveal-duration": isRevealAnimating ? `${REVEAL_DURATION}ms` : "220ms",
             "--reveal-delay": isRevealAnimating ? `${cardIndex * REVEAL_STAGGER}ms` : "0ms",
             "--mobile-card-width": "min(360px, 70vw)",

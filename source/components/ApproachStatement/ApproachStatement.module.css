@@ -1,48 +1,22 @@
 .section {
   position: relative;
   isolation: isolate;
-  width: 100%;
+  padding: 72px 32px 40px;
+  overflow: hidden;
   color: var(--portfolio-color-text);
   background-color: var(--portfolio-color-board);
-  background-image: radial-gradient(
-    circle,
-    var(--portfolio-color-board-dot) 1.14px,
-    transparent 1.3px
-  );
+  background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
   background-position: 4.448px 8.038px;
   background-size: 34.205px 34.205px;
 }
-
-.frame {
-  width: 100%;
-  padding: clamp(48px, 7svh, 80px) 24px 54px;
-  background-color: var(--portfolio-color-board);
-  background-image: radial-gradient(
-    circle,
-    var(--portfolio-color-board-dot) 1.14px,
-    transparent 1.3px
-  );
-  background-position: 4.448px 8.038px;
-  background-size: 34.205px 34.205px;
-  text-align: center;
-}
-
-.deck {
-  display: grid;
-  gap: 20px;
-  width: min(360px, 100%);
-  margin: 0 auto;
-}
-
-.card {
-  position: relative;
-  min-height: 480px;
-  padding: 32px 30.5px 40px;
-  border: 1.5px solid var(--portfolio-color-text);
-  border-radius: 40px;
-  background: var(--portfolio-color-white);
-}
-
+.deck { position: relative; width: min(100%, 1200px); height: 440px; margin: 0 auto; --approach-card-width: min(310px, 24.5vw); }
+.deck > div { position: relative; height: 100%; }
+.deck .card { position: absolute; top: 10px; left: calc(var(--index) * (100% - var(--approach-card-width)) / 3); opacity: 1; transform: translate(var(--drag-x), var(--drag-y)); transition: left 700ms cubic-bezier(.22,1,.36,1), transform 550ms cubic-bezier(.22,1,.36,1), opacity 350ms ease; transition-delay: calc(var(--index) * 65ms); }
+.section[data-revealed="true"] .card { left: calc(var(--index) * (100% - var(--approach-card-width)) / 3); opacity: 1; }
+.deck .card[data-dragging="true"] { transition: none; }
+.deck .surface { padding: 22px 20px 24px; overflow: auto; text-align: center; }
+.restack { display: block; margin: 40px auto 0; padding: 8px 16px; border: 0; background: transparent; color: var(--portfolio-color-link); font: 500 14px/22px var(--font-family-sans); cursor: pointer; }
+.restack:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .cardTitle {
   margin: 0;
   color: var(--portfolio-color-link);
@@ -54,11 +28,11 @@
 }
 
 .copy {
-  margin: 30px 0 0;
+  margin: 20px 0 0;
   font-family: var(--font-family-sans);
-  font-size: 17px;
+  font-size: 14.5px;
   font-weight: var(--portfolio-body-weight);
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: var(--portfolio-body-letter-spacing);
   text-align: left;
 }
@@ -66,47 +40,33 @@
 .copy p { margin: 0; }
 .copy p + p { margin-top: 0.5lh; }
 
-/* Progressive enhancement: without JS, every card remains in reading order.
-   This scroll-only deck deliberately leaves touch scrolling native. */
-.section[data-animated="true"] { height: calc(var(--frame-height, 100svh) + 300svh); }
-
-.section[data-animated="true"] .frame {
-  display: grid;
-  align-content: center;
-  position: sticky;
-  top: var(--pin-top, 0px);
-  min-height: 100svh;
-  overflow: clip;
-}
-
-.section[data-animated="true"] .deck {
-  padding-bottom: 30px;
-  gap: 0;
-}
-
-.section[data-animated="true"] .card {
-  grid-area: 1 / 1;
-  transform: translate3d(0, var(--card-y, 0px), 0);
-  will-change: transform;
-}
 
 @media (max-width: 760px) {
-  .frame { padding: 40px 16px 40px; }
-
-}
-
-@media (max-width: 374px) {
-  .card { padding-inline: 24px; }
-  .copy { font-size: 16px; line-height: 23px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .section[data-animated="true"] { height: auto; }
-  .section[data-animated="true"] .frame { position: static; min-height: 0; }
-  .section[data-animated="true"] .deck { gap: 20px; padding-bottom: 0; }
-  .section[data-animated="true"] .card {
-    grid-area: auto;
-    transform: none;
-    will-change: auto;
+  .section { padding: 40px 16px 24px; }
+  .deck { height: 650px; }
+  .deck > div { position: absolute; display: block; inset: 0; }
+  .deck .card, .section[data-revealed="true"] .card {
+    position: absolute; height: 600px; aspect-ratio: auto; opacity: 1;
+    left: var(--mobile-card-left);
+    transform: translate(var(--mobile-card-anchor-x, -50%), 0) translate(var(--mobile-stack-x), var(--mobile-stack-y)) translate(var(--drag-x), var(--drag-y));
+    transition: transform 220ms cubic-bezier(.22,1,.36,1);
   }
+  .deck .card[data-returning="true"] { transition-duration: 936ms; }
+  .deck .card[data-dragging="true"] { transition: none; }
+  .deck .surface { min-height: 0; padding: 32px 24px; }
+  .copy { font-size: 17px; line-height: 24px; }
+  .restack { margin-top: 0; }
+}
+@media (max-width: 374px) {
+  .deck { height: 770px; }
+  .deck .card { height: 720px; }
+  .copy { font-size: 16px; line-height: 23px; }
+  .deck .surface { padding-inline: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck .card { opacity: 1; transition: none; }
+}
+
+@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
+  .section[data-enhanced="true"][data-revealed="false"] .card { left: calc(50% - var(--approach-card-width) / 2); opacity: 0; }
 }

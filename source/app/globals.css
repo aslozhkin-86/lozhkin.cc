@@ -11,10 +11,18 @@
 }
 
 @font-face {
-  font-family: "LORE";
-  src: url("/fonts/LORE-Regular.woff2") format("woff2");
+  font-family: "LORE Alternates";
+  src: url("/fonts/LORE-Alternates-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LORE Alternates";
+  src: url("/fonts/LORE-Alternates-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
 }
 
@@ -33,7 +41,6 @@
 html,
 body {
   min-height: 100%;
-  scroll-behavior: smooth;
 }
 
 body {

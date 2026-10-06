@@ -28,51 +28,23 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 56px 40px;
   margin-top: 60px;
-}
-
-.project {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.preview {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-}
-
-.copy {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.projectTitle {
-  margin: 0;
-  font-family: var(--font-family-serif);
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.description {
-  margin: 0;
-  font-family: var(--font-family-sans);
-  font-size: 16px;
-  font-weight: var(--portfolio-body-weight);
-  line-height: 24px;
-  letter-spacing: var(--portfolio-body-letter-spacing);
 }
 
 @media (max-width: 999px) {
   .grid { column-gap: 24px; }
 }
+
+/* Varied, stable tilts keep server and client rendering identical. */
+.project { scroll-margin-top: 32px; }
+.project:nth-child(1) { transform: rotate(-1.4deg); }
+.project:nth-child(2) { transform: rotate(0.8deg); }
+.project:nth-child(3) { transform: rotate(1.7deg); }
+.project:nth-child(4) { transform: rotate(-0.9deg); }
+.project:nth-child(5) { transform: rotate(-1.8deg); }
+.project:nth-child(6) { transform: rotate(1.2deg); }
 
 @media (max-width: 720px) {
   .section { padding-top: 64px; }
@@ -89,5 +61,5 @@
     margin-top: 40px;
   }
 
-  .project { gap: 16px; }
+
 }

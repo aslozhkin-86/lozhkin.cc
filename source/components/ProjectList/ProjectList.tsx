@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./ProjectList.module.css";
 
@@ -7,6 +8,7 @@ const projects = [
     description:
       "Design strategy, brand update and a mobile app visual concept for a marketplace in Azerbaijan",
     height: 914,
+    href: "/projects/birmarket",
     id: "birmarket",
     src: "/projects/whiteboard/bm-teaser.png",
     mobileSrc: "/projects/whiteboard/m10-teaser-mobile-1.png",
@@ -14,8 +16,9 @@ const projects = [
   },
   {
     description:
-      "Launched the m10 digital wallet and helped it reach 700K MAU and 2M registered users, making it Azerbaijan’s fifth-largest financial service",
+      "Helped launch m10 and scale it to 700K monthly active users and 2M registered users",
     height: 914,
+    href: "/projects/m10",
     id: "m10",
     src: "/projects/whiteboard/m10-teaser.png",
     mobileSrc: "/projects/whiteboard/m10-teaser-mobile.png",
@@ -25,6 +28,7 @@ const projects = [
     description:
       "Redesigned the Yandex Market shopping experience, from cart and checkout to delivery and post-purchase",
     height: 914,
+    href: null,
     id: "yandex-market",
     src: "/projects/whiteboard/yandex-market-teaser.png",
     mobileSrc: "/projects/whiteboard/yandex-market-teaser-mobile.png",
@@ -41,12 +45,8 @@ export function ProjectList() {
         </h2>
 
         <div className={styles.projects}>
-          {projects.map((project) => (
-            <article
-              className={styles.project}
-              id={project.id}
-              key={project.id}
-            >
+          {projects.map((project) => {
+            const teaser = (
               <picture>
                 <source
                   media="(max-width: 800px)"
@@ -65,13 +65,27 @@ export function ProjectList() {
                   width={project.width}
                 />
               </picture>
+            );
 
-              <div className={styles.details}>
-                <p>{project.description}</p>
-                <p className={styles.status}>Case in progress</p>
-              </div>
-            </article>
-          ))}
+            return (
+              <article className={styles.project} id={project.id} key={project.id}>
+                {project.href ? (
+                  <Link className={styles.caseLink} href={project.href} aria-label={`Open ${project.id} case study`}>
+                    {teaser}
+                  </Link>
+                ) : teaser}
+
+                <div className={styles.details}>
+                  <p>{project.description}</p>
+                  {project.href ? (
+                    <Link className={styles.caseLink} href={project.href}>Read the case</Link>
+                  ) : (
+                    <p className={styles.status}>Case in progress</p>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <a className={styles.moreProjects} href="#other-projects">
@@ -86,6 +100,7 @@ export function ProjectList() {
           />
         </a>
       </div>
+
     </section>
   );
 }

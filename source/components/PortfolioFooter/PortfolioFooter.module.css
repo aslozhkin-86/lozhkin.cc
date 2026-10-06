@@ -1,7 +1,10 @@
 .footer {
   padding: 80px 24px 92px;
   color: var(--portfolio-color-text);
-  background: var(--portfolio-color-board);
+  background-color: var(--portfolio-color-board);
+  background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
+  background-position: 4.448px 8.038px;
+  background-size: 34.205px 34.205px;
   font-family: var(--font-family-marker);
   font-size: 48px;
   font-weight: 400;
