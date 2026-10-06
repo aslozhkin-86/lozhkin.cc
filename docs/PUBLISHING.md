@@ -12,4 +12,4 @@ Run `cd source && pnpm test` when a change warrants the rendered-page checks. Th
 
 The site is static. It has no database, preview password, or separate test-domain deployment. The former `card-portfolio` and `portfolio-site` folders are not part of this workflow.
 
-The static-output check verifies the current Hero card stack. Keep that check aligned with the published homepage if its sections change. Unpublished case drafts must stay outside this public repository.
+The static-output check verifies the current Hero card stack and the expected project routes. The sync script copies every prerendered page to its `.html` path and a matching directory `index.html`, so direct project URLs resolve on the static host. Keep those checks aligned with the published site. Unpublished case drafts must stay outside this public repository.
