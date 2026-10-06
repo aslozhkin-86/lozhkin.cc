@@ -36,6 +36,7 @@ Use these names consistently when discussing or editing the page:
 ## Shared Interaction Architecture
 
 - `PageCloseLink` is the shared close/back control for project overview and standalone case pages. It owns the 40 px hit area, 32 px SVG, icon-only opacity hover, focus outline, and reduced-motion behavior. Page styles only position it; each page supplies its return URL and accessible label.
+- Cross-page navigation uses native anchors. The static production host serves prerendered HTML, while vinext client-side `Link` navigation fails on the published site; a full document navigation also restarts the destination page's entrance animation.
 
 - Reuse `DraggableCardStack` and `useCardStack` for card stacks. Do not copy their pointer logic into individual sections.
 - Reuse `DraggableIcon` and `useDragCollection` for loose image/icon interactions.

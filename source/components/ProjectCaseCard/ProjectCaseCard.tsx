@@ -1,6 +1,5 @@
 import type { MouseEventHandler } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import styles from "./ProjectCaseCard.module.css";
 
@@ -62,8 +61,8 @@ export function ProjectCaseCard({
   if (onOpen) return <button type="button" id={id} className={[styles.link, styles.button, className].filter(Boolean).join(" ")} onClick={onOpen} aria-label={`Unlock case study: ${title}`}>{card}</button>;
 
   return href ? (
-    <Link href={href} id={id} className={[styles.link, className].filter(Boolean).join(" ")} aria-label={`Open case study: ${company ? `${company} — ` : ""}${title}`}>
+    <a href={href} id={id} className={[styles.link, className].filter(Boolean).join(" ")} aria-label={`Open case study: ${company ? `${company} — ` : ""}${title}`}>
       {card}
-    </Link>
+    </a>
   ) : card;
 }

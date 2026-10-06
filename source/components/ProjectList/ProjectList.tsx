@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import styles from "./ProjectList.module.css";
 
@@ -70,15 +69,15 @@ export function ProjectList() {
             return (
               <article className={styles.project} id={project.id} key={project.id}>
                 {project.href ? (
-                  <Link className={styles.caseLink} href={project.href} aria-label={`Open ${project.id} case study`}>
+                  <a className={styles.caseLink} href={project.href} aria-label={`Open ${project.id} case study`}>
                     {teaser}
-                  </Link>
+                  </a>
                 ) : teaser}
 
                 <div className={styles.details}>
                   <p>{project.description}</p>
                   {project.href ? (
-                    <Link className={styles.caseLink} href={project.href}>Read the case</Link>
+                    <a className={styles.caseLink} href={project.href}>Read the case</a>
                   ) : (
                     <p className={styles.status}>Case in progress</p>
                   )}
