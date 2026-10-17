@@ -14,6 +14,13 @@ if [[ -z "$message" ]]; then
   exit 1
 fi
 
+if [[ -e source/app/projects/birmarket/breaking-the-inertia/page.tsx ||
+      -e source/app/projects/birmarket/vision-2027/page.tsx ||
+      -d source/components/BirmarketGrowthArticle ]]; then
+  echo "Unpublished Birmarket drafts are in the source tree. Move them out before publishing." >&2
+  exit 1
+fi
+
 if [[ -n "$(git status --porcelain -- source)" || "${2:-}" == "--force" ]]; then
   (cd source && pnpm run build)
   node scripts/sync-static.mjs

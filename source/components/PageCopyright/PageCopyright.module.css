@@ -1,0 +1,15 @@
+.copyright {
+  position: relative;
+  width: min(1160px, 100%);
+  margin: 80px auto 0;
+  color: var(--portfolio-color-text);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: var(--portfolio-body-letter-spacing);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .copyright { margin-top: 40px; }
+}

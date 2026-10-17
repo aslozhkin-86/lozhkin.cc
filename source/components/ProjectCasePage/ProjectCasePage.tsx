@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { PageCloseLink } from "../PageCloseLink/PageCloseLink";
+import { PageCopyright } from "../PageCopyright/PageCopyright";
 
 import styles from "./ProjectCasePage.module.css";
 
@@ -30,7 +31,7 @@ export function ProjectCasePage({ cards, cardsLabel, children, proof, returnHref
         </section>
       </div>
 
-      <p className={styles.copyright}>© Alexander Lozhkin</p>
+      <PageCopyright />
     </article>
   );
 }

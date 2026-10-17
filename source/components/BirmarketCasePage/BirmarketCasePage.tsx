@@ -3,27 +3,27 @@ import { ProjectCasePage } from "../ProjectCasePage/ProjectCasePage";
 import styles from "../ProjectCasePage/ProjectCasePage.module.css";
 
 const caseCards = [
+  { id: "breaking-the-inertia", title: "How we got a company moving and changed how it builds products", category: "Product strategy" },
   { id: "vision", title: "Marketplace Vision 2027", category: "Product vision" },
-  { id: "breaking-the-inertia", title: "Breaking the inertia: turning scattered effort into visible change", category: "Product strategy" },
 ] as const;
 
 export function BirmarketCasePage() {
   return (
     <ProjectCasePage
-      cards={caseCards.map((card) => (
-        <ProjectCaseCard
-          alt={card.id === "vision" ? "Birmarket Vision 2027 mobile marketplace concept" : "Green What if? sticky note among pink notes"}
-          category={card.category}
-          className={styles.projectCard}
-          height={card.id === "vision" ? 1132 : 540}
-          image={card.id === "vision" ? "/projects/birmarket/vision-2027.png" : "/projects/birmarket/shake_birmarket.png"}
-          id={card.id}
-          key={card.id}
-          size="large"
-          title={card.title}
-          width={card.id === "vision" ? 1744 : 960}
-        />
-      ))}
+      cards={caseCards.map((card) => {
+        const props = {
+          alt: card.id === "vision" ? "Birmarket Vision 2027 mobile marketplace concept" : "Hand-drawn marketplace wireframes beside a pink highlighter",
+          category: card.category,
+          className: styles.projectCard,
+          height: card.id === "vision" ? 1132 : 804,
+          image: card.id === "vision" ? "/projects/birmarket/vision-2027.png" : "/projects/birmarket/inertia/hero-preview.png",
+          id: card.id,
+          size: "large" as const,
+          title: card.title,
+          width: card.id === "vision" ? 1744 : 1440,
+        };
+        return <ProjectCaseCard {...props} href={card.id === "breaking-the-inertia" ? "/projects/birmarket/breaking-the-inertia" : undefined} key={card.id} />;
+      })}
       cardsLabel="Birmarket case studies"
       returnHref="/#birmarket"
       title="Birmarket marketplace"

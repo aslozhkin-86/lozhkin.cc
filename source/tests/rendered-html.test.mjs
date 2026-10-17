@@ -160,16 +160,43 @@ test("earlier projects are display cards without navigation or status icons", as
 });
 
 
-test("Birmarket case cards remain visible without publishing their pages", async () => {
+test("the local Birmarket article opens from the first case card", async () => {
   const overview = await (await render("/projects/birmarket")).text();
-  assert.match(overview, /Breaking the inertia: turning scattered effort into visible change/);
+  assert.match(overview, /How we got a company moving and changed how it builds products/);
   assert.match(overview, /Marketplace Vision 2027/);
   assert.match(overview, /projects\/birmarket\/vision-2027.png/);
   assert.match(overview, /projects\/shared\/lock.svg/);
-  assert.doesNotMatch(overview, /href="\/projects\/birmarket\/(breaking-the-inertia|vision-2027)"/);
-  assert.doesNotMatch(overview, /Unlock case study/);
+  assert.match(overview, /href="\/projects\/birmarket\/breaking-the-inertia"/);
+  assert.doesNotMatch(overview, /href="\/projects\/birmarket\/vision-2027"/);
+  assert.doesNotMatch(overview, /Unlock case study|Enter the password/);
+  assert.ok(overview.indexOf('id="breaking-the-inertia"') < overview.indexOf('id="vision"'));
+  assert.match(overview, /\/projects\/birmarket\/inertia\/hero-preview\.png/);
   assert.doesNotMatch(overview, /Warehouse operator workstation/);
-  assert.equal((await render("/projects/birmarket/breaking-the-inertia")).status, 404);
+
+  const article = await render("/projects/birmarket/breaking-the-inertia");
+  assert.equal(article.status, 200);
+  const html = await article.text();
+  assert.match(html, /href="\/projects\/birmarket#breaking-the-inertia"/);
+  assert.doesNotMatch(html, /7 percentage points|500 responses|Image placeholder/);
+  assert.match(html, /600 responses/);
+  assert.match(html, /6 min reading/);
+  assert.match(html, /Business goal — fix unit economics/);
+  assert.match(html, /Measured results/);
+  assert.match(html, /This is a recent project, so I can’t share detailed results publicly yet/);
+  assert.match(html, /\/projects\/birmarket\/inertia\/results-lock\.svg/);
+  assert.match(html, /aria-hidden="true"/);
+  assert.doesNotMatch(html, /Results coming soon|View full-size image/);
+  assert.equal((html.match(/<figure\b/g) ?? []).length, 9);
+  assert.equal((html.match(/data-case-block="big-image"/g) ?? []).length, 5);
+  assert.equal((html.match(/data-case-block="text-image"/g) ?? []).length, 5);
+  assert.equal((html.match(/data-case-block="paragraph"/g) ?? []).length, 13);
+  assert.equal((html.match(/data-case-block="feature"/g) ?? []).length, 1);
+  assert.match(html, /<h3 id="understand-the-problem">Understand the problem<\/h3>/);
+  assert.match(html, /\/projects\/birmarket\/inertia\/hero-photo\.png/);
+  assert.match(html, /\/projects\/birmarket\/inertia\/impact-effort-matrix\.png/);
+  assert.match(html, /\/projects\/birmarket\/inertia\/brand-transition\.png/);
+  assert.doesNotMatch(html, /homepage-results/);
+  assert.doesNotMatch(html, /\/projects\/birmarket\/inertia\/[^"\s]+\.webp/);
   assert.equal((await render("/projects/birmarket/vision-2027")).status, 404);
 });
 

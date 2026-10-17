@@ -41,13 +41,13 @@
 html,
 body {
   min-height: 100%;
+  background-color: var(--portfolio-color-board);
 }
 
 body {
   margin: 0;
   /* Clip horizontal overflow without making body a sticky scroll container. */
   overflow-x: clip;
-  background: #fff;
   color: var(--color-black);
   font-family: var(--font-family-sans);
 }

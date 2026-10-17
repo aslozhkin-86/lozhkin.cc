@@ -21,8 +21,7 @@
 }
 
 .header,
-.layout,
-.copyright {
+.layout {
   position: relative;
   width: min(1160px, 100%);
   margin-inline: auto;
@@ -183,15 +182,6 @@ a.proofItem:focus-visible { outline: 2px solid var(--portfolio-color-text); outl
 .projectCard:nth-child(3) { transform: rotate(1deg); }
 .projectCard:nth-child(4) { transform: rotate(-2deg); }
 
-.copyright {
-  margin-top: 80px;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: var(--portfolio-body-letter-spacing);
-  text-align: center;
-}
-
 @media (max-width: 900px) {
   .page { padding-inline: 32px; }
   .close { right: -8px; }
@@ -215,5 +205,4 @@ a.proofItem:focus-visible { outline: 2px solid var(--portfolio-color-text); outl
     gap: 60px;
     margin-top: 40px;
   }
-  .copyright { margin-top: 40px; }
 }
