@@ -66,7 +66,7 @@ const companyIconInset = (90 - companyIconSize) / 2;
 type CompanyId = (typeof companies)[number]["id"];
 type Company = (typeof companies)[number];
 type CompanyStyle = CSSProperties & Record<`--${string}`, string | number>;
-const mobileQuery = "(max-width: 999px), (hover: none), (pointer: coarse)";
+const mobileQuery = "(max-width: 1079px), (hover: none), (pointer: coarse)";
 
 function CompanyTooltipContent({
   company,
@@ -90,7 +90,7 @@ export function CompanyHistory() {
   const layers = useLayerOrder<CompanyId>(companyIds);
   const icons = useDragCollection(companyIds, {
     enabled: () => window.matchMedia(
-      "(min-width: 1000px) and (hover: hover) and (pointer: fine)",
+      "(min-width: 1080px) and (hover: hover) and (pointer: fine)",
     ).matches,
     onDragStart: (id) => layers.bringToFront(id as CompanyId),
   });

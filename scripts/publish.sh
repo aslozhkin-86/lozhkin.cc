@@ -14,10 +14,8 @@ if [[ -z "$message" ]]; then
   exit 1
 fi
 
-if [[ -e source/app/projects/birmarket/breaking-the-inertia/page.tsx ||
-      -e source/app/projects/birmarket/vision-2027/page.tsx ||
-      -d source/components/BirmarketGrowthArticle ]]; then
-  echo "Unpublished Birmarket drafts are in the source tree. Move them out before publishing." >&2
+if [[ -e source/app/projects/birmarket/vision-2027/page.tsx ]]; then
+  echo "The unpublished Marketplace Vision 2027 route is in the source tree. Move it out before publishing." >&2
   exit 1
 fi
 
@@ -26,11 +24,11 @@ if [[ -n "$(git status --porcelain -- source)" || "${2:-}" == "--force" ]]; then
   node scripts/sync-static.mjs
 fi
 
-git add -A AGENTS.md README.md docs scripts source public
-git diff --cached --check -- AGENTS.md README.md docs scripts source public
-if git diff --cached --quiet -- AGENTS.md README.md docs scripts source public; then
+git add -A .gitignore AGENTS.md README.md docs scripts source public
+git diff --cached --check -- .gitignore AGENTS.md README.md docs scripts source public
+if git diff --cached --quiet -- .gitignore AGENTS.md README.md docs scripts source public; then
   echo "No site changes to publish."
   exit 0
 fi
-git commit -m "$message" -- AGENTS.md README.md docs scripts source public
+git commit -m "$message" -- .gitignore AGENTS.md README.md docs scripts source public
 git push origin main

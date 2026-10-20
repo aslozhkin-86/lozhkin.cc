@@ -21,7 +21,7 @@ const cards = [
 
 const cardIds = cards.map(({ id }) => id);
 type CardId = (typeof cards)[number]["id"];
-const DESKTOP_QUERY = "(min-width: 761px)";
+const DESKTOP_QUERY = "(min-width: 1080px)";
 const REVEAL_DURATION = 900;
 const REVEAL_STAGGER = 70;
 
@@ -136,7 +136,7 @@ export function SpeakingSection() {
               className={styles.cardImage}
               draggable={false}
               fill
-              sizes="(max-width: 760px) 70vw, 22vw"
+              sizes="(max-width: 1079px) 70vw, 22vw"
               src={card.image}
             />
           )}
@@ -151,19 +151,7 @@ export function SpeakingSection() {
         rel="noreferrer"
         target="_blank"
       >
-        Watch{" "}
-        <span className={styles.talkLinkAccent}>
-          my talk
-          <Image
-            alt=""
-            className={styles.talkUnderline}
-            draggable={false}
-            height={6}
-            src="/speaking/talk-underline.svg"
-            width={94}
-          />
-        </span>{" "}
-        about brand in product
+        Watch my talk about brand in product
       </a>
     </section>
   );

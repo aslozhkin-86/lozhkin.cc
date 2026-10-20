@@ -4,10 +4,13 @@ import { PortfolioFooter } from "@/components/PortfolioFooter";
 import { ProjectList } from "@/components/ProjectList";
 import { SpeakingSection } from "@/components/SpeakingSection";
 import { WhiteboardHeader } from "@/components/WhiteboardHeader";
+import { DotParallax } from "./DotParallax";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.home} data-portfolio-home>
+      <DotParallax />
       <main>
         <WhiteboardHeader />
         <CompanyHistory />
@@ -16,6 +19,6 @@ export default function Home() {
         <OtherProjects />
       </main>
       <PortfolioFooter />
-    </>
+    </div>
   );
 }

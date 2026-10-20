@@ -19,7 +19,7 @@ function ImageFigure({ image, size }: { image: CaseImage; size: "small" | "big" 
         alt={image.alt}
         width={image.width}
         height={image.height}
-        sizes={size === "small" ? "(max-width: 760px) calc(100vw - 48px), 600px" : "(max-width: 760px) calc(100vw - 48px), (max-width: 1280px) calc(100vw - 128px), 1160px"}
+        sizes={size === "small" ? "(max-width: 1079px) calc(100vw - 48px), 600px" : "(max-width: 1079px) calc(100vw - 48px), 1160px"}
       />
       {image.caption && <figcaption>{image.caption}</figcaption>}
     </figure>

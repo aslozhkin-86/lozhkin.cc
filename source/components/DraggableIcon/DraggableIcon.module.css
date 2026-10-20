@@ -42,7 +42,7 @@
   opacity: 0;
   visibility: hidden;
   color: var(--portfolio-color-white);
-  background: #222;
+  background: #333;
   font-family: var(--font-family-sans);
   font-size: 16px;
   line-height: 18px;
@@ -99,7 +99,7 @@
   transition: none;
 }
 
-@media (max-width: 999px), (hover: none), (pointer: coarse) {
+@media (max-width: 1079px), (hover: none), (pointer: coarse) {
   .root {
     cursor: pointer;
     touch-action: auto;

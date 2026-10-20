@@ -12,6 +12,8 @@ Run `cd source && pnpm test` when a change warrants the rendered-page checks. Th
 
 The site is static. It has no database, preview password, or separate test-domain deployment. The former `card-portfolio` and `portfolio-site` folders are not part of this workflow.
 
-The static-output check verifies the current Hero card stack and the expected project routes. The sync script copies every prerendered page to its `.html` path and a matching directory `index.html`, so direct project URLs resolve on the static host. Keep those checks aligned with the published site. Unpublished case drafts must stay outside this public repository.
+The static-output check verifies the current Hero card stack and the expected project routes, including the Birmarket transformation article. The sync script copies every prerendered page to its `.html` path and a matching directory `index.html`, so direct project URLs resolve on the static host. Keep those checks aligned with the published site. Unpublished case drafts must stay outside this public repository.
 
-For local article work, unpublished Birmarket drafts may be restored in `source/`. The publish script stops before building, committing, or pushing whenever their route or local-only components are present. Move the drafts back out before an explicitly approved release, and confirm that the public site still excludes their pages.
+The m10 overview uses the owner-supplied artwork `source/public/projects/m10/hero-project.jpg`, the shared client-side `DotParallax` layer, and `M10CaseMotion` for hero and content motion. `ProjectHero` is shared by the redesigned project overviews and editorial case article, while `ProjectStoryCard` is shared by their related cases and the homepage Other Projects section. Keep active artwork in `source/public/` so the static build includes it; remove unused variants there before publishing.
+
+The Birmarket transformation article at `/projects/birmarket/breaking-the-inertia` is approved for publication and included in the static output. Marketplace Vision 2027 remains unpublished; the publish script stops if its standalone route is restored to `source/`.

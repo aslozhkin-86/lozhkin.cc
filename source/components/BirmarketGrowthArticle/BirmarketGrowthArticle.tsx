@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { CaseBigImage, CaseParagraph, CaseSmallImage, CaseTextImageBlock } from "../CaseArticleBlocks/CaseArticleBlocks";
 import { CaseStudyPage } from "../CaseStudyPage/CaseStudyPage";
+import { birmarketCaseMedia } from "../../data/featuredProjectMedia";
 
 import styles from "./BirmarketGrowthArticle.module.css";
 
-export const birmarketGrowthTitle = "How we got a company moving and changed how it builds products";
+export const birmarketGrowthTitle = "How design sped up company transformation";
 
 const asset = (name: string) => `/projects/birmarket/inertia/${name}.png`;
 
 const images = {
   timeline: { src: asset("discovery-timeline"), alt: "Discovery, workshop, planning, and development timeline", width: 1200, height: 446 },
-  audit: { src: asset("experience-audit"), alt: "Audit of Birmarket’s mobile shopping journey and field research", width: 2320, height: 1445 },
-  sprint: { src: asset("design-sprint"), alt: "Shared design sprint workspace and product team", width: 2320, height: 1445 },
-  research: { src: asset("prototype-research"), alt: "Proposed marketplace screens and user research", width: 2320, height: 1360 },
+  audit: { src: asset("experience-audit"), alt: "Audit of Birmarket’s mobile shopping journey and field research", width: 2464, height: 1446 },
+  sprint: { src: asset("design-sprint"), alt: "Shared design sprint workspace and product team", width: 2464, height: 1446 },
+  research: { src: asset("prototype-research"), alt: "Proposed marketplace screens and user research", width: 2464, height: 1360 },
   matrix: { src: asset("impact-effort-matrix"), alt: "Impact–Effort Matrix comparing value and implementation effort", width: 1200, height: 800 },
-  rollout: { src: asset("staged-rollout"), alt: "Five stages of the Birmarket homepage redesign", width: 2320, height: 1088 },
+  rollout: { src: asset("staged-rollout"), alt: "Five stages of the Birmarket homepage redesign", width: 2320, height: 1229 },
   visualDirection: { src: asset("visual-direction"), alt: "New purple Birmarket app design on two phones", width: 2320, height: 1504 },
   comparison: { src: asset("competitor-comparison"), alt: "Birmarket’s updated interface beside competing marketplace apps", width: 1200, height: 826 },
   brandTransition: { src: asset("brand-transition"), alt: "Birmarket icon changing from pink through a gradient to purple", width: 1200, height: 440 },
@@ -26,7 +27,7 @@ function BirmarketStatusBlock() {
       <div className={styles.statusCard}>
         <p className={styles.statusTitle}>Birmarket</p>
         <p className={styles.statusSubtitle}>No updates for years<br />Outdated design and experience</p>
-        <Image src={asset("original-experience")} alt="Original Birmarket desktop and mobile shopping experience" width={1520} height={880} sizes="(max-width: 760px) calc(100vw - 64px), 760px" />
+        <Image src={asset("original-experience")} alt="Original Birmarket desktop and mobile shopping experience" width={1140} height={660} sizes="(max-width: 1079px) calc(100vw - 64px), 760px" />
       </div>
       <div className={styles.goalCard}>
         <p className={styles.goalTitle}>Business goal — fix unit economics</p>
@@ -38,7 +39,7 @@ function BirmarketStatusBlock() {
 
 export function BirmarketGrowthArticle() {
   return (
-    <CaseStudyPage title={birmarketGrowthTitle} image={asset("hero-photo")} imageWidth={2480} imageHeight={1386} alt="Hand-drawn marketplace wireframes beside a pink highlighter" returnHref="/projects/birmarket#breaking-the-inertia" returnLabel="Back to Birmarket projects" articleVariant="editorial" readingTime="6 min reading">
+    <CaseStudyPage title={birmarketGrowthTitle} image={birmarketCaseMedia.src} imageWidth={2880} imageHeight={1920} alt={birmarketCaseMedia.alt} returnHref="/projects/birmarket#breaking-the-inertia" returnLabel="Back to Birmarket projects" articleVariant="editorial" readingTime="6 min reading">
       <CaseParagraph variant="lead">
         <p>In an experimental project, our small team started from scratch, showed the company how to get results quickly, and changed how teams worked on the product.</p>
       </CaseParagraph>
@@ -97,7 +98,7 @@ export function BirmarketGrowthArticle() {
       <CaseBigImage image={images.rollout} />
 
       <CaseParagraph>
-        <h3 id="my-contribution">My contribution</h3>
+        <h3 id="my-contribution">Visual part</h3>
         <p>Alongside the research, I took full ownership of the new UI and a modest brand refresh. I worked with the marketing team on this. I proposed a new color that works better in digital and print, and set the direction for the graphic style.</p>
       </CaseParagraph>
       <CaseBigImage image={images.visualDirection} />

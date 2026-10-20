@@ -30,7 +30,7 @@
 .figure img { display: block; width: 100%; height: auto; border-radius: 40px; corner-shape: var(--portfolio-corner-shape); }
 .figure figcaption { max-width: 600px; margin: 16px auto 0; font-size: 14px; line-height: 1.5; }
 
-@media (max-width: 760px) {
+@media (max-width: 1079px) {
   .block { margin-bottom: 48px; }
   .textImage { gap: 32px; }
 }

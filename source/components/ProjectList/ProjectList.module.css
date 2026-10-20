@@ -1,17 +1,17 @@
 .section {
   width: 100%;
-  padding: 52px 24px 72px;
+  padding: 80px clamp(24px, 6.25vw, 80px) 80px;
   color: var(--portfolio-color-text);
   background-color: var(--portfolio-color-board);
   background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
-  background-position: 4.448px 8.038px;
-  background-size: 34.205px 34.205px;
+  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
+  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
 }
 
 .content {
   width: 100%;
-  max-width: 1152px;
-  margin: 0 auto;
+  max-width: 1160px;
+  margin-inline: auto;
 }
 
 .heading {
@@ -27,109 +27,189 @@
 .projects {
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 5vw, 64px);
-  margin-top: 56px;
+  gap: 80px;
+  margin-top: 80px;
 }
 
-.project {
-  display: grid;
-  grid-template-columns: minmax(0, 560px) minmax(280px, 1fr);
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
-}
+.project { min-width: 0; }
 
-.teaser {
+.projectLink {
+  position: relative;
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 29 / 20;
+  overflow: hidden;
+  border-radius: 40px;
+  corner-shape: var(--portfolio-corner-shape);
+  color: #161616;
+  background: #dfdfde;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.project[data-tone="dark"] .projectLink {
+  color: #fff;
+  background: #090c0c;
+}
+
+.project[data-tone="pending"] .projectLink { background: #f1f2f4; }
+
+.projectImage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  corner-shape: var(--portfolio-corner-shape);
   pointer-events: none;
   user-select: none;
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.caseLink {
-  display: block;
-  color: inherit;
-  text-decoration: none;
+.projectLink:hover .projectImage { transform: scale(1.025); }
+
+.project[data-tone="pending"] .projectImage {
+  left: auto;
+  width: 62%;
+  object-fit: contain;
 }
 
-button.caseLink {
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
+.projectInfo {
+  position: absolute;
+  z-index: 1;
+  top: 48px;
+  left: 48px;
+  display: flex;
+  width: min(360px, calc(100% - 96px));
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
-.details button.caseLink { width: auto; }
-
-.caseLink:hover { filter: brightness(1.07); }
-.caseLink:focus-visible {
-  outline: 2px solid var(--portfolio-color-link);
-  outline-offset: 8px;
-}
-
-.details {
-  width: min(336px, 100%);
-  font-family: var(--font-family-marker);
-  font-size: 19px;
+.projectTitle {
+  margin: 0;
+  font-family: "Instrument Serif", "EB Garamond", Georgia, serif;
+  font-size: 48px;
   font-weight: 400;
-  line-height: normal;
+  line-height: 56px;
+  letter-spacing: 0;
+}
+
+.description {
+  margin: 0;
+  color: #595d65;
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
   letter-spacing: -0.02em;
 }
 
-.details .caseLink { color: var(--portfolio-color-link); }
+.project[data-tone="dark"] .description { color: var(--project-color-text-secondary); }
 
-.details p { margin: 0; }
-.details p + p { margin-top: 4px; }
-.status { opacity: 0.3; }
+.readButton {
+  display: inline-flex;
+  min-width: 91px;
+  height: 58px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 40px;
+  color: #fff;
+  background: #0449b1;
+  box-shadow:
+    inset -0.4px -0.4px 0.6px rgb(255 255 255 / 25%),
+    inset 10px 8px 16px rgb(0 0 0 / 14%),
+    inset 0.8px 0.8px 0.5px rgb(255 255 255 / 55%);
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+}
+
+.project[data-tone="dark"] .readButton {
+  background: var(--project-color-action-background);
+}
+
+.project[data-tone="pending"] .readButton {
+  color: #595d65;
+  background: rgb(22 22 22 / 8%);
+  box-shadow: none;
+}
+
+.projectLink:hover .readButton { filter: brightness(1.1); }
+.projectLink:focus-visible { outline: 3px solid var(--portfolio-color-link); outline-offset: 4px; }
 
 .moreProjects {
-  display: flex;
+  display: block;
   width: max-content;
-  flex-direction: column;
-  align-items: center;
-  margin: 48px auto 0;
+  margin: 64px auto 0;
   color: var(--portfolio-color-link);
-  font-family: var(--font-family-marker);
-  font-size: 19px;
-  line-height: normal;
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  font-weight: var(--portfolio-body-weight);
+  line-height: 26px;
   letter-spacing: -0.02em;
   white-space: nowrap;
   text-decoration: none;
 }
+
+.moreProjects:hover { filter: brightness(1.5); }
 
 .moreProjects:focus-visible {
   outline: 2px solid var(--portfolio-color-link);
   outline-offset: 8px;
 }
 
-.moreUnderline {
-  width: 197px;
-  height: 12px;
-  margin-top: -2px;
-}
-
-@media (max-width: 800px) {
-  .section { padding: 64px 16px 72px; }
-
+@media (max-width: 1079px) {
+  .section { padding: 64px 0 72px; }
+  .content { max-width: 760px; }
   .heading {
+    padding-inline: 24px;
     font-size: var(--portfolio-mobile-section-title-size);
     line-height: var(--portfolio-mobile-section-title-line-height);
   }
-
-  .projects {
-    gap: 64px;
-    margin-top: 48px;
+  .projects { gap: 48px; margin-top: 48px; }
+  .project[data-tone] .projectLink {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    aspect-ratio: auto;
+    border-radius: 0;
+    color: var(--portfolio-color-text);
+    background: transparent;
   }
-
-  .project {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
+  .project[data-tone] .description { color: var(--portfolio-color-text-muted); }
+  .projectInfo {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    gap: 16px;
+    order: -1;
   }
-
-  .teaser { max-width: 560px; margin: 0 auto; }
-  .details { width: min(400px, 100%); margin: 0 auto; }
+  .projectImage {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    border-radius: 24px;
+    corner-shape: var(--portfolio-corner-shape);
+    object-fit: cover;
+  }
+  .projectLink:hover .projectImage { transform: none; }
+  .project[data-tone="pending"] .projectImage { width: 100%; }
+  .project[data-tone="pending"] .readButton {
+    color: var(--portfolio-color-text-muted);
+    background: rgb(255 255 255 / 10%);
+  }
   .moreProjects { margin-top: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectImage { transition: none; }
 }

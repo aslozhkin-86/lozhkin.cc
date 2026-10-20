@@ -34,6 +34,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -44,6 +52,18 @@ body {
   background-color: var(--portfolio-color-board);
 }
 
+html:has([data-portfolio-home]) {
+  background-color: #1f1f1f;
+}
+
+html:has([data-m10-page]) {
+  background-color: var(--project-color-background);
+}
+
+html:has([data-article-variant="editorial"]) {
+  background-color: var(--project-color-background);
+}
+
 body {
   margin: 0;
   /* Clip horizontal overflow without making body a sticky scroll container. */
@@ -52,7 +72,7 @@ body {
   font-family: var(--font-family-sans);
 }
 
-@media (max-width: 760px), (hover: none), (pointer: coarse) {
+@media (max-width: 1079px), (hover: none), (pointer: coarse) {
   html,
   body {
     width: 100%;

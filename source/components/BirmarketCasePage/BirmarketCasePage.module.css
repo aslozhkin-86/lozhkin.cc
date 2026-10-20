@@ -1,0 +1,33 @@
+.page {
+  --portfolio-dot-origin-y: 90px;
+}
+
+.heroImage { background-color: #000; }
+
+.stickerColumn {
+  width: min(100%, 320px);
+  margin: 24px auto 0;
+  transform: rotate(-6deg);
+}
+
+.stickerColumn img { display: block; width: 100%; height: auto; }
+
+.resultNote {
+  margin: 24px 0 0;
+  color: var(--project-color-text-secondary);
+  font-size: var(--project-body-size);
+  line-height: var(--project-body-line-height);
+  letter-spacing: var(--project-body-letter-spacing);
+}
+
+@media (max-width: 1079px) {
+  .page { --portfolio-dot-origin-y: 95px; }
+  .stickerColumn { width: min(260px, 65%); margin-block: 8px 24px; }
+
+  .heroImage {
+    background-position: 80% center;
+    background-size: cover;
+  }
+
+  .resultNote { margin-top: 16px; }
+}

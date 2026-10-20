@@ -10,6 +10,6 @@
   text-align: center;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1079px) {
   .copyright { margin-top: 40px; }
 }

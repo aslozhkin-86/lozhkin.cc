@@ -2,32 +2,25 @@
   position: relative;
   isolation: isolate;
   width: 100%;
-  height: 480px;
+  height: 410px;
   overflow: hidden;
   color: var(--portfolio-color-text);
   background-color: var(--portfolio-color-board);
   background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
-  background-size: 34.205px 34.205px;
-  background-position: 4.448px 8.038px;
+  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
+  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
 }
 
 .divider {
-  position: absolute;
-  z-index: 0;
-  top: 40px;
-  left: 50%;
-  width: 205px;
-  height: 40px;
-  pointer-events: none;
-  transform: translateX(-50%);
+  display: none;
 }
 
 .title {
   position: absolute;
   z-index: 0;
-  top: 152px;
-  left: calc(50% - 6px);
-  width: min(740px, calc(100% - 32px));
+  top: 84px;
+  left: 50%;
+  width: min(653px, calc(100% - 32px));
   margin: 0;
   color: var(--portfolio-color-text);
   font-family: var(--portfolio-contrast-big-family);
@@ -42,7 +35,7 @@
 .icons {
   position: absolute;
   inset: 0;
-  top: 32px;
+  top: -40px;
   pointer-events: none;
 }
 
@@ -73,16 +66,25 @@
   letter-spacing: -0.02em;
 }
 
-.tooltipTags,
 .tooltipDescription {
   display: block;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--portfolio-body-weight);
   line-height: 24px;
   letter-spacing: -0.02em;
 }
 
-.tooltipTags { opacity: 0.5; }
+.tooltipTags {
+  display: block;
+  opacity: 0.5;
+  font-family: var(--portfolio-caption-family);
+  font-style: normal;
+  font-size: var(--portfolio-caption-size);
+  font-weight: 400;
+  line-height: var(--portfolio-caption-line-height);
+  letter-spacing: var(--portfolio-caption-letter-spacing);
+  text-transform: uppercase;
+}
 
 .popover { display: none; }
 
@@ -91,11 +93,11 @@
   cursor: url("/hero/cursors/drag.svg") 45 45, grabbing;
 }
 
-@media (max-width: 999px), (hover: none), (pointer: coarse) {
+@media (max-width: 1079px), (hover: none), (pointer: coarse) {
   .section {
     height: auto;
     min-height: 0;
-    padding: 128px 0 48px;
+    padding: 64px 0 64px;
   }
 
   .title {
@@ -120,7 +122,7 @@
     column-gap: clamp(12px, 4vw, 20px);
     row-gap: 24px;
     width: max-content;
-    margin: 32px auto 0;
+    margin: 40px auto 0;
     transform: none;
   }
 
@@ -164,7 +166,7 @@
     overflow: auto;
     border-radius: 24px;
     color: var(--portfolio-color-white);
-    background: var(--portfolio-color-black);
+    background: #333;
     font-family: var(--font-family-sans);
     letter-spacing: -0.02em;
   }

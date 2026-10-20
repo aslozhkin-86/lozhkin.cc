@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function DesignStrategyPage() {
-  return <CaseStudyPage title={title} image="/projects/m10/digital-card-case.png" alt="Playful m10 digital card displayed in the wallet app" returnHref="/projects/m10#design-strategy" />;
+  return <CaseStudyPage title={title} image="/projects/m10/digital-card-case.png" alt="Playful m10 digital card displayed in the wallet app" returnHref="/projects/m10#design-strategy" articleVariant="editorial" />;
 }

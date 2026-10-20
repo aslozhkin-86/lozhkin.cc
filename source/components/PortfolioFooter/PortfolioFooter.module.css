@@ -3,31 +3,23 @@
   color: var(--portfolio-color-text);
   background-color: var(--portfolio-color-board);
   background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
-  background-position: 4.448px 8.038px;
-  background-size: 34.205px 34.205px;
-  font-family: var(--font-family-marker);
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
+  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
   text-align: center;
 }
 
 .content {
-  position: relative;
-  left: -20px;
   max-width: 1152px;
   margin: 0 auto;
 }
 
-.divider {
-  display: block;
-  margin: 0 auto 68px;
-}
-
 .heading {
   margin: 0;
-  font: inherit;
+  font-family: var(--portfolio-contrast-big-family);
+  font-size: var(--portfolio-contrast-big-size);
+  font-weight: var(--portfolio-contrast-big-weight);
+  line-height: var(--portfolio-contrast-big-line-height);
+  letter-spacing: var(--portfolio-contrast-big-letter-spacing);
 }
 
 .links {
@@ -36,15 +28,16 @@
   justify-content: center;
   gap: 16px 24px;
   margin-top: 24px;
-  font-size: 19px;
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  font-weight: var(--portfolio-body-weight);
 }
 
 .link {
   display: inline-flex;
   min-height: 36px;
   align-items: center;
-  gap: 6px;
-  color: inherit;
+  color: var(--portfolio-color-link);
   line-height: 1;
   text-decoration: none;
   transition: filter 160ms ease;
@@ -60,23 +53,15 @@
   border-radius: var(--portfolio-hover-radius);
 }
 
-.arrow {
-  width: 0.78em;
-  height: auto;
-  flex-shrink: 0;
-}
-
-@media (max-width: 999px) {
-  .content { left: 0; }
-}
-
-@media (max-width: 720px) {
+@media (max-width: 1079px) {
   .footer {
     padding: 64px 16px;
-    font-size: clamp(30px, 7.6vw, 40px);
   }
 
-  .divider { margin-bottom: 48px; }
+  .heading {
+    font-size: var(--portfolio-mobile-section-title-size);
+    line-height: var(--portfolio-mobile-section-title-line-height);
+  }
   .links { gap: 12px 18px; font-size: 18px; }
 }
 

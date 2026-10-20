@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { useDragCollection } from "../interaction/useDragCollection";
 
-const MOBILE_STACK_QUERY = "(max-width: 760px)";
+const MOBILE_STACK_QUERY = "(max-width: 1079px)";
 const MOBILE_CYCLE_DISTANCE = 100;
 
 export function useCardStack(

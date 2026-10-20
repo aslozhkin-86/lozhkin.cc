@@ -1,37 +1,38 @@
 import Image from "next/image";
 
+import { featuredProjectMedia } from "../../data/featuredProjectMedia";
 import styles from "./ProjectList.module.css";
 
 const projects = [
   {
-    description:
-      "Design strategy, brand update and a mobile app visual concept for a marketplace in Azerbaijan",
-    height: 914,
-    href: "/projects/birmarket",
     id: "birmarket",
-    src: "/projects/whiteboard/bm-teaser.png",
-    mobileSrc: "/projects/whiteboard/m10-teaser-mobile-1.png",
-    width: 965,
+    title: "Birmarket",
+    description:
+      "Design audit, unit economics, brand update and a mobile app visual concept for a marketplace in Azerbaijan",
+    href: "/projects/birmarket",
+    media: featuredProjectMedia.birmarket,
+    tone: "light",
   },
   {
+    id: "m10",
+    title: "Digital wallet m10",
     description:
       "Helped launch m10 and scale it to 700K monthly active users and 2M registered users",
-    height: 914,
     href: "/projects/m10",
-    id: "m10",
-    src: "/projects/whiteboard/m10-teaser.png",
-    mobileSrc: "/projects/whiteboard/m10-teaser-mobile.png",
-    width: 965,
+    media: featuredProjectMedia.m10,
+    tone: "dark",
   },
   {
-    description:
-      "Redesigned the Yandex Market shopping experience, from cart and checkout to delivery and post-purchase",
-    height: 914,
-    href: null,
     id: "yandex-market",
-    src: "/projects/whiteboard/yandex-market-teaser.png",
-    mobileSrc: "/projects/whiteboard/yandex-market-teaser-mobile.png",
-    width: 965,
+    title: "Yandex Market",
+    description:
+      "Redesigned the shopping experience, from cart and checkout to delivery and post-purchase",
+    href: null,
+    media: {
+      src: "/projects/whiteboard/yandex-market-teaser.png",
+      alt: "Yandex Market cart design on a phone",
+    },
+    tone: "pending",
   },
 ] as const;
 
@@ -45,61 +46,43 @@ export function ProjectList() {
 
         <div className={styles.projects}>
           {projects.map((project) => {
-            const teaser = (
-              <picture>
-                <source
-                  media="(max-width: 800px)"
-                  srcSet={project.mobileSrc}
-                  width={930}
-                  height={930}
-                />
+            const cardContent = (
+              <>
                 <Image
-                  alt={`${project.id} project teaser`}
-                  className={styles.teaser}
-                  data-project-teaser={project.id}
+                  alt={project.media.alt}
+                  className={styles.projectImage}
                   draggable={false}
-                  height={project.height}
-                  sizes="(max-width: 800px) min(560px, calc(100vw - 32px)), (max-width: 1000px) calc(100vw - 380px), 560px"
-                  src={project.src}
-                  width={project.width}
+                  height={project.id === "yandex-market" ? 1371 : 1920}
+                  sizes="(max-width: 1079px) min(712px, calc(100vw - 48px)), (max-width: 1440px) calc(100vw - 160px), 1160px"
+                  src={project.media.src}
+                  width={project.id === "yandex-market" ? 1448 : 2880}
                 />
-              </picture>
+                <div className={styles.projectInfo}>
+                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <p className={styles.description}>{project.description}</p>
+                  <span className={styles.readButton}>{project.href ? "Read" : "Case in progress"}</span>
+                </div>
+              </>
             );
 
             return (
-              <article className={styles.project} id={project.id} key={project.id}>
+              <article className={styles.project} data-tone={project.tone} id={project.id} key={project.id}>
                 {project.href ? (
-                  <a className={styles.caseLink} href={project.href} aria-label={`Open ${project.id} case study`}>
-                    {teaser}
+                  <a className={styles.projectLink} href={project.href} aria-label={`Read about ${project.title}`}>
+                    {cardContent}
                   </a>
-                ) : teaser}
-
-                <div className={styles.details}>
-                  <p>{project.description}</p>
-                  {project.href ? (
-                    <a className={styles.caseLink} href={project.href}>Read the case</a>
-                  ) : (
-                    <p className={styles.status}>Case in progress</p>
-                  )}
-                </div>
+                ) : (
+                  <div className={styles.projectLink}>{cardContent}</div>
+                )}
               </article>
             );
           })}
         </div>
 
         <a className={styles.moreProjects} href="#other-projects">
-          <span>Show other projects</span>
-          <Image
-            alt=""
-            className={styles.moreUnderline}
-            draggable={false}
-            height={12}
-            src="/projects/whiteboard/show-other.svg"
-            width={197}
-          />
+          Show other projects
         </a>
       </div>
-
     </section>
   );
 }

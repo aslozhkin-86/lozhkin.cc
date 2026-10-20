@@ -9,6 +9,10 @@
 
   --portfolio-color-background: var(--portfolio-color-white);
   --portfolio-color-text: var(--portfolio-color-black);
+  --portfolio-color-card-text: var(--portfolio-color-black);
+  --portfolio-dot-spacing: 34.205px;
+  --portfolio-dot-origin-x: 4.448px;
+  --portfolio-dot-origin-y: 8.038px;
 
   --portfolio-body-weight: 500;
   --portfolio-body-letter-spacing: -0.02em;
@@ -17,6 +21,11 @@
   --portfolio-body-bold-weight: 700;
   --portfolio-body-bold-line-height: 24px;
   --portfolio-body-bold-letter-spacing: -0.02em;
+
+  --portfolio-caption-family: var(--font-family-sans);
+  --portfolio-caption-size: 12px;
+  --portfolio-caption-line-height: 22px;
+  --portfolio-caption-letter-spacing: 0.02em;
 
   --portfolio-contrast-big-family: var(--font-family-serif);
   --portfolio-contrast-big-size: 44px;
@@ -28,4 +37,25 @@
 
   --portfolio-hover-radius: 8px;
   --portfolio-corner-shape: squircle;
+
+  /* Figma project-page styles (Project / m10 desktop and mobile). */
+  --project-color-background: #161616;
+  --project-color-text-primary: #ffffff;
+  --project-color-text-secondary: #888995;
+  --project-color-text-inverse: #161616;
+  --project-color-action-background: rgb(125 220 177 / 20%);
+  --project-display-size: 64px;
+  --project-display-line-height: 80px;
+  --project-heading-size: 48px;
+  --project-heading-line-height: 56px;
+  --project-subheading-size: 36px;
+  --project-subheading-line-height: 44px;
+  --project-body-size: 18px;
+  --project-body-line-height: 26px;
+  --project-body-letter-spacing: -0.02em;
+  --project-label-size: 12px;
+  --project-label-line-height: 22px;
+  --project-label-letter-spacing: 0.02em;
+  --project-small-size: 14px;
+  --project-small-line-height: 22px;
 }

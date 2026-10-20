@@ -11,8 +11,8 @@
     var(--portfolio-color-board-dot) 1.14px,
     transparent 1.3px
   );
-  background-position: 4.448px 8.038px;
-  background-size: 34.205px 34.205px;
+  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
+  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
 }
 
 .title {
@@ -56,31 +56,16 @@
   max-width: calc(100% - 32px);
   margin: 24px auto 0;
   color: var(--portfolio-color-link);
-  font-family: var(--font-family-marker);
-  font-size: 19px;
-  line-height: 28px;
+  font-family: var(--font-family-sans);
+  font-size: 18px;
+  font-weight: var(--portfolio-body-weight);
+  line-height: 26px;
   letter-spacing: -0.02em;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
-.talkLinkAccent {
-  position: relative;
-  display: inline-block;
-}
-
-.talkUnderline {
-  position: absolute;
-  top: calc(100% - 2px);
-  left: 50%;
-  width: 94px;
-  height: 6px;
-  pointer-events: none;
-  transform: translateX(-50%);
-}
-
-.talkLink:hover { opacity: 0.65; }
+.talkLink:hover { filter: brightness(1.5); }
 
 .restack:focus-visible,
 .talkLink:focus-visible {
@@ -110,7 +95,7 @@
 .section .speakingCard[data-dragging="true"] { transition: none; }
 .section .speakingCard[data-dragging="true"] .cardSurface { transition: none; }
 
-@media (max-width: 760px) {
+@media (max-width: 1079px) {
   .section {
     padding: 44px 0 72px;
   }
@@ -132,15 +117,12 @@
 
   .talkLink {
     margin-top: 16px;
-    font-size: 17px;
-    line-height: 24px;
   }
 
   .section[data-dragging="true"] { cursor: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .talkLink { transition-duration: 1ms; }
   .section .speakingCard,
   .section .cardSurface {
     transition-delay: 0ms;

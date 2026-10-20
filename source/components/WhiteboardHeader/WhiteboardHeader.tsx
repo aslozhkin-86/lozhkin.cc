@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import {
+  Fragment,
   useEffect,
   useRef,
   useState,
@@ -31,16 +32,17 @@ const headerLinks = [
   { label: "Telegram", href: "https://t.me/Leshey" },
   { label: "Email", href: emailUrl },
   { label: "LinkedIn", href: linkedinUrl },
+  { label: "CV", href: "/Alexander-Lozhkin-CV.pdf" },
 ];
 
-// Coordinates and rotations from the 1280 × 842 desktop Figma frame.
+// Coordinates and rotations from the 1280 × 842 dark desktop Figma frame.
 const stickers = [
-  { id: "figma", label: "Figma", tooltip: "Flows, drafts, pixel-perfect UI, and animations live here", x: 321.723, y: 304, width: 71.41, height: 90.679, rotation: -14.195 },
-  { id: "creative-tool", label: "Hexfield", tooltip: "Exploring visual ideas to see where they take me", x: 152, y: 498.142, width: 100.412, height: 100.412, rotation: 0 },
-  { id: "notion", label: "Notion", tooltip: "The knowledge base that gives my AI tools context. Most of my work runs through it now", x: 1187.679, y: 490.028, width: 96.447, height: 96.447, rotation: 0 },
-  { id: "vscode", label: "VS Code", tooltip: "Learning to code and getting hands-on with the details", x: 1046.582, y: 306.504, width: 89.305, height: 89.305, rotation: 6.185 },
-  { id: "codex", label: "Codex", tooltip: "My AI workspace for research, design, writing, and building", x: 911.543, y: 453.331, width: 90.915, height: 90.915, rotation: -6.277 },
-  { id: "open-to-work", label: "Open to work", x: -15.372, y: 212, width: 188.755, height: 184.595, rotation: 8 },
+  { id: "figma", label: "Figma", tooltip: "Flows, drafts, pixel-perfect UI, and animations live here", x: 209, y: 569, width: 68.232, height: 86.376, rotation: 8.03 },
+  { id: "creative-tool", label: "Hexfield", tooltip: "Exploring visual ideas to see where they take me", x: 333, y: 335, width: 84.671, height: 84.671, rotation: -16.45 },
+  { id: "notion", label: "Notion", tooltip: "The knowledge base that gives my AI tools context. Most of my work runs through it now", x: 1171, y: 351, width: 75.52, height: 76.491, rotation: -6.28 },
+  { id: "vscode", label: "VS Code", tooltip: "Learning to code and getting hands-on with the details", x: 922, y: 396, width: 77.134, height: 77.134, rotation: 6.18 },
+  { id: "codex", label: "Codex", tooltip: "My AI workspace for research, design, writing, and building", x: 1025, y: 561, width: 87.638, height: 87.638, rotation: 13.09 },
+  { id: "open-to-work", label: "Open to work", x: -40, y: 384, width: 188.755, height: 184.595, rotation: 10.04 },
 ] as const;
 const stickerIds = stickers.map(({ id }) => id);
 const serviceIconHeight = 81;
@@ -65,9 +67,11 @@ function CardContent({ id }: { id: CardId }) {
         <Image className={styles.portrait} src="/hero/redesign/portrait.jpg"
           alt="Alexander Lozhkin wearing a cap and glasses" fill priority sizes="360px" draggable={false} />
         <span className={styles.swipeHint}>
-          <span>swipe right</span>
-          <Image className={styles.swipeArrow} src="/hero/redesign/swipe-arrow.svg"
-            alt="" width={29} height={19} draggable={false} />
+          <Image className={`${styles.swipeArrow} ${styles.swipeArrowLeft}`}
+            src="/hero/redesign/swipe-arrow-left.svg" alt="" width={22} height={14} draggable={false} />
+          <span>Swipe</span>
+          <Image className={styles.swipeArrow} src="/hero/redesign/swipe-arrow-right.svg"
+            alt="" width={22} height={14} draggable={false} />
         </span>
       </>
     );
@@ -82,12 +86,9 @@ function CardContent({ id }: { id: CardId }) {
             <p>I worked 15+ years across fintech, e-commerce, and complex data-heavy products.</p>
             <p>Built and scaled multidisciplinary design teams, leading up to 16 people.</p>
             <p>I work at the strategic level and get hands-on when needed</p>
+            <p><a className={styles.downloadLink} href="/Alexander-Lozhkin-CV.pdf" download
+              onPointerDown={stopCardDrag}>Download CV</a></p>
           </div>
-          <a className={styles.downloadLink} href="/Alexander-Lozhkin-CV.pdf" download
-            onPointerDown={stopCardDrag}>
-            <Image src="/hero/redesign/download-cv-arrow.svg" alt="" width={16} height={23} draggable={false} />
-            <span>Download CV</span>
-          </a>
         </>
       ) : (
         <>
@@ -114,7 +115,7 @@ export function WhiteboardHeader() {
   });
   const icons = useDragCollection(stickerIds, {
     enabled: () => window.matchMedia(
-      "(min-width: 1000px) and (hover: hover) and (pointer: fine)",
+      "(min-width: 1080px) and (hover: hover) and (pointer: fine)",
     ).matches,
     onDragStart: (id) => layers.bringToFront(id as StickerId),
   });
@@ -167,7 +168,7 @@ export function WhiteboardHeader() {
   return (
     <header className={styles.hero} aria-label="Introduction"
       data-dragging={Boolean(stack.draggingId || icons.draggingId)} data-expanded={expanded}>
-      <h1 className={styles.title}>Hi! I am Alex,<br />product design lead</h1>
+      <h1 className={styles.title}><span>Hi! I am Alex,</span>{" "}<span>product design lead</span></h1>
 
       <button className={styles.deckToggle} data-mode={heldIconMode ?? deckMode}
         data-feedback={deckFeedback !== null} type="button"
@@ -194,7 +195,7 @@ export function WhiteboardHeader() {
         dataKind="card"
         getStyle={(_, cardIndex): DraggableCardStyle => ({
           "--stack-card-width": expanded ? "var(--hero-spread-card-width)" : "var(--hero-card-width)",
-          "--stack-card-radius": "min(64px, 12.444vw)",
+          "--stack-card-radius": "40px",
           "--card-bottom": "calc(var(--footer-bottom) + var(--footer-height) + 48px)",
           "--card-left": "calc(50% - 10px)",
           "--card-anchor-x": "-50%",
@@ -204,6 +205,7 @@ export function WhiteboardHeader() {
           "--mobile-card-left": "calc(50% - 10px)",
           "--mobile-card-anchor-x": "-50%",
           "--mobile-card-anchor-y": "-50%",
+          "--mobile-card-radius": "min(64px, 12.444vw)",
           "--mobile-stack-x": `${cardIndex * 10}px`,
           "--mobile-stack-y": `${cardIndex * -10}px`,
         })}
@@ -251,10 +253,13 @@ export function WhiteboardHeader() {
       </div>
 
       <nav className={styles.headerLinks} aria-label="Contact links">
-        {headerLinks.map((link) => (
-          <a key={link.label} href={link.href}
-            rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
-            target={link.href.startsWith("mailto:") ? undefined : "_blank"}>{link.label}</a>
+        {headerLinks.map((link, index) => (
+          <Fragment key={link.label}>
+            {index > 0 && <span aria-hidden="true">—</span>}
+            <a href={link.href}
+              rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
+              target={link.href.startsWith("mailto:") ? undefined : "_blank"}>{link.label}</a>
+          </Fragment>
         ))}
       </nav>
     </header>

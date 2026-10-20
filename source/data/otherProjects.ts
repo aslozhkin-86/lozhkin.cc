@@ -5,6 +5,7 @@ export const otherProjects = [
     text: "A white-label wealth management platform for the UK market, bringing together portfolio management, CRM, compliance, e-signatures, and financial reporting under MiFID II",
     image: "/projects/other/dolfin-portfolio.png",
     alt: "Dolfin portfolio management interface on a laptop and phone",
+    width: 1112,
     height: 692,
   },
   {
@@ -13,7 +14,8 @@ export const otherProjects = [
     text: "A CRM for UK financial advisors, covering client onboarding, investment accounts, transactions, and annual reporting",
     image: "/projects/other/dolfin-crm.png",
     alt: "Dolfin advisor CRM showing a client account and transactions",
-    height: 622,
+    width: 1192,
+    height: 690,
   },
   {
     id: "bright-view",
@@ -21,7 +23,8 @@ export const otherProjects = [
     text: "Web interface for deploying and managing HPC clusters, redesigned from a complex desktop product and tested with users",
     image: "/projects/other/bright-view.png",
     alt: "Bright View web interface for managing cluster nodes",
-    height: 564,
+    width: 1192,
+    height: 628,
   },
   {
     id: "bright-view-data",
@@ -29,7 +32,8 @@ export const otherProjects = [
     text: "Configurable dashboards for exploring cluster performance data and keeping key metrics in view",
     image: "/projects/other/bright-view-data.png",
     alt: "Bright View monitoring dashboard with performance charts",
-    height: 622,
+    width: 1192,
+    height: 688,
   },
   {
     id: "yandex-maps",
@@ -37,7 +41,8 @@ export const otherProjects = [
     text: "A crowdsourced map editor where people improve Yandex Maps. I redesigned tools for editing roads, places, and other map data",
     image: "/projects/other/yandex-maps.png",
     alt: "Yandex Maps community editor with road editing tools",
-    height: 622,
+    width: 1192,
+    height: 688,
   },
   {
     id: "dota",
@@ -45,6 +50,7 @@ export const otherProjects = [
     text: "An interactive overlay for Dota 2 tournaments that brings live match stats and team comparisons into the stream",
     image: "/projects/other/dota.png",
     alt: "Dota 2 Twitch extension showing team gold and player statistics",
-    height: 842,
+    width: 1112,
+    height: 834,
   },
 ] as const;

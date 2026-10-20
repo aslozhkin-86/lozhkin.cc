@@ -34,17 +34,19 @@ test("server-renders the portfolio homepage", async () => {
   assert.match(html, /Draggable tool icons/);
   assert.match(html, /I make room for honest conversations/);
   assert.match(html, /Download CV/);
-  assert.match(html, /swipe right/);
+  assert.match(html, />Swipe</);
   assert.match(html, /Thanks for the room to try/);
-  assert.match(html, /Where I grew from designer to manager/);
   assert.match(html, /And here a few cases/);
-  assert.match(html, /Design strategy, brand update/);
+  assert.match(html, /Design audit, unit economics, brand update/);
+  assert.match(html, /projects\/birmarket\/hero-project\.jpg/);
+  assert.match(html, /projects\/m10\/hero-project\.jpg/);
   assert.doesNotMatch(html, /data-birmarket-access-trigger=/);
   assert.doesNotMatch(html, /Enter the password to open this project/);
   assert.match(html, /href="\/projects\/birmarket"/);
   assert.match(html, /Helped launch m10 and scale it/);
   assert.match(html, /href="\/projects\/m10"/);
-  assert.match(html, /Redesigned the Yandex Market shopping experience/);
+  assert.match(html, /Yandex Market cart design on a phone/);
+  assert.match(html, /Case in progress/);
   assert.match(html, /Show other projects/);
   assert.doesNotMatch(html, /This year I finally felt the shift/);
   assert.doesNotMatch(html, /Agents prefer/);
@@ -64,7 +66,7 @@ test("server-renders the portfolio homepage", async () => {
   assert.equal((html.match(/data-speaking-card-id=/g) ?? []).length, 5);
   assert.equal((html.match(/data-sticker-id=/g) ?? []).length, 6);
   assert.equal((html.match(/data-company-id=/g) ?? []).length, 6);
-  assert.equal((html.match(/data-project-teaser=/g) ?? []).length, 3);
+  assert.equal((html.match(/<article[^>]+id="(?:birmarket|m10|yandex-market)"/g) ?? []).length, 3);
   assert.doesNotMatch(html, /data-project-image-id=/);
 });
 
@@ -74,13 +76,13 @@ test("server-renders the m10 case page without the home contact footer", async (
 
   const html = await response.text();
   assert.match(html, /Digital wallet m10/);
-  assert.match(html, /Tracked results/);
+  assert.match(html, /Measurable results/);
   assert.match(html, /Mentions/);
-  assert.equal((html.match(/data-project-case-card=/g) ?? []).length, 4);
-  assert.match(html, /Simplicity as a Strategy: Turning Limited Resources into a Market-Recognised Product/);
+  assert.match(html, /Simplicity as a solution/);
   assert.match(html, /Card that gives you nothing but fun/);
-  assert.match(html, /Visual Brand Refresh and the Creation of a Unified Product Brand System/);
-  assert.match(html, /How I Secured Dedicated Engineering Resources for Customer-Critical Projects — and Cut Call Center Contacts by 46%/);
+  assert.match(html, /A unified product brand/);
+  assert.match(html, /Customer-critical projects/);
+  assert.match(html, /projects\/m10\/hero-project\.jpg/);
   assert.match(html, /projects\/m10\/design-strategy.png/);
   assert.match(html, /projects\/m10\/digital-card-case.png/);
   assert.match(html, /projects\/m10\/brand-update.png/);
@@ -88,7 +90,7 @@ test("server-renders the m10 case page without the home contact footer", async (
   assert.match(html, /projects\/m10\/app-store-award.svg/);
   assert.doesNotMatch(html, /data-m10-proof-card-id=/);
   assert.doesNotMatch(html, /m10 is a digital wallet built for everyday payments/);
-  assert.match(html, /© Alexander Lozhkin/);
+  assert.match(html, /© Lozhkin/);
   assert.doesNotMatch(html, /Hey, let/);
 });
 
@@ -104,7 +106,7 @@ test("server-renders the Birmarket case without store proof or mentions", async 
   assert.doesNotMatch(html, /30 to 87 items per minute/);
   assert.match(html, /share selected results/);
   assert.equal((html.match(/<dialog/g) ?? []).length, 0);
-  assert.equal((html.match(/data-project-case-card=/g) ?? []).length, 2);
+  assert.match(html, /projects\/birmarket\/hero-project\.jpg/);
   assert.doesNotMatch(html, /App of the Day/);
   assert.doesNotMatch(html, /Ratings checked/);
   assert.doesNotMatch(html, /Mentions/);
@@ -151,7 +153,7 @@ test("earlier projects are display cards without navigation or status icons", as
   const home = await (await render()).text();
   const section = home.match(/<section[^>]*id="other-projects"[\s\S]*?<\/section>/)?.[0];
   assert.ok(section);
-  assert.equal((section.match(/data-project-case-card=/g) ?? []).length, 6);
+  assert.equal((section.match(/<article\b/g) ?? []).length, 6);
   assert.doesNotMatch(section, /<a\b/);
   assert.doesNotMatch(section, /projects\/shared\/(arrow-link|lock)\.svg/);
   for (const id of ["dolfin-portfolio", "dolfin-crm", "bright-view", "bright-view-data", "yandex-maps", "dota"]) {
@@ -162,15 +164,14 @@ test("earlier projects are display cards without navigation or status icons", as
 
 test("the local Birmarket article opens from the first case card", async () => {
   const overview = await (await render("/projects/birmarket")).text();
-  assert.match(overview, /How we got a company moving and changed how it builds products/);
+  assert.match(overview, /How design sped up company transformation/);
   assert.match(overview, /Marketplace Vision 2027/);
   assert.match(overview, /projects\/birmarket\/vision-2027.png/);
-  assert.match(overview, /projects\/shared\/lock.svg/);
   assert.match(overview, /href="\/projects\/birmarket\/breaking-the-inertia"/);
   assert.doesNotMatch(overview, /href="\/projects\/birmarket\/vision-2027"/);
   assert.doesNotMatch(overview, /Unlock case study|Enter the password/);
   assert.ok(overview.indexOf('id="breaking-the-inertia"') < overview.indexOf('id="vision"'));
-  assert.match(overview, /\/projects\/birmarket\/inertia\/hero-preview\.png/);
+  assert.match(overview, /\/projects\/birmarket\/inertia\/research-visual\.jpg/);
   assert.doesNotMatch(overview, /Warehouse operator workstation/);
 
   const article = await render("/projects/birmarket/breaking-the-inertia");
@@ -192,7 +193,7 @@ test("the local Birmarket article opens from the first case card", async () => {
   assert.equal((html.match(/data-case-block="paragraph"/g) ?? []).length, 13);
   assert.equal((html.match(/data-case-block="feature"/g) ?? []).length, 1);
   assert.match(html, /<h3 id="understand-the-problem">Understand the problem<\/h3>/);
-  assert.match(html, /\/projects\/birmarket\/inertia\/hero-photo\.png/);
+  assert.match(html, /\/projects\/birmarket\/inertia\/research-visual\.jpg/);
   assert.match(html, /\/projects\/birmarket\/inertia\/impact-effort-matrix\.png/);
   assert.match(html, /\/projects\/birmarket\/inertia\/brand-transition\.png/);
   assert.doesNotMatch(html, /homepage-results/);

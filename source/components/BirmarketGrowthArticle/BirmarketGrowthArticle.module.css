@@ -3,22 +3,23 @@
 .statusCard {
   overflow: hidden;
   padding-bottom: 28px;
-  border-radius: 48px;
-  background: #f3f3f3;
+  border-radius: 40px;
+  corner-shape: var(--portfolio-corner-shape);
+  background: #27272b;
   text-align: center;
 }
 
 .statusTitle {
   margin: 60px 24px 12px;
-  color: var(--portfolio-color-text);
+  color: var(--project-color-text-primary);
   font-size: 40px;
   font-weight: 700;
-  line-height: 52px;
+  line-height: 48px;
   letter-spacing: -0.02em;
 }
 
-.statusSubtitle { margin: 0 24px 20px; color: #999; font-size: 18px; line-height: 26px; }
-.statusCard img { display: block; width: 100%; height: auto; border-radius: 40px; corner-shape: var(--portfolio-corner-shape); }
+.statusSubtitle { margin: 0 24px 20px; color: var(--project-color-text-primary); font-size: 18px; line-height: 26px; letter-spacing: -0.02em; }
+.statusCard img { display: block; width: 100%; height: auto; }
 
 .goalCard {
   display: flex;
@@ -27,27 +28,29 @@
   gap: 16px;
   margin-top: 40px;
   padding: 40px;
-  border-radius: 48px;
-  background: var(--portfolio-color-text);
+  border-radius: 40px;
+  corner-shape: var(--portfolio-corner-shape);
+  background: #27272b;
   text-align: center;
 }
 
-.goalCard p { margin: 0; color: #aaa; }
-.goalCard .goalTitle { color: var(--portfolio-color-white); font-size: 24px; font-weight: 700; line-height: 28px; letter-spacing: -0.02em; }
+.goalCard p { margin: 0; color: #9b9aa3; }
+.goalCard .goalTitle { color: var(--project-color-text-primary); font-size: 24px; font-weight: 700; line-height: 28px; letter-spacing: -0.02em; }
 
 .resultsPlaceholder {
   display: grid;
   width: 100%;
-  min-height: 240px;
+  min-height: 400px;
   aspect-ratio: 3 / 2;
   place-items: center;
   border-radius: 20px;
-  background: #f3f3f3;
+  corner-shape: var(--portfolio-corner-shape);
+  background: #27272b;
 }
 
 .resultsPlaceholder img { display: block; width: 60px; height: 80px; }
 
-@media (max-width: 760px) {
+@media (max-width: 1079px) {
   .statusBlock { margin-bottom: 48px; }
   .statusCard, .goalCard { border-radius: 28px; }
   .statusCard { padding-bottom: 16px; }

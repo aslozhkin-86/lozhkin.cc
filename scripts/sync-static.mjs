@@ -11,6 +11,7 @@ for (const file of [
   "index.rsc",
   "404.html",
   "projects/birmarket.html",
+  "projects/birmarket/breaking-the-inertia.html",
   "projects/m10.html",
   "projects/m10/design-strategy.html",
 ]) {
