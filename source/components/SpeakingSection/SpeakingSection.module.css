@@ -4,25 +4,25 @@
   width: 100%;
   padding: 48px 0 64px;
   overflow: hidden;
-  color: var(--portfolio-color-text);
-  background-color: var(--portfolio-color-board);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
   background-image: radial-gradient(
     circle,
-    var(--portfolio-color-board-dot) 1.14px,
+    var(--dot-color) 1.14px,
     transparent 1.3px
   );
-  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
-  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
+  background-position: var(--dot-origin-x) var(--dot-origin-y);
+  background-size: var(--dot-spacing) var(--dot-spacing);
 }
 
 .title {
   width: min(1040px, calc(100% - 64px));
   margin: 0 auto;
-  font-family: var(--portfolio-contrast-big-family);
-  font-size: var(--portfolio-contrast-big-size);
-  font-weight: var(--portfolio-contrast-big-weight);
-  line-height: var(--portfolio-contrast-big-line-height);
-  letter-spacing: var(--portfolio-contrast-big-letter-spacing);
+  font-family: var(--font-family-serif);
+  font-size: var(--type-heading-size);
+  font-weight: var(--type-heading-weight);
+  line-height: var(--type-heading-line-height);
+  letter-spacing: var(--type-heading-letter-spacing);
   text-align: center;
 }
 
@@ -55,11 +55,11 @@
   width: fit-content;
   max-width: calc(100% - 32px);
   margin: 24px auto 0;
-  color: var(--portfolio-color-link);
+  color: var(--color-accent);
   font-family: var(--font-family-sans);
-  font-size: 18px;
-  font-weight: var(--portfolio-body-weight);
-  line-height: 26px;
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line-height);
   letter-spacing: -0.02em;
   text-align: center;
   text-decoration: none;
@@ -102,8 +102,8 @@
 
   .title {
     width: calc(100% - 32px);
-    font-size: var(--portfolio-mobile-section-title-size);
-    line-height: var(--portfolio-mobile-section-title-line-height);
+    font-size: var(--type-mobile-heading-size);
+    line-height: var(--type-mobile-heading-line-height);
   }
 
   .gallery {

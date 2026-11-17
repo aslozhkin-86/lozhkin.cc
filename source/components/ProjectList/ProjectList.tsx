@@ -1,87 +1,69 @@
 import Image from "next/image";
 
-import { featuredProjectMedia } from "../../data/featuredProjectMedia";
+import { ProjectPreviewVideo } from "./ProjectPreviewVideo";
+import { StoreProof } from "../StoreProof/StoreProof";
+import { YandexDeliveryVideo } from "./YandexDeliveryVideo";
+import { YandexJourney } from "./YandexJourney";
 import styles from "./ProjectList.module.css";
-
-const projects = [
-  {
-    id: "birmarket",
-    title: "Birmarket",
-    description:
-      "Design audit, unit economics, brand update and a mobile app visual concept for a marketplace in Azerbaijan",
-    href: "/projects/birmarket",
-    media: featuredProjectMedia.birmarket,
-    tone: "light",
-  },
-  {
-    id: "m10",
-    title: "Digital wallet m10",
-    description:
-      "Helped launch m10 and scale it to 700K monthly active users and 2M registered users",
-    href: "/projects/m10",
-    media: featuredProjectMedia.m10,
-    tone: "dark",
-  },
-  {
-    id: "yandex-market",
-    title: "Yandex Market",
-    description:
-      "Redesigned the shopping experience, from cart and checkout to delivery and post-purchase",
-    href: null,
-    media: {
-      src: "/projects/whiteboard/yandex-market-teaser.png",
-      alt: "Yandex Market cart design on a phone",
-    },
-    tone: "pending",
-  },
-] as const;
 
 export function ProjectList() {
   return (
-    <section className={styles.section} aria-labelledby="projects-title">
+    <section className={styles.section} aria-label="Featured projects">
       <div className={styles.content}>
-        <h2 className={styles.heading} id="projects-title">
-          And here a few cases
-        </h2>
-
         <div className={styles.projects}>
-          {projects.map((project) => {
-            const cardContent = (
-              <>
+          <article className={styles.project} id="m10">
+            <div className={styles.projectInfo}>
+              <h2 className={styles.projectTitle}>Digital wallet m10</h2>
+              <p className={styles.description}>I led m10’s design from day one, shaping its core flows, design system and visual language. The wallet reached 700K monthly active users in 18 months and later grew to 2M registered users.</p>
+            </div>
+            <StoreProof
+              ariaLabel="m10 store recognition and ratings"
+              variant="homepage"
+              awardSrc="/projects/m10/app-store-award.svg"
+              awardWidth={131}
+              rank={{ value: "#1", text: "Finance Appstore & Google Play" }}
+              ratings={[{ value: "4.9", store: "App Store" }, { value: "4.6", store: "Google Play" }]}
+            />
+            <div className={styles.m10MediaGrid}>
+              <div className={styles.projectMedia}>
+                <ProjectPreviewVideo />
+              </div>
+              <div className={styles.projectMedia}>
                 <Image
-                  alt={project.media.alt}
+                  alt="Illustration of a hand holding m10 banknotes"
                   className={styles.projectImage}
                   draggable={false}
-                  height={project.id === "yandex-market" ? 1371 : 1920}
-                  sizes="(max-width: 1079px) min(712px, calc(100vw - 48px)), (max-width: 1440px) calc(100vw - 160px), 1160px"
-                  src={project.media.src}
-                  width={project.id === "yandex-market" ? 1448 : 2880}
+                  height={1224}
+                  sizes="(max-width: 1079px) calc(100vw - 48px), 576px"
+                  src="/homepage/m10/money.png"
+                  width={1152}
                 />
-                <div className={styles.projectInfo}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <p className={styles.description}>{project.description}</p>
-                  <span className={styles.readButton}>{project.href ? "Read" : "Case in progress"}</span>
-                </div>
-              </>
-            );
+              </div>
+            </div>
+          </article>
 
-            return (
-              <article className={styles.project} data-tone={project.tone} id={project.id} key={project.id}>
-                {project.href ? (
-                  <a className={styles.projectLink} href={project.href} aria-label={`Read about ${project.title}`}>
-                    {cardContent}
-                  </a>
-                ) : (
-                  <div className={styles.projectLink}>{cardContent}</div>
-                )}
-              </article>
-            );
-          })}
+          <article className={styles.project} id="yandex-market">
+            <div className={styles.projectInfo}>
+              <h2 className={styles.projectTitle}>Yandex Market</h2>
+              <p className={styles.description}>I led the end-to-end purchase experience, from cart and checkout through delivery, tracking and returns. I created shared patterns that helped more than 10 product teams keep the journey consistent.</p>
+            </div>
+            <StoreProof
+              ariaLabel="Yandex Market store recognition and ratings"
+              variant="homepage"
+              awardSrc="/projects/m10/app-store-award.svg"
+              awardWidth={131}
+              ratings={[{ value: "4.9", store: "App Store" }, { value: "4.4", store: "Google Play" }]}
+            />
+            <div className={styles.yandexContent}>
+              <div className={styles.yandexTeaser}>
+                <Image alt="Yandex Market cart designs on desktop and mobile" className={styles.projectImage} src="/homepage/yandex/teaser.png" width={1740} height={1110} sizes="(max-width: 1079px) calc(100vw - 48px), 1160px" />
+              </div>
+              <YandexJourney />
+              <YandexDeliveryVideo />
+            </div>
+          </article>
         </div>
 
-        <a className={styles.moreProjects} href="#other-projects">
-          Show other projects
-        </a>
       </div>
     </section>
   );

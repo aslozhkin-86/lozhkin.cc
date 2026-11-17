@@ -9,6 +9,7 @@ type ProjectHeroProps = {
   imageAlt: string;
   returnHref: string;
   returnLabel: string;
+  backToPrevious?: boolean;
   mobileImage?: string;
   foreground?: "light" | "dark";
   hideTitle?: boolean;
@@ -29,6 +30,7 @@ export function ProjectHero({
   imageAlt,
   returnHref,
   returnLabel,
+  backToPrevious,
   mobileImage,
   foreground = "light",
   hideTitle = false,
@@ -53,7 +55,7 @@ export function ProjectHero({
       />
       <div className={[styles.content, contentClassName].filter(Boolean).join(" ")}>
         <nav className={styles.navigation} aria-label="Project navigation">
-          <PageCloseLink className={styles.close} href={returnHref} label={returnLabel} />
+          <PageCloseLink className={styles.close} href={returnHref} label={returnLabel} backToPrevious={backToPrevious} />
         </nav>
         <h1 className={[styles.title, hideTitle && styles.visuallyHidden].filter(Boolean).join(" ")}>{title}</h1>
         {children && <div className={styles.meta}>{children}</div>}

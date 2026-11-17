@@ -4,21 +4,21 @@
   overflow: hidden;
   padding-bottom: 28px;
   border-radius: 40px;
-  corner-shape: var(--portfolio-corner-shape);
-  background: #27272b;
+  corner-shape: var(--corner-shape);
+  background: var(--color-panel);
   text-align: center;
 }
 
 .statusTitle {
   margin: 60px 24px 12px;
-  color: var(--project-color-text-primary);
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 48px;
+  color: var(--color-text-primary);
+  font-size: var(--type-feature-size);
+  font-weight: var(--type-body-bold-weight);
+  line-height: var(--type-feature-line-height);
   letter-spacing: -0.02em;
 }
 
-.statusSubtitle { margin: 0 24px 20px; color: var(--project-color-text-primary); font-size: 18px; line-height: 26px; letter-spacing: -0.02em; }
+.statusSubtitle { margin: 0 24px 20px; color: var(--color-text-primary); font-size: var(--type-body-size); line-height: var(--type-body-line-height); letter-spacing: -0.02em; }
 .statusCard img { display: block; width: 100%; height: auto; }
 
 .goalCard {
@@ -29,13 +29,13 @@
   margin-top: 40px;
   padding: 40px;
   border-radius: 40px;
-  corner-shape: var(--portfolio-corner-shape);
-  background: #27272b;
+  corner-shape: var(--corner-shape);
+  background: var(--color-panel);
   text-align: center;
 }
 
-.goalCard p { margin: 0; color: #9b9aa3; }
-.goalCard .goalTitle { color: var(--project-color-text-primary); font-size: 24px; font-weight: 700; line-height: 28px; letter-spacing: -0.02em; }
+.goalCard p { margin: 0; color: var(--color-text-secondary); }
+.goalCard .goalTitle { color: var(--color-text-primary); font-size: var(--type-card-title-size); font-weight: var(--type-body-bold-weight); line-height: var(--type-card-title-line-height); letter-spacing: var(--type-body-letter-spacing); }
 
 .resultsPlaceholder {
   display: grid;
@@ -44,8 +44,8 @@
   aspect-ratio: 3 / 2;
   place-items: center;
   border-radius: 20px;
-  corner-shape: var(--portfolio-corner-shape);
-  background: #27272b;
+  corner-shape: var(--corner-shape);
+  background: var(--color-panel);
 }
 
 .resultsPlaceholder img { display: block; width: 60px; height: 80px; }

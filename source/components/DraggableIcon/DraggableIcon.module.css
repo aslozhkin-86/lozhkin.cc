@@ -38,11 +38,11 @@
   align-items: center;
   padding: 16px 20px;
   border-radius: 24px;
-  corner-shape: var(--portfolio-corner-shape);
+  corner-shape: var(--corner-shape);
   opacity: 0;
   visibility: hidden;
-  color: var(--portfolio-color-white);
-  background: #333;
+  color: var(--color-white);
+  background: var(--color-panel);
   font-family: var(--font-family-sans);
   font-size: 16px;
   line-height: 18px;
@@ -54,7 +54,7 @@
 }
 
 .root:focus-visible .visual {
-  filter: brightness(1.07) drop-shadow(0 0 4px var(--portfolio-color-background));
+  filter: brightness(1.07) drop-shadow(0 0 4px var(--color-background));
 }
 
 .root:focus-visible,
@@ -87,7 +87,7 @@
 }
 
 .root[data-dragging="true"] .visual {
-  filter: brightness(1.08) drop-shadow(0 8px 12px rgb(0 0 0 / 15%));
+  filter: brightness(1.08) drop-shadow(0 8px 12px rgb(22 22 22 / 15%));
   transform: rotate(calc(var(--icon-rotation, 0deg) + 2deg)) scale(1.018);
   transition: none;
 }

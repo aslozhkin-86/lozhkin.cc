@@ -1,10 +1,9 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
-@import "../styles/portfolio-tokens.css";
 
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter-Latin.woff2") format("woff2");
+  src: url("/fonts/InterVariable.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -27,14 +26,6 @@
 }
 
 @font-face {
-  font-family: "EB Garamond";
-  src: url("/fonts/eb-garamond-500.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Instrument Serif";
   src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
   font-style: normal;
@@ -49,19 +40,7 @@
 html,
 body {
   min-height: 100%;
-  background-color: var(--portfolio-color-board);
-}
-
-html:has([data-portfolio-home]) {
-  background-color: #1f1f1f;
-}
-
-html:has([data-m10-page]) {
-  background-color: var(--project-color-background);
-}
-
-html:has([data-article-variant="editorial"]) {
-  background-color: var(--project-color-background);
+  background-color: var(--color-background);
 }
 
 body {

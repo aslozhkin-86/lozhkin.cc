@@ -1,7 +1,59 @@
 :root {
-  --color-black: #222222;
+  /* Shared palette and type scale for the homepage and project pages. */
+  --color-black: #161616;
+  --color-white: #ffffff;
+  --color-background: var(--color-black);
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: #888995;
+  --color-text-inverse: var(--color-black);
+  --color-text-inverse-secondary: #595d65;
+  --color-accent: #31ff6b;
+  --color-panel: #27272b;
+  --color-placeholder: #d9d9d9;
+  --color-card-light: #dfdfde;
+  --color-card-pending: #f1f2f4;
+  --color-action-blue: #0449b1;
+  --color-media-mint: #3bedca;
+  --color-image-contain: #f3f3f3;
+  --color-action-surface: rgb(125 220 177 / 20%);
+  --color-dot: rgb(255 255 255 / 18%);
+  --dot-color: var(--color-dot);
+  --dot-spacing: 110px;
+  --dot-origin-x: 34px;
+  --dot-origin-y: 72px;
 
   --font-family-sans: "Inter", Arial, sans-serif;
   --font-family-marker: "LORE Alternates", cursive;
-  --font-family-serif: "EB Garamond", Georgia, serif;
+  --font-family-serif: "Instrument Serif", Georgia, serif;
+
+  --type-display-size: 64px;
+  --type-display-line-height: 80px;
+  --type-heading-size: 48px;
+  --type-heading-line-height: 56px;
+  --type-heading-weight: 400;
+  --type-heading-letter-spacing: 0;
+  --type-subheading-size: 36px;
+  --type-subheading-line-height: 44px;
+  --type-feature-size: 40px;
+  --type-feature-line-height: 48px;
+  --type-card-title-size: 24px;
+  --type-card-title-line-height: 28px;
+  --type-lead-size: 22px;
+  --type-lead-line-height: 30px;
+  --type-body-size: 18px;
+  --type-body-line-height: 26px;
+  --type-body-letter-spacing: -0.02em;
+  --type-body-weight: 400;
+  --type-body-bold-weight: 700;
+  --type-small-size: 14px;
+  --type-small-line-height: 22px;
+  --type-label-size: 12px;
+  --type-label-line-height: 22px;
+  --type-label-letter-spacing: 0.02em;
+  --type-mobile-heading-size: clamp(32px, 7.6vw, 40px);
+  --type-mobile-heading-line-height: 1.12;
+
+  --hover-radius: 8px;
+  --corner-shape: squircle;
+  --accent-icon-filter: brightness(0) saturate(100%) invert(80%) sepia(89%) saturate(1150%) hue-rotate(63deg) brightness(106%);
 }

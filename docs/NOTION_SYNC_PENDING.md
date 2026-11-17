@@ -2,7 +2,7 @@
 
 Implemented the owner-approved English copy in the Hero Approach card and all four Approach section cards. The introduction uses the final designer-focused version; Management and Cycle use the accepted lively versions; Design ends with getting behind bold ideas shaped together. Hero contains three matching principles and the “How I work ↓” link.
 
-Source of truth: the copy in `source/components/WhiteboardHeader/WhiteboardHeader.tsx` and `source/components/ApproachStatement/ApproachStatement.tsx` within `/Users/alex/Documents/Lozhkin PDP/lozhkin-site`.
+Current source of truth: the live Hero Approach card copy in `source/components/WhiteboardHeader/WhiteboardHeader.tsx` within `/Users/alex/Documents/Lozhkin PDP/lozhkin-site`. The unused four-card `ApproachStatement` component was removed in the local design-system cleanup; its historical wording remains in Git history.
 
 Notion synchronization is pending: both the main PDP page (352e1b36867a80729589ed3970874d5d) and the existing portfolio task (384e1b36867a813ca916e86ae898540c) returned access-related 404 responses again on 2026-10-02. When access is restored, fetch the task again and append a concise result, publication status, and source paths to Owner Notes, preserving existing notes and the broader task status. No full editable copy of the text is needed in Notion.
 

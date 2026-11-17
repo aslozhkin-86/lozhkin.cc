@@ -39,9 +39,9 @@ function BirmarketStatusBlock() {
 
 export function BirmarketGrowthArticle() {
   return (
-    <CaseStudyPage title={birmarketGrowthTitle} image={birmarketCaseMedia.src} imageWidth={2880} imageHeight={1920} alt={birmarketCaseMedia.alt} returnHref="/projects/birmarket#breaking-the-inertia" returnLabel="Back to Birmarket projects" articleVariant="editorial" readingTime="6 min reading">
+    <CaseStudyPage title={birmarketGrowthTitle} image={birmarketCaseMedia.src} alt={birmarketCaseMedia.alt} returnHref="/#birmarket" returnLabel="Back to previous page" backToPrevious readingTime="6 min reading">
       <CaseParagraph variant="lead">
-        <p>In an experimental project, our small team started from scratch, showed the company how to get results quickly, and changed how teams worked on the product.</p>
+        <p>Birmarket had strong traffic, but too few visits turned into completed orders. I led a two-month design and research effort to find friction in the purchase journey, test potential fixes with customers, and help the product team decide what to change first.</p>
       </CaseParagraph>
       <CaseParagraph>
         <h3 id="context">Context</h3>

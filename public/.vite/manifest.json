@@ -1,57 +1,14 @@
 {
-  "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js": {
-    "file": "_next/static/chunks/image-Dv83BNNu.js",
-    "name": "image",
-    "src": "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "virtual:vinext-app-browser-entry",
-      "_framework-BgSIrAUN.js"
-    ]
+  "_ProjectList.CdZFYfhg.css": {
+    "file": "_next/static/css/ProjectList.CdZFYfhg.css",
+    "src": "_ProjectList.CdZFYfhg.css"
   },
-  "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-DHgNJfpB.js",
-    "name": "layout-segment-context",
-    "src": "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "virtual:vinext-app-browser-entry",
-      "_framework-BgSIrAUN.js"
-    ]
-  },
-  "_DraggableCardStack-B0zimHjO.js": {
-    "file": "_next/static/chunks/DraggableCardStack-B0zimHjO.js",
-    "name": "DraggableCardStack",
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_useLayerOrder-CjZ7ux3c.js",
-      "_framework-BgSIrAUN.js"
-    ],
+  "_ProjectList.module-CET1VTGS.js": {
+    "file": "_next/static/chunks/ProjectList.module-CET1VTGS.js",
+    "name": "ProjectList.module",
     "css": [
-      "_next/static/css/DraggableCardStack.BCQPbtU2.css"
+      "_next/static/css/ProjectList.CdZFYfhg.css"
     ]
-  },
-  "_DraggableCardStack.BCQPbtU2.css": {
-    "file": "_next/static/css/DraggableCardStack.BCQPbtU2.css",
-    "src": "_DraggableCardStack.BCQPbtU2.css"
-  },
-  "_DraggableIcon-CnZKpyOu.js": {
-    "file": "_next/static/chunks/DraggableIcon-CnZKpyOu.js",
-    "name": "DraggableIcon",
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
-      "_framework-BgSIrAUN.js"
-    ],
-    "css": [
-      "_next/static/css/DraggableIcon.BxXhgtxt.css"
-    ]
-  },
-  "_DraggableIcon.BxXhgtxt.css": {
-    "file": "_next/static/css/DraggableIcon.BxXhgtxt.css",
-    "src": "_DraggableIcon.BxXhgtxt.css"
   },
   "_framework-BgSIrAUN.js": {
     "file": "_next/static/chunks/framework-BgSIrAUN.js",
@@ -73,7 +30,7 @@
     ]
   },
   "app/DotParallax.tsx": {
-    "file": "_next/static/chunks/DotParallax-DGvTfaUC.js",
+    "file": "_next/static/chunks/DotParallax-Bg7BJSQP.js",
     "name": "DotParallax",
     "src": "app/DotParallax.tsx",
     "isDynamicEntry": true,
@@ -82,11 +39,25 @@
       "_framework-BgSIrAUN.js"
     ],
     "css": [
-      "_next/static/css/DotParallax.DE9DDyAg.css"
+      "_next/static/css/DotParallax.DuSrsb8V.css"
+    ]
+  },
+  "components/BeforeAfter/BeforeAfter.tsx": {
+    "file": "_next/static/chunks/BeforeAfter-mpu99jj-.js",
+    "name": "BeforeAfter",
+    "src": "components/BeforeAfter/BeforeAfter.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "_framework-BgSIrAUN.js"
+    ],
+    "css": [
+      "_next/static/css/BeforeAfter.BnJdVr3v.css"
     ]
   },
   "components/CaseStudyPage/CaseArticleReveal.tsx": {
-    "file": "_next/static/chunks/CaseArticleReveal-OhQ_D-Ax.js",
+    "file": "_next/static/chunks/CaseArticleReveal-1rVxZh5f.js",
     "name": "CaseArticleReveal",
     "src": "components/CaseStudyPage/CaseArticleReveal.tsx",
     "isDynamicEntry": true,
@@ -96,66 +67,104 @@
     ]
   },
   "components/CompanyHistory/CompanyHistory.tsx": {
-    "file": "_next/static/chunks/CompanyHistory-Bnc9SkoX.js",
+    "file": "_next/static/chunks/CompanyHistory-CY8pfSD0.js",
     "name": "CompanyHistory",
     "src": "components/CompanyHistory/CompanyHistory.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_DraggableIcon-CnZKpyOu.js",
       "_useLayerOrder-CjZ7ux3c.js",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
       "_framework-BgSIrAUN.js"
     ],
     "css": [
-      "_next/static/css/CompanyHistory.Dp1wU4ul.css"
+      "_next/static/css/CompanyHistory.BJxSD3cw.css"
     ]
   },
-  "components/ProjectCasePage/M10CaseMotion.tsx": {
+  "components/M10CaseMotion/M10CaseMotion.tsx": {
     "file": "_next/static/chunks/M10CaseMotion-BJ-lq7uN.js",
     "name": "M10CaseMotion",
-    "src": "components/ProjectCasePage/M10CaseMotion.tsx",
+    "src": "components/M10CaseMotion/M10CaseMotion.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
       "_framework-BgSIrAUN.js"
     ]
   },
+  "components/PageCloseLink/PageCloseLink.tsx": {
+    "file": "_next/static/chunks/PageCloseLink-CUraXFyA.js",
+    "name": "PageCloseLink",
+    "src": "components/PageCloseLink/PageCloseLink.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "_framework-BgSIrAUN.js"
+    ],
+    "css": [
+      "_next/static/css/PageCloseLink.SXDoFT5p.css"
+    ]
+  },
+  "components/ProjectList/ProjectPreviewVideo.tsx": {
+    "file": "_next/static/chunks/ProjectPreviewVideo-BekZusNa.js",
+    "name": "ProjectPreviewVideo",
+    "src": "components/ProjectList/ProjectPreviewVideo.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_ProjectList.module-CET1VTGS.js",
+      "_framework-BgSIrAUN.js"
+    ]
+  },
+  "components/ProjectList/YandexDeliveryVideo.tsx": {
+    "file": "_next/static/chunks/YandexDeliveryVideo-CixrmbOR.js",
+    "name": "YandexDeliveryVideo",
+    "src": "components/ProjectList/YandexDeliveryVideo.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_ProjectList.module-CET1VTGS.js",
+      "_framework-BgSIrAUN.js"
+    ]
+  },
   "components/SpeakingSection/SpeakingSection.tsx": {
-    "file": "_next/static/chunks/SpeakingSection-hBzydAke.js",
+    "file": "_next/static/chunks/SpeakingSection-ChV66j36.js",
     "name": "SpeakingSection",
     "src": "components/SpeakingSection/SpeakingSection.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_DraggableCardStack-B0zimHjO.js",
       "_useLayerOrder-CjZ7ux3c.js",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
       "_framework-BgSIrAUN.js"
     ],
     "css": [
-      "_next/static/css/SpeakingSection.MMVPKVkX.css"
+      "_next/static/css/SpeakingSection.BJYzWPdt.css"
     ]
   },
-  "components/WhiteboardHeader/WhiteboardHeader.tsx": {
-    "file": "_next/static/chunks/WhiteboardHeader-DBqXwHAJ.js",
-    "name": "WhiteboardHeader",
-    "src": "components/WhiteboardHeader/WhiteboardHeader.tsx",
+  "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js": {
+    "file": "_next/static/chunks/image-CqDxPMJj.js",
+    "name": "image",
+    "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_DraggableCardStack-B0zimHjO.js",
-      "_DraggableIcon-CnZKpyOu.js",
-      "_useLayerOrder-CjZ7ux3c.js",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "virtual:vinext-app-browser-entry",
       "_framework-BgSIrAUN.js"
-    ],
-    "css": [
-      "_next/static/css/WhiteboardHeader.CnZpcf0i.css"
+    ]
+  },
+  "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-C2I_MW57.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-BgSIrAUN.js"
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-8lyvsP4p.js",
+    "file": "_next/static/chunks/index-BhhFAVX6.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -164,15 +173,18 @@
       "_framework-BgSIrAUN.js"
     ],
     "dynamicImports": [
-      "virtual:vinext-app-browser-entry",
-      "components/ProjectCasePage/M10CaseMotion.tsx",
-      "components/WhiteboardHeader/WhiteboardHeader.tsx",
+      "components/PageCloseLink/PageCloseLink.tsx",
+      "components/ProjectList/ProjectPreviewVideo.tsx",
+      "components/ProjectList/YandexDeliveryVideo.tsx",
       "components/SpeakingSection/SpeakingSection.tsx",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
       "app/DotParallax.tsx",
-      "../../lozhkin-site/source/node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "virtual:vinext-app-browser-entry",
+      "components/BeforeAfter/BeforeAfter.tsx",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
       "components/CaseStudyPage/CaseArticleReveal.tsx",
-      "components/CompanyHistory/CompanyHistory.tsx"
+      "components/CompanyHistory/CompanyHistory.tsx",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
+      "components/M10CaseMotion/M10CaseMotion.tsx"
     ]
   }
 }

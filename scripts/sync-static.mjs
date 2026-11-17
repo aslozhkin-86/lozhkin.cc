@@ -22,7 +22,7 @@ for (const file of [
 }
 
 const html = await readFile(join(prerender, "index.html"), "utf8");
-if (!html.includes('aria-label="Draggable card stack"') || html.includes("/Users/")) {
+if (!html.includes('aria-label="Featured projects"') || !html.includes("Yandex Market cart designs on desktop and mobile") || html.includes("/Users/")) {
   throw new Error("Static HTML is incomplete or contains a local file path.");
 }
 

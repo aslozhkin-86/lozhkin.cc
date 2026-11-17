@@ -2,11 +2,11 @@
   position: relative;
   width: min(1160px, 100%);
   margin: 80px auto 0;
-  color: var(--portfolio-color-text);
-  font-size: 17px;
+  color: var(--color-text-primary);
+  font-size: var(--type-small-size);
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: var(--portfolio-body-letter-spacing);
+  line-height: var(--type-small-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
   text-align: center;
 }
 

@@ -6,8 +6,10 @@ const title = "Simplicity as a Strategy: Turning Limited Resources into a Market
 export const metadata: Metadata = {
   title: "m10 design strategy — Alexander Lozhkin",
   description: title,
+  alternates: { canonical: "/projects/m10/design-strategy" },
+  robots: { index: false, follow: false },
 };
 
 export default function DesignStrategyPage() {
-  return <CaseStudyPage title={title} image="/projects/m10/digital-card-case.png" alt="Playful m10 digital card displayed in the wallet app" returnHref="/projects/m10#design-strategy" articleVariant="editorial" />;
+  return <CaseStudyPage title={title} image="/projects/m10/digital-card-case.png" alt="Playful m10 digital card displayed in the wallet app" returnHref="/projects/m10#design-strategy" />;
 }

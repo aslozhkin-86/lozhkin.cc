@@ -1,0 +1,185 @@
+.superpowers,
+.scope {
+  position: relative;
+  width: 100%;
+  color: var(--color-text-primary);
+}
+
+.superpowers {
+  min-height: 628px;
+  padding: 80px 24px;
+}
+
+.strengthsInner {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--type-heading-size);
+  font-weight: var(--type-heading-weight);
+  line-height: var(--type-heading-line-height);
+  letter-spacing: var(--type-heading-letter-spacing);
+  text-align: center;
+}
+
+.strengthsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.strength {
+  display: flex;
+  min-width: 0;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.strengthIcon {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.strengthCopy {
+  min-width: 0;
+  padding-top: 24px;
+  font-family: var(--font-family-sans);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+}
+
+.strengthTitle,
+.strengthDescription { margin: 0; }
+.strengthTitle { font-weight: var(--type-body-bold-weight); }
+.strengthDescription {
+  margin-top: 8px;
+  color: var(--color-text-secondary);
+  font-weight: var(--type-body-weight);
+}
+
+.scope {
+  min-height: 840px;
+  padding: 80px 24px;
+}
+
+.scopeIntro {
+  width: min(480px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.introduction {
+  margin: 24px 0 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+}
+
+.scopeCards {
+  display: grid;
+  width: min(1160px, 100%);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 64px auto 0;
+}
+
+.scopeCard {
+  position: relative;
+  min-width: 0;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 40px;
+  corner-shape: var(--corner-shape);
+  background: var(--color-panel);
+}
+
+.cardCaption {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 56px);
+  margin: 28px auto 0;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-small-size);
+  font-weight: 400;
+  line-height: var(--type-small-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+  text-align: center;
+}
+
+.cardMedia {
+  position: absolute;
+  container-type: inline-size;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 260px;
+  overflow: hidden;
+}
+
+.marketImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 260px;
+  transform: translateX(0);
+}
+
+@media (min-width: 1080px) and (hover: hover) and (pointer: fine) {
+  .scopeCard:hover .marketImage { animation: market-pan 16s ease-in-out infinite alternate; }
+}
+
+.birmarketImage,
+.pashapayImage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  max-width: none;
+  height: 260px;
+  transform: translateX(-50%);
+}
+
+.birmarketImage {
+  width: 320px;
+}
+.pashapayImage { width: 320px; }
+
+@keyframes market-pan {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100cqw - 100%)); }
+}
+
+@media (max-width: 1079px) {
+  .superpowers { min-height: 0; padding: 64px 24px 80px; }
+  .scope { min-height: 0; padding: 64px 24px 80px; }
+  .heading { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
+  .scopeCards { grid-template-columns: 1fr; margin-top: 64px; }
+  .scopeCard { width: 100%; }
+  .marketImage { width: max(997px, calc(100cqw + 200px)); height: auto; }
+  .marketImage,
+  .scopeCard:hover .marketImage { animation: market-pan 16s ease-in-out infinite alternate; }
+}
+
+@media (max-width: 700px) {
+  .strengthsGrid { grid-template-columns: 1fr; gap: 32px; }
+  .scopeIntro { width: min(480px, 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scopeCard:hover .marketImage,
+  .marketImage { animation: none; }
+}

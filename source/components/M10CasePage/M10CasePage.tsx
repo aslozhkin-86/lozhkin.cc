@@ -1,10 +1,9 @@
-import Image from "next/image";
-
 import { DotParallax } from "../../app/DotParallax";
-import { M10CaseMotion } from "../ProjectCasePage/M10CaseMotion";
+import { M10CaseMotion } from "../M10CaseMotion/M10CaseMotion";
 import { ProjectHero } from "../ProjectHero/ProjectHero";
 import { featuredProjectMedia } from "../../data/featuredProjectMedia";
 import { ProjectStoryCard } from "../ProjectStoryCard/ProjectStoryCard";
+import { StoreProof } from "../StoreProof/StoreProof";
 import styles from "./M10CasePage.module.css";
 
 const achievements = [
@@ -98,23 +97,17 @@ export function M10CasePage() {
         returnHref="/#m10"
         returnLabel="Back to projects"
       >
-          <div className={styles.storeProof} aria-label="m10 recognition and store ratings">
-            <span className={styles.appAward} aria-label="App of the day on the App Store">
-              <Image alt="" src="/projects/m10/app-store-award.svg" width={131} height={48} />
-            </span>
-            <span className={styles.rankProof}>
-              <span className={styles.proofBadge}>#1</span>
-              <span>Fintech Appstore &amp; Google Play</span>
-            </span>
-            <div className={styles.storeRatings}>
-              <a className={styles.ratingProof} href="https://apps.apple.com/az/app/m10-digital-wallet/id1642308007?platform=iphone&amp;see-all=reviews" target="_blank" rel="noreferrer">
-                <span className={styles.proofBadge}>4.9</span><span>App Store</span>
-              </a>
-              <a className={styles.ratingProof} href="https://play.google.com/store/apps/details?id=com.m10" target="_blank" rel="noreferrer">
-                <span className={styles.proofBadge}>4.6</span><span>Google Play</span>
-              </a>
-            </div>
-          </div>
+        <StoreProof
+          ariaLabel="m10 recognition and store ratings"
+          variant="hero"
+          awardSrc="/projects/m10/app-store-award.svg"
+          awardWidth={131}
+          rank={{ value: "#1", text: "Fintech Appstore & Google Play" }}
+          ratings={[
+            { value: "4.9", store: "App Store", href: "https://apps.apple.com/az/app/m10-digital-wallet/id1642308007?platform=iphone&see-all=reviews" },
+            { value: "4.6", store: "Google Play", href: "https://play.google.com/store/apps/details?id=com.m10" },
+          ]}
+        />
       </ProjectHero>
 
       <main className={styles.main}>

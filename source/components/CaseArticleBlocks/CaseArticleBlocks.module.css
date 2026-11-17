@@ -9,8 +9,8 @@
 }
 
 .textContent > * { margin: 0; }
-.textContent[data-variant="lead"] { font-size: var(--case-lead-size, 22px); line-height: var(--case-lead-line-height, 30px); }
-.textContent strong { font-weight: var(--portfolio-body-bold-weight); }
+.textContent[data-variant="lead"] { font-size: var(--type-lead-size); line-height: var(--type-lead-line-height); }
+.textContent strong { font-weight: var(--type-body-bold-weight); }
 .textContent ul, .textContent ol { padding-left: 24px; }
 .textContent ul { list-style: disc; }
 .textContent ol { list-style: decimal; }
@@ -27,8 +27,8 @@
 
 .bigImage { width: 100%; }
 .figure { width: 100%; margin: 0; }
-.figure img { display: block; width: 100%; height: auto; border-radius: 40px; corner-shape: var(--portfolio-corner-shape); }
-.figure figcaption { max-width: 600px; margin: 16px auto 0; font-size: 14px; line-height: 1.5; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 40px; corner-shape: var(--corner-shape); }
+.figure figcaption { max-width: 600px; margin: 16px auto 0; font-size: var(--type-small-size); line-height: var(--type-small-line-height); }
 
 @media (max-width: 1079px) {
   .block { margin-bottom: 48px; }

@@ -19,22 +19,22 @@
 
 .label {
   margin: 0;
-  color: var(--project-color-text-secondary);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: var(--project-label-size);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-label-size);
   font-weight: 400;
-  line-height: var(--project-label-line-height);
-  letter-spacing: var(--project-label-letter-spacing);
+  line-height: var(--type-label-line-height);
+  letter-spacing: var(--type-label-letter-spacing);
   text-transform: uppercase;
 }
 
 .title {
   margin: 0;
-  color: var(--project-color-text-primary);
-  font-family: "Instrument Serif", "EB Garamond", Georgia, serif;
-  font-size: var(--project-heading-size);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
+  font-size: var(--type-heading-size);
   font-weight: 400;
-  line-height: var(--project-heading-line-height);
+  line-height: var(--type-heading-line-height);
   letter-spacing: 0;
 }
 
@@ -44,12 +44,12 @@
 
 .description {
   margin: 0;
-  color: var(--project-color-text-secondary);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: var(--project-body-size);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-body-size);
   font-weight: 400;
-  line-height: var(--project-body-line-height);
-  letter-spacing: var(--project-body-letter-spacing);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
 }
 
 .readButton {
@@ -62,15 +62,15 @@
   gap: 10px;
   padding: 16px 24px;
   border-radius: 40px;
-  color: var(--project-color-text-primary);
-  background: var(--project-color-action-background);
+  color: var(--color-text-primary);
+  background: var(--color-action-surface);
   box-shadow:
     inset -0.4px -0.4px 0.6px rgb(255 255 255 / 25%),
-    inset 10px 8px 16px rgb(0 0 0 / 14%),
+    inset 10px 8px 16px rgb(22 22 22 / 14%),
     inset 0.8px 0.8px 0.5px rgb(255 255 255 / 55%);
-  font-size: var(--project-body-size);
-  line-height: var(--project-body-line-height);
-  letter-spacing: var(--project-body-letter-spacing);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
   text-decoration: none;
 }
 
@@ -82,24 +82,24 @@ a.readButton:hover { filter: brightness(1.12); }
   overflow: hidden;
   aspect-ratio: 758 / 575.25;
   border-radius: 24px;
-  corner-shape: var(--portfolio-corner-shape);
-  background: #3bedca;
+  corner-shape: var(--corner-shape);
+  background: var(--color-media-mint);
 }
 
 .media > a { display: block; width: 100%; height: 100%; }
 .media img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.media[data-image-fit="contain"] { background: #f3f3f3; }
+.media[data-image-fit="contain"] { background: var(--color-image-contain); }
 .media[data-image-fit="contain"] img { object-fit: contain; }
 .media a:hover img { filter: brightness(0.94); }
 
 .title a:focus-visible,
 .readButton:focus-visible,
-.media a:focus-visible { outline: 2px solid var(--project-color-text-primary); outline-offset: 4px; }
+.media a:focus-visible { outline: 2px solid var(--color-text-primary); outline-offset: 4px; }
 
 @media (max-width: 1079px) {
   .card { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 40px 0; }
   .content { gap: 16px; }
-  .title { font-size: var(--project-subheading-size); line-height: var(--project-subheading-line-height); }
+  .title { font-size: var(--type-subheading-size); line-height: var(--type-subheading-line-height); }
   .media { height: auto; aspect-ratio: 4 / 3; }
 }
 

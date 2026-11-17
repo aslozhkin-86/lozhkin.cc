@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lozhkin.cc"),
   title: shareTitle,
   description: shareDescription,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Alexander Lozhkin",
@@ -28,6 +29,15 @@ export const metadata: Metadata = {
   },
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://lozhkin.cc/#alexander-lozhkin",
+  name: "Alexander Lozhkin",
+  url: "https://lozhkin.cc/",
+  sameAs: ["https://www.linkedin.com/in/alexanderlozhkin/"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         {children}
       </body>
     </html>

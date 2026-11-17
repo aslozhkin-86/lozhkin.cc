@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "m10 digital wallet — Alexander Lozhkin",
   description:
     "How Alexander Lozhkin helped build and scale the m10 digital wallet in Azerbaijan through product design, brand, and team leadership.",
+  alternates: { canonical: "/projects/m10" },
 };
 
 export default function M10Page() {

@@ -2,11 +2,11 @@
   width: 100%;
   padding: 48px 0 0;
   scroll-margin-top: 24px;
-  color: var(--portfolio-color-text);
-  background-color: var(--portfolio-color-board);
-  background-image: radial-gradient(circle, var(--portfolio-color-board-dot) 1.14px, transparent 1.3px);
-  background-position: var(--portfolio-dot-origin-x) var(--portfolio-dot-origin-y);
-  background-size: var(--portfolio-dot-spacing) var(--portfolio-dot-spacing);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  background-image: radial-gradient(circle, var(--dot-color) 1.14px, transparent 1.3px);
+  background-position: var(--dot-origin-x) var(--dot-origin-y);
+  background-size: var(--dot-spacing) var(--dot-spacing);
 }
 
 .content {
@@ -17,11 +17,11 @@
 .heading {
   max-width: 706px;
   margin: 0 auto;
-  font-family: var(--portfolio-contrast-big-family);
-  font-size: var(--portfolio-contrast-big-size);
-  font-weight: var(--portfolio-contrast-big-weight);
-  line-height: var(--portfolio-contrast-big-line-height);
-  letter-spacing: var(--portfolio-contrast-big-letter-spacing);
+  font-family: var(--font-family-serif);
+  font-size: var(--type-heading-size);
+  font-weight: var(--type-heading-weight);
+  line-height: var(--type-heading-line-height);
+  letter-spacing: var(--type-heading-letter-spacing);
   text-align: center;
 }
 
@@ -36,8 +36,8 @@
   .content { width: min(760px, calc(100% - 48px)); }
 
   .heading {
-    font-size: var(--portfolio-mobile-section-title-size);
-    line-height: var(--portfolio-mobile-section-title-line-height);
+    font-size: var(--type-mobile-heading-size);
+    line-height: var(--type-mobile-heading-line-height);
   }
 
   .grid { margin-top: 40px; }

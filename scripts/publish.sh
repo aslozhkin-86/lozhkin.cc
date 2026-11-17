@@ -19,6 +19,11 @@ if [[ -e source/app/projects/birmarket/vision-2027/page.tsx ]]; then
   exit 1
 fi
 
+if [[ -d source/app/playground ]]; then
+  echo "The local-only playground route is in the source tree. Move it out or explicitly approve it for publication before publishing." >&2
+  exit 1
+fi
+
 if [[ -n "$(git status --porcelain -- source)" || "${2:-}" == "--force" ]]; then
   (cd source && pnpm run build)
   node scripts/sync-static.mjs

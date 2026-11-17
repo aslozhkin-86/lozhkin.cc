@@ -1,0 +1,31 @@
+.timeline {
+  margin-top: 56px;
+}
+
+.timeline .entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline .entry + .entry {
+  margin-top: 24px;
+}
+
+.meta {
+  margin-bottom: 4px;
+  color: var(--color-text-secondary);
+  font-size: var(--type-small-size);
+  line-height: var(--type-small-line-height);
+}
+
+.meta strong {
+  color: var(--color-text-primary);
+  font-weight: var(--type-body-bold-weight);
+}
+
+@media (max-width: 1079px) {
+  .timeline {
+    margin-top: 48px;
+  }
+}

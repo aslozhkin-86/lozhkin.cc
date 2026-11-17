@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 
 import styles from "./page.module.css";
 
-const dotSpacing = 110;
 const scrollRatio = 0.18;
 
 export function DotParallax() {
@@ -14,6 +13,7 @@ export function DotParallax() {
     const layer = dots.current;
     if (!layer) return;
 
+    const dotSpacing = Number.parseFloat(window.getComputedStyle(layer).getPropertyValue("--dot-spacing")) || 110;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
 

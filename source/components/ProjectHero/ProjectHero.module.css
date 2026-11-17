@@ -4,7 +4,7 @@
   width: 100%;
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  background: #080808;
+  background: var(--color-black);
 }
 
 .image {
@@ -45,17 +45,17 @@
 .title {
   width: 100%;
   margin: 0;
-  color: var(--project-color-text-primary);
-  font-family: "Instrument Serif", "EB Garamond", Georgia, serif;
-  font-size: clamp(44px, 5vw, var(--project-display-size));
+  color: var(--color-text-primary);
+  font-family: var(--font-family-serif);
+  font-size: clamp(44px, 5vw, var(--type-display-size));
   font-weight: 400;
-  line-height: clamp(54px, 6.25vw, var(--project-display-line-height));
+  line-height: clamp(54px, 6.25vw, var(--type-display-line-height));
   letter-spacing: 0;
   text-align: center;
   text-wrap: balance;
 }
 
-.hero[data-foreground="dark"] .title { color: #161616; }
+.hero[data-foreground="dark"] .title { color: var(--color-black); }
 
 .visuallyHidden {
   position: absolute;
@@ -72,11 +72,11 @@
   min-height: 80px;
   align-items: center;
   justify-content: center;
-  color: var(--project-color-text-primary);
-  font-family: "Inter", Arial, sans-serif;
-  font-size: var(--project-small-size);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-small-size);
   font-weight: 400;
-  line-height: var(--project-small-line-height);
+  line-height: var(--type-small-line-height);
   letter-spacing: -0.02em;
   text-align: center;
 }
@@ -97,7 +97,7 @@
   .content { padding-inline: 24px; }
   .navigation { width: calc(100% + 16px); height: 80px; margin-inline: -8px; }
   .close { width: 44px; height: 44px; }
-  .title { font-size: var(--project-heading-size); line-height: var(--project-heading-line-height); }
+  .title { font-size: var(--type-heading-size); line-height: var(--type-heading-line-height); }
 }
 
 @media (prefers-reduced-motion: reduce) {

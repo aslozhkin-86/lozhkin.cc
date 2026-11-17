@@ -15,7 +15,7 @@
   aspect-ratio: var(--stack-card-aspect, 3 / 4);
   padding: 0;
   outline: none;
-  color: var(--portfolio-color-text);
+  color: var(--color-text-primary);
   font-family: var(--font-family-sans);
   background: transparent;
   cursor: url("/hero/cursors/hover.svg") 45 45, grab;
@@ -36,10 +36,10 @@
   height: 100%;
   container-type: inline-size;
   overflow: hidden;
-  border: 1.5px solid var(--portfolio-color-text);
+  border: 1.5px solid var(--color-text-primary);
   border-radius: var(--stack-card-radius, 40px);
-  corner-shape: var(--portfolio-corner-shape);
-  background: var(--portfolio-color-white);
+  corner-shape: var(--corner-shape);
+  background: var(--color-white);
   transform: rotate(var(--card-rotation, 0deg));
   transform-origin: 50% 84%;
   transition: filter 180ms ease, transform 180ms ease;
@@ -51,7 +51,7 @@
 }
 
 .card:focus-visible .surface {
-  outline: 3px solid var(--portfolio-color-text);
+  outline: 3px solid var(--color-text-primary);
   outline-offset: 4px;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .card[data-dragging="true"] .surface {
-  filter: brightness(1.08) drop-shadow(0 8px 12px rgb(0 0 0 / 15%));
+  filter: brightness(1.08) drop-shadow(0 8px 12px rgb(22 22 22 / 15%));
   transform: rotate(calc(var(--card-rotation, 0deg) + 2deg)) scale(1.018);
   transition: none;
 }
@@ -98,7 +98,7 @@
   }
 
   .card[data-dragging="true"] .surface {
-    filter: brightness(1.08) drop-shadow(0 8px 12px rgb(0 0 0 / 15%));
+    filter: brightness(1.08) drop-shadow(0 8px 12px rgb(22 22 22 / 15%));
     transform: rotate(calc(var(--mobile-card-rotation, 0deg) + 2deg)) scale(1.018);
   }
 }
