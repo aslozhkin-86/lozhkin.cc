@@ -65,7 +65,7 @@
     ]
   },
   "components/BirmarketFeature/BirmarketComparison.tsx": {
-    "file": "_next/static/chunks/BirmarketComparison-C7k6-iGn.js",
+    "file": "_next/static/chunks/BirmarketComparison-CiWBY9kN.js",
     "name": "BirmarketComparison",
     "src": "components/BirmarketFeature/BirmarketComparison.tsx",
     "isDynamicEntry": true,
@@ -80,7 +80,7 @@
     ]
   },
   "components/BirmarketFeature/BirmarketIntro.tsx": {
-    "file": "_next/static/chunks/BirmarketIntro-Cnc2WTZ4.js",
+    "file": "_next/static/chunks/BirmarketIntro-Ck6TyKR3.js",
     "name": "BirmarketIntro",
     "src": "components/BirmarketFeature/BirmarketIntro.tsx",
     "isDynamicEntry": true,
@@ -92,7 +92,7 @@
     ]
   },
   "components/BirmarketVision/VisionHeroVideo.tsx": {
-    "file": "_next/static/chunks/VisionHeroVideo-BRh10lne.js",
+    "file": "_next/static/chunks/VisionHeroVideo-CIEyah1M.js",
     "name": "VisionHeroVideo",
     "src": "components/BirmarketVision/VisionHeroVideo.tsx",
     "isDynamicEntry": true,
@@ -125,7 +125,7 @@
     ]
   },
   "components/CompanyHistory/CompanyHistory.tsx": {
-    "file": "_next/static/chunks/CompanyHistory-DSjDg6BK.js",
+    "file": "_next/static/chunks/CompanyHistory-B7VGVeHq.js",
     "name": "CompanyHistory",
     "src": "components/CompanyHistory/CompanyHistory.tsx",
     "isDynamicEntry": true,
@@ -150,7 +150,7 @@
     ]
   },
   "components/PageCloseLink/PageCloseLink.tsx": {
-    "file": "_next/static/chunks/PageCloseLink-De4cTx8H.js",
+    "file": "_next/static/chunks/PageCloseLink-DTIouQpI.js",
     "name": "PageCloseLink",
     "src": "components/PageCloseLink/PageCloseLink.tsx",
     "isDynamicEntry": true,
@@ -174,7 +174,7 @@
     ]
   },
   "components/ProjectList/YandexDeliveryVideo.tsx": {
-    "file": "_next/static/chunks/YandexDeliveryVideo-1WBWPRIw.js",
+    "file": "_next/static/chunks/YandexDeliveryVideo-CB1EFqV0.js",
     "name": "YandexDeliveryVideo",
     "src": "components/ProjectList/YandexDeliveryVideo.tsx",
     "isDynamicEntry": true,
@@ -186,7 +186,7 @@
     ]
   },
   "components/SpeakingSection/SpeakingSection.tsx": {
-    "file": "_next/static/chunks/SpeakingSection-Dph7k0b7.js",
+    "file": "_next/static/chunks/SpeakingSection-BKiY3evb.js",
     "name": "SpeakingSection",
     "src": "components/SpeakingSection/SpeakingSection.tsx",
     "isDynamicEntry": true,
@@ -201,7 +201,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js": {
-    "file": "_next/static/chunks/image-BqsqYFed.js",
+    "file": "_next/static/chunks/image-nMnL3fY9.js",
     "name": "image",
     "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
     "isDynamicEntry": true,
@@ -212,7 +212,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-JQZo-4so.js",
+    "file": "_next/static/chunks/layout-segment-context-DDPG1f6D.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -223,7 +223,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-CjNiKa8Q.js",
+    "file": "_next/static/chunks/index-BCkWzF5k.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
