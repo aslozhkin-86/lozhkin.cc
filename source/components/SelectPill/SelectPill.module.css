@@ -1,0 +1,59 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 80px;
+  height: 33px;
+  padding: 3px 12px 4px;
+  border: 2px solid color-mix(in srgb, var(--color-text-primary) 30%, transparent);
+  border-radius: 16px;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-body-size);
+  font-weight: 600;
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.pill[data-selected="true"] {
+  border-color: var(--color-text-primary);
+}
+
+.pill:hover {
+  border-color: color-mix(in srgb, var(--color-text-primary) 65%, transparent);
+  background: color-mix(in srgb, var(--color-text-primary) 8%, transparent);
+}
+
+.pill[data-selected="true"]:hover {
+  border-color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-text-primary) 14%, transparent);
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.pill:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pill:disabled:hover {
+  border-color: color-mix(in srgb, var(--color-text-primary) 30%, transparent);
+  background: transparent;
+}
+
+.pill[data-selected="true"]:disabled:hover {
+  border-color: var(--color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill { transition: none; }
+}

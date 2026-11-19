@@ -4,7 +4,7 @@ The GitHub repository `aslozhkin-86/lozhkin.cc` is the only project repository. 
 
 Work locally by default. Push to GitHub and publish only when the user explicitly requests it. Update this guide in the same task whenever the publishing workflow or hosting architecture changes.
 
-The local agent workflow is defined in `AGENTS.md` and `.codex/agents/`: Dev implements production site changes, Tim maintains the Playground and checks the real site afterward, Al reviews changed motion against `docs/MOTION_RULES.md`, and Wipe checks changed public content against current Notion and local source-of-truth material. Resolve material review findings before describing the local work as complete. These agent roles do not change the explicit approval required to publish.
+The local agent workflow is defined in `AGENTS.md` and `.codex/agents/`: Dev implements production site changes, checks changed motion against `docs/MOTION_RULES.md`, and verifies changed public content against current Notion and local source-of-truth material. Tim maintains the Playground and checks the real site afterward. Resolve material review findings before describing the local work as complete. These agent roles do not change the explicit approval required to publish.
 
 Dev's project-local Figma design-system-rules skill is in `.agents/skills/figma-create-design-system-rules/`. It is for creating or updating agent rules; routine site edits continue to follow the existing tokens, CSS Modules, shared components, and local asset paths. The skill adds no build or publishing step.
 

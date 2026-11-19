@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 import styles from "./ProjectList.module.css";
@@ -34,7 +35,11 @@ export function YandexDeliveryVideo() {
         <video ref={videoRef} className={styles.deliveryVideo} src="/homepage/yandex/delivery-model.mp4" muted playsInline preload="auto" aria-hidden="true" />
       </button>
       <div className={`${styles.deliveryCard} ${styles.deliveryTextCard}`}>
-        <span>Delivery options and tariffs had grown through one-off decisions, creating inconsistencies across the purchase journey. Working with a product manager, I brought them into one model for courier delivery and pickup, with clear rules for express, on-demand and standard options.</span>
+        <Image className={styles.deliveryIcon} src="/homepage/yandex/delivery-icon.svg" alt="" width={48} height={50} />
+        <div className={styles.deliveryCopy}>
+          <p>Delivery options and tariffs had grown through one-off decisions, creating inconsistencies across the purchase journey.</p>
+          <p>Working with a product manager,<br />I brought them into one model for courier delivery and pickup, with clear rules for express, on-demand and standard options.</p>
+        </div>
       </div>
     </div>
   );

@@ -32,23 +32,52 @@ test("server-renders the portfolio homepage", async () => {
   assert.match(html, /aria-label="Main navigation"/);
   assert.match(html, /Hi! I am Alex/);
   assert.match(html, /Superpowers/);
-  assert.match(html, /Scope &amp; Scale/);
+  assert.match(html, /id="birmarket-2027"/);
+  assert.match(html, /homepage\/birmarket\/vision-2027\/catalog\.png/);
+  assert.match(html, /homepage\/birmarket\/vision-2027\/hero\.mp4/);
+  assert.match(html, /homepage\/birmarket\/vision-2027\/play\.svg/);
+  assert.match(html, /aria-label="Play Birmarket 2027 concept video"/);
+  assert.match(html, /homepage\/birmarket\/vision-2027\/listing-promo\.mp4/);
+  assert.match(html, /homepage\/birmarket\/checkout-demo\.mp4/);
+  assert.match(html, /homepage\/birmarket\/vision-2027\/cart-snippets\.png/);
+  assert.ok(html.indexOf('alt="Alexander Lozhkin"') < html.indexOf('id="birmarket-2027"'));
+  assert.ok(html.indexOf('id="superpowers-title"') < html.indexOf('id="birmarket-2027"'));
+  assert.ok(html.indexOf('aria-label="Featured projects"') < html.indexOf('id="birmarket-2027"'));
+  assert.ok(html.indexOf('id="birmarket-2027"') < html.indexOf('id="birmarket-feature-title"'));
+  assert.ok(html.indexOf('id="birmarket-feature-title"') < html.indexOf('id="birmarket-audit-title"'));
+  assert.ok(html.indexOf('id="birmarket-audit-title"') < html.indexOf('id="m10"'));
+  assert.ok(html.indexOf('id="birmarket-2027"') < html.indexOf('id="m10"'));
+  assert.ok(html.indexOf('id="m10"') < html.indexOf('id="yandex-market"'));
+  assert.doesNotMatch(html, /Scope &amp; Scale/);
   assert.doesNotMatch(html, /Alexander-Lozhkin-CV\.pdf/);
   assert.match(html, /Featured projects/);
-  assert.match(html, /Brand refresh and mobile concept for Birmarket/);
-  assert.match(html, /Marketing wanted to improve Birmarket’s visual identity/);
-  for (const name of ["brand-update", "billboard", "3d-1", "3d-2", "new-catalog", "listing", "checkout-details"]) {
+  assert.match(html, /Brand refresh for Birmarket/);
+  assert.match(html, /Birmarket: from audit to action/);
+  assert.match(html, /We audited the main shopping journeys/);
+  assert.match(html, /homepage\/birmarket\/audit-teaser\.png/);
+  assert.match(html, /aria-haspopup="dialog"[^>]*>old logo<\/button> got lost in ads/);
+  assert.match(html, /<dialog[^>]+id="birmarket-old-logo-gallery"/);
+  for (const name of ["campaign", "wordmark", "advert", "app", "promotion"]) {
+    assert.match(html, new RegExp(`homepage/birmarket/old-logo-${name}\\.jpg`));
+  }
+  for (const name of ["new-logo", "sale", "old-app", "toys", "med", "tools", "bike", "food", "home", "wear", "cosm", "wash", "comp"]) {
     assert.match(html, new RegExp(`homepage/birmarket/${name}\\.png`));
   }
-  assert.match(html, /homepage\/birmarket\/before\.png/);
-  assert.match(html, /homepage\/birmarket\/after\.png/);
-  assert.match(html, /homepage\/birmarket\/checkout-demo\.mp4/);
-  assert.doesNotMatch(html, /homepage\/birmarket\/(?:before|after)-mobile\.jpg/);
-  assert.doesNotMatch(html, /homepage\/birmarket\/(?:contrast-colour|category-search|imagery)\.png/);
+  assert.match(html, /homepage\/birmarket\/brand-billboard\.jpg/);
+  assert.match(html, /Strengthening the brand’s presence/);
+  assert.match(html, /aria-pressed="true"[^>]*>Old<\/button>/);
+  assert.match(html, /aria-pressed="false"[^>]*>New<\/button>/);
+  assert.match(html, /homepage\/birmarket\/cloth-drop\.mp4/);
+  assert.match(html, /homepage\/yandex\/delivery-icon\.svg/);
+  assert.ok(html.indexOf('alt="Birmarket winter campaign') < html.indexOf('alt="Old pink Birmarket icon'));
+  assert.ok(html.indexOf('alt="Old pink Birmarket icon') < html.indexOf("Strengthening the brand’s presence"));
+  assert.ok(html.indexOf("Strengthening the brand’s presence") < html.indexOf("Consistent style and creation rules for 3D product imagery"));
+  assert.doesNotMatch(html, /homepage\/birmarket\/brand-catalog\.png/);
   assert.match(html, /<section[^>]+id="birmarket"/);
   assert.doesNotMatch(html, /data-birmarket-access-trigger=/);
   assert.doesNotMatch(html, /Enter the password to open this project/);
   assert.match(html, /href="\/projects\/birmarket\/breaking-the-inertia"/);
+  assert.equal((html.match(/href="\/projects\/birmarket\/breaking-the-inertia"/g) ?? []).length, 1);
   assert.doesNotMatch(html, /projects\/whiteboard\/yandex-market-teaser\.png/);
   assert.doesNotMatch(html, /Case in progress/);
   assert.match(html, /id="other-projects"/);
@@ -56,6 +85,8 @@ test("server-renders the portfolio homepage", async () => {
   assert.match(html, /alt="Alexander Lozhkin"/);
   assert.doesNotMatch(html, /id="approach"/);
   assert.ok(html.indexOf('id="birmarket"') < html.indexOf('id="m10"'));
+  assert.ok(html.indexOf('id="birmarket-feature-title"') < html.indexOf('id="birmarket-audit-title"'));
+  assert.ok(html.indexOf('id="birmarket-audit-title"') < html.indexOf('id="m10"'));
   assert.ok(html.indexOf('id="m10"') < html.indexOf('id="company-history-title"'));
 });
 

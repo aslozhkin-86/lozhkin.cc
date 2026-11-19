@@ -1,6 +1,6 @@
 # Motion rules for the portfolio site
 
-This file records the site's established motion behavior for Al's reviews and Dev's changes. Read it with `docs/PROJECT_CONTEXT.md`. The external `review-animations` and `animation-performance` skills provide additional review heuristics; they do not replace a deliberate site behavior merely because a generic duration or easing recommendation differs.
+This file records the site's established motion behavior for Dev's changes. Read it with `docs/PROJECT_CONTEXT.md`. The external `review-animations` and `animation-performance` skills provide additional review heuristics; they do not replace a deliberate site behavior merely because a generic duration or easing recommendation differs.
 
 ## Intent and scope
 

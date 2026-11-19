@@ -20,7 +20,7 @@ The unpublished Playground source is archived locally at `/Users/alex/Documents/
 
 ## Site agent team
 
-Open Codex with this repository as the primary project folder. `AGENTS.md` defines the workflow; `.codex/agents/` defines Dev (production implementation), Tim (Playground maintenance, testing, and design-system consistency), Al (motion review), and Wipe (Notion data, synchronization, and website content review). Al reads `docs/MOTION_RULES.md` and the project-local animation review skills. For example: “Ask Dev to implement this change, then have Tim update the Playground if needed and test the real site, Al review any changed animation, and Wipe check changed content against its sources. Address their findings before reporting completion.”
+Open Codex with this repository as the primary project folder. `AGENTS.md` defines the workflow; `.codex/agents/` defines Dev (production implementation, motion checks, and source-dependent content verification) and Tim (Playground maintenance, testing, and design-system consistency). Dev uses `docs/MOTION_RULES.md` for motion changes. For example: “Ask Dev to implement this change and verify affected behavior and content, then have Tim update the Playground if needed and test the real site. Address review findings before reporting completion.”
 
 Dev also has the project-local `figma-create-design-system-rules` skill for requests to create or refine Figma-to-code rules. Everyday site changes still use the existing components and tokens; Tim reviews any proposed shared-system additions.
 

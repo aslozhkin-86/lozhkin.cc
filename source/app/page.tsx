@@ -5,7 +5,6 @@ import { ProjectList } from "@/components/ProjectList";
 import { SpeakingSection } from "@/components/SpeakingSection";
 import { WhiteboardHeader } from "@/components/WhiteboardHeader";
 import { HomepageHighlights } from "@/components/HomepageHighlights/HomepageHighlights";
-import { BirmarketFeature } from "@/components/BirmarketFeature/BirmarketFeature";
 import { DotParallax } from "./DotParallax";
 import styles from "./page.module.css";
 
@@ -15,8 +14,7 @@ export default function Home() {
       <DotParallax />
       <main>
         <WhiteboardHeader />
-        <HomepageHighlights />
-        <BirmarketFeature />
+        <HomepageHighlights showScope={false} />
         <ProjectList />
         <CompanyHistory />
         <SpeakingSection />
