@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import { GazePortrait } from "./GazePortrait";
 import styles from "./WhiteboardHeader.module.css";
 
 export function WhiteboardHeader() {
@@ -12,11 +11,7 @@ export function WhiteboardHeader() {
         <span className={styles.location}>Georgia <span className={styles.timezone}>GMT +4</span></span>
       </nav>
       <div className={styles.introduction}>
-        <div className={styles.portraitFrame}>
-          <Image alt="Alexander Lozhkin" className={styles.portrait}
-            src="/hero/minimal/portrait.jpg" width={3024} height={4032}
-            priority sizes="257px" />
-        </div>
+        <GazePortrait />
         <div className={styles.introCopy}>
           <h1>Hi! I am Alex,<br />product design lead</h1>
           <p>I create products and scale them through design systems and teams that strengthen the business</p>

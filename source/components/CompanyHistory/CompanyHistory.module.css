@@ -61,7 +61,7 @@
 .tooltipTitle {
   display: block;
   font-size: var(--type-card-title-size);
-  font-weight: 900;
+  font-weight: var(--type-body-bold-weight);
   line-height: var(--type-card-title-line-height);
   letter-spacing: -0.02em;
 }

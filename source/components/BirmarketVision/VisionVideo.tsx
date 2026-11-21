@@ -25,9 +25,9 @@ export function VisionVideo({ src, label }: VisionVideoProps) {
     };
 
     const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
+      visible = entry.intersectionRatio >= 0.5;
       syncPlayback();
-    }, { threshold: 0.15 });
+    }, { threshold: 0.5 });
 
     observer.observe(video);
     motionPreference.addEventListener("change", syncPlayback);

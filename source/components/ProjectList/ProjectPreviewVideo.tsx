@@ -8,17 +8,27 @@ export function ProjectPreviewVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
     const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
     const syncPlayback = () => {
-      const video = videoRef.current;
-      if (!video) return;
-      if (motionPreference.matches) video.pause();
+      if (!visible || motionPreference.matches) video.pause();
       else void video.play().catch(() => {});
     };
 
-    syncPlayback();
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.intersectionRatio >= 0.5;
+      syncPlayback();
+    }, { threshold: 0.5 });
+
+    observer.observe(video);
     motionPreference.addEventListener("change", syncPlayback);
-    return () => motionPreference.removeEventListener("change", syncPlayback);
+    return () => {
+      observer.disconnect();
+      motionPreference.removeEventListener("change", syncPlayback);
+      video.pause();
+    };
   }, []);
 
   return (

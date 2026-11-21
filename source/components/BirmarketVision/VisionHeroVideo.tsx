@@ -31,9 +31,10 @@ export function VisionHeroVideo() {
         ref={videoRef}
         className={styles.video}
         src="/homepage/birmarket/vision-2027/hero.mp4"
+        poster="/homepage/birmarket/vision-2027/hero-poster.jpg"
         muted
         playsInline
-        preload="auto"
+        preload="none"
         onPlay={() => setPlaying(true)}
         onEnded={reset}
         aria-label="Birmarket 2027 concept overview animation"

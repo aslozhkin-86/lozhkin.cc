@@ -61,12 +61,6 @@
 
 @media (max-width: 1079px) {
   .section { padding: 64px 24px 80px; }
+  .title { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
   .media { margin-top: 48px; }
-}
-
-@media (max-width: 600px) {
-  .title {
-    font-size: var(--type-mobile-heading-size);
-    line-height: var(--type-mobile-heading-line-height);
-  }
 }

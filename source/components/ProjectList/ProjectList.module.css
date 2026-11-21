@@ -130,6 +130,7 @@
 
 @media (max-width: 1079px) {
   .projectItems { padding: 64px 24px 72px; }
+  .projectTitle { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
   .content { gap: 80px; }
   .projectMedia { aspect-ratio: 4 / 3; }
   .m10MediaGrid { grid-template-columns: minmax(0, 1fr); }

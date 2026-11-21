@@ -40,7 +40,8 @@ test("server-renders the portfolio homepage", async () => {
   assert.match(html, /homepage\/birmarket\/vision-2027\/listing-promo\.mp4/);
   assert.match(html, /homepage\/birmarket\/checkout-demo\.mp4/);
   assert.match(html, /homepage\/birmarket\/vision-2027\/cart-snippets\.png/);
-  assert.ok(html.indexOf('alt="Alexander Lozhkin"') < html.indexOf('id="birmarket-2027"'));
+  const portrait = html.match(/role="img"[^>]*aria-label="Alexander Lozhkin"/);
+  assert.ok(portrait && portrait.index < html.indexOf('id="birmarket-2027"'));
   assert.ok(html.indexOf('id="superpowers-title"') < html.indexOf('id="birmarket-2027"'));
   assert.ok(html.indexOf('aria-label="Featured projects"') < html.indexOf('id="birmarket-2027"'));
   assert.ok(html.indexOf('id="birmarket-2027"') < html.indexOf('id="birmarket-feature-title"'));
@@ -82,7 +83,7 @@ test("server-renders the portfolio homepage", async () => {
   assert.doesNotMatch(html, /Case in progress/);
   assert.match(html, /id="other-projects"/);
   assert.match(html, /id="speaking-title"/);
-  assert.match(html, /alt="Alexander Lozhkin"/);
+  assert.match(html, /role="img"[^>]*aria-label="Alexander Lozhkin"/);
   assert.doesNotMatch(html, /id="approach"/);
   assert.ok(html.indexOf('id="birmarket"') < html.indexOf('id="m10"'));
   assert.ok(html.indexOf('id="birmarket-feature-title"') < html.indexOf('id="birmarket-audit-title"'));
