@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { HoverTiltIcon } from "@/components/HoverTiltIcon";
+
 import styles from "./HomepageHighlights.module.css";
 
 const strengths = [
@@ -34,7 +36,7 @@ export function HomepageHighlights({ showScope = true }: { showScope?: boolean }
           <div className={styles.strengthsGrid}>
             {strengths.map((strength) => (
               <div className={styles.strength} key={strength.title}>
-                <Image src={strength.icon} alt="" width={80} height={80} className={styles.strengthIcon} />
+                <HoverTiltIcon src={strength.icon} label={strength.title} />
                 <div className={styles.strengthCopy}>
                   <h3 className={styles.strengthTitle}>{strength.title}</h3>
                   <p className={styles.strengthDescription}>{strength.description}</p>

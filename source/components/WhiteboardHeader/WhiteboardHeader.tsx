@@ -18,7 +18,7 @@ export function WhiteboardHeader() {
         </div>
       </div>
       <div className={styles.experience} aria-label="Experience">
-        <p>15 years in design</p>
+        <p id="hero-design-years">15 years in design</p>
         <p>6 years leading teams</p>
       </div>
     </header>

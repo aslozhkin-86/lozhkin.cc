@@ -1,0 +1,70 @@
+.target {
+  display: grid;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  flex: none;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.target:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.artwork {
+  position: relative;
+  display: block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(var(--lift-scale, 1));
+  transform-style: preserve-3d;
+  transition-property: transform, filter;
+  transition-timing-function: ease-out;
+  filter: drop-shadow(0 14px 16px rgb(0 0 0 / 30%));
+  pointer-events: none;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.glare {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle var(--glare-size, 40px) at var(--glare-x, 50%) var(--glare-y, 50%), rgb(255 255 255 / 92%), rgb(255 255 255 / 52%) 35%, transparent 100%);
+  mask-mode: alpha;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  transition: opacity 160ms ease-out;
+  pointer-events: none;
+}
+
+@media (min-width: 1080px) and (hover: hover) and (pointer: fine) {
+  .target:hover .artwork {
+    --lift-scale: var(--hover-scale, 1.1);
+    filter: brightness(1.12) drop-shadow(0 20px 18px rgb(0 0 0 / 55%));
+  }
+
+  .target:hover .glare { opacity: var(--glare-opacity, 0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .target:hover .artwork, .artwork {
+    transform: none;
+    transition: none;
+    filter: drop-shadow(0 14px 16px rgb(0 0 0 / 30%));
+  }
+
+  .target:hover .glare, .glare { opacity: 0; transition: none; }
+}

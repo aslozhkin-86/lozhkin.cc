@@ -25,8 +25,8 @@
     "file": "_next/static/css/ProjectList.HcTCZXid.css",
     "src": "_ProjectList.HcTCZXid.css"
   },
-  "_ProjectList.module-BUaQ9uRJ.js": {
-    "file": "_next/static/chunks/ProjectList.module-BUaQ9uRJ.js",
+  "_ProjectList.module-D4V3NGA8.js": {
+    "file": "_next/static/chunks/ProjectList.module-D4V3NGA8.js",
     "name": "ProjectList.module",
     "css": [
       "_next/static/css/ProjectList.HcTCZXid.css"
@@ -65,7 +65,7 @@
     ]
   },
   "components/BirmarketFeature/BirmarketComparison.tsx": {
-    "file": "_next/static/chunks/BirmarketComparison-CNAvNlEp.js",
+    "file": "_next/static/chunks/BirmarketComparison-BeHRz9by.js",
     "name": "BirmarketComparison",
     "src": "components/BirmarketFeature/BirmarketComparison.tsx",
     "isDynamicEntry": true,
@@ -80,7 +80,7 @@
     ]
   },
   "components/BirmarketFeature/BirmarketIntro.tsx": {
-    "file": "_next/static/chunks/BirmarketIntro-C9Hg48tK.js",
+    "file": "_next/static/chunks/BirmarketIntro-BmIQe9MI.js",
     "name": "BirmarketIntro",
     "src": "components/BirmarketFeature/BirmarketIntro.tsx",
     "isDynamicEntry": true,
@@ -92,7 +92,7 @@
     ]
   },
   "components/BirmarketVision/VisionHeroVideo.tsx": {
-    "file": "_next/static/chunks/VisionHeroVideo-nhZ9RCaI.js",
+    "file": "_next/static/chunks/VisionHeroVideo-DaEvAbUD.js",
     "name": "VisionHeroVideo",
     "src": "components/BirmarketVision/VisionHeroVideo.tsx",
     "isDynamicEntry": true,
@@ -125,7 +125,7 @@
     ]
   },
   "components/CompanyHistory/CompanyHistory.tsx": {
-    "file": "_next/static/chunks/CompanyHistory-BX3avWIR.js",
+    "file": "_next/static/chunks/CompanyHistory-Ebidl_a_.js",
     "name": "CompanyHistory",
     "src": "components/CompanyHistory/CompanyHistory.tsx",
     "isDynamicEntry": true,
@@ -139,8 +139,22 @@
       "_next/static/css/CompanyHistory.By29-3TG.css"
     ]
   },
+  "components/HoverTiltIcon/HoverTiltIcon.tsx": {
+    "file": "_next/static/chunks/HoverTiltIcon-h0Kabb7a.js",
+    "name": "HoverTiltIcon",
+    "src": "components/HoverTiltIcon/HoverTiltIcon.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
+      "_framework-BgSIrAUN.js"
+    ],
+    "css": [
+      "_next/static/css/HoverTiltIcon.DByIuNgy.css"
+    ]
+  },
   "components/M10CaseMotion/M10CaseMotion.tsx": {
-    "file": "_next/static/chunks/M10CaseMotion-CMk7i8ml.js",
+    "file": "_next/static/chunks/M10CaseMotion-DqXfbFSo.js",
     "name": "M10CaseMotion",
     "src": "components/M10CaseMotion/M10CaseMotion.tsx",
     "isDynamicEntry": true,
@@ -150,7 +164,7 @@
     ]
   },
   "components/PageCloseLink/PageCloseLink.tsx": {
-    "file": "_next/static/chunks/PageCloseLink--FD4TTfB.js",
+    "file": "_next/static/chunks/PageCloseLink-DZ7Ai1cl.js",
     "name": "PageCloseLink",
     "src": "components/PageCloseLink/PageCloseLink.tsx",
     "isDynamicEntry": true,
@@ -163,30 +177,30 @@
     ]
   },
   "components/ProjectList/ProjectPreviewVideo.tsx": {
-    "file": "_next/static/chunks/ProjectPreviewVideo-DzsMtulb.js",
+    "file": "_next/static/chunks/ProjectPreviewVideo-qBALSwFg.js",
     "name": "ProjectPreviewVideo",
     "src": "components/ProjectList/ProjectPreviewVideo.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_ProjectList.module-BUaQ9uRJ.js",
+      "_ProjectList.module-D4V3NGA8.js",
       "_framework-BgSIrAUN.js"
     ]
   },
   "components/ProjectList/YandexDeliveryVideo.tsx": {
-    "file": "_next/static/chunks/YandexDeliveryVideo-yrE_GWFI.js",
+    "file": "_next/static/chunks/YandexDeliveryVideo--HB4tsEp.js",
     "name": "YandexDeliveryVideo",
     "src": "components/ProjectList/YandexDeliveryVideo.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_ProjectList.module-BUaQ9uRJ.js",
+      "_ProjectList.module-D4V3NGA8.js",
       "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
       "_framework-BgSIrAUN.js"
     ]
   },
   "components/SpeakingSection/SpeakingSection.tsx": {
-    "file": "_next/static/chunks/SpeakingSection-CO3EQoGj.js",
+    "file": "_next/static/chunks/SpeakingSection-BO_MAXQs.js",
     "name": "SpeakingSection",
     "src": "components/SpeakingSection/SpeakingSection.tsx",
     "isDynamicEntry": true,
@@ -201,7 +215,7 @@
     ]
   },
   "components/WhiteboardHeader/GazePortrait.tsx": {
-    "file": "_next/static/chunks/GazePortrait-CsKJtMWQ.js",
+    "file": "_next/static/chunks/GazePortrait-CHPoxOKS.js",
     "name": "GazePortrait",
     "src": "components/WhiteboardHeader/GazePortrait.tsx",
     "isDynamicEntry": true,
@@ -210,11 +224,11 @@
       "_framework-BgSIrAUN.js"
     ],
     "css": [
-      "_next/static/css/GazePortrait.CNLaTnZx.css"
+      "_next/static/css/GazePortrait.Bjq1wKx4.css"
     ]
   },
   "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js": {
-    "file": "_next/static/chunks/image-C8TSGNTm.js",
+    "file": "_next/static/chunks/image-BJLkJgUa.js",
     "name": "image",
     "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
     "isDynamicEntry": true,
@@ -225,7 +239,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-D9CeLEM5.js",
+    "file": "_next/static/chunks/layout-segment-context-Cdu78OwF.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -236,7 +250,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-DrgkJh2x.js",
+    "file": "_next/static/chunks/index-CPwSd5yH.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -255,6 +269,7 @@
       "components/BirmarketFeature/BirmarketIntro.tsx",
       "components/BirmarketFeature/BirmarketComparison.tsx",
       "components/BirmarketVision/VisionHeroVideo.tsx",
+      "components/HoverTiltIcon/HoverTiltIcon.tsx",
       "node_modules/.pnpm/vinext@1.0.0-beta.2_@vitejs+plugin-react@6.0.2_vite@8.0.13_@types+node@22.19.19_esbuild_c6b08ce8379e8f9f04d528dd392a4566/node_modules/vinext/dist/shims/image.js",
       "components/CaseStudyPage/CaseArticleReveal.tsx",
       "components/CompanyHistory/CompanyHistory.tsx",

@@ -39,13 +39,6 @@
   align-items: flex-start;
 }
 
-.strengthIcon {
-  flex: 0 0 80px;
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
 .strengthCopy {
   min-width: 0;
   padding-top: 24px;
