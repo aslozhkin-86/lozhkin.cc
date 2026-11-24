@@ -42,7 +42,8 @@ test("server-renders the portfolio homepage", async () => {
   assert.match(html, /homepage\/birmarket\/vision-2027\/cart-snippets\.png/);
   const portrait = html.match(/role="img"[^>]*aria-label="Alexander Lozhkin"/);
   assert.ok(portrait && portrait.index < html.indexOf('id="birmarket-2027"'));
-  assert.ok(html.indexOf('id="superpowers-title"') < html.indexOf('id="birmarket-2027"'));
+  assert.ok(html.indexOf('id="yandex-market"') < html.indexOf('id="superpowers-title"'));
+  assert.ok(html.indexOf('id="superpowers-title"') < html.indexOf('id="company-history-title"'));
   assert.ok(html.indexOf('aria-label="Featured projects"') < html.indexOf('id="birmarket-2027"'));
   assert.ok(html.indexOf('id="birmarket-2027"') < html.indexOf('id="birmarket-feature-title"'));
   assert.ok(html.indexOf('id="birmarket-feature-title"') < html.indexOf('id="birmarket-audit-title"'));
@@ -61,8 +62,11 @@ test("server-renders the portfolio homepage", async () => {
   for (const name of ["campaign", "wordmark", "advert", "app", "promotion"]) {
     assert.match(html, new RegExp(`homepage/birmarket/old-logo-${name}\\.jpg`));
   }
-  for (const name of ["new-logo", "sale", "old-app", "toys", "med", "tools", "bike", "food", "home", "wear", "cosm", "wash", "comp"]) {
+  for (const name of ["new-logo", "sale", "old-app"]) {
     assert.match(html, new RegExp(`homepage/birmarket/${name}\\.png`));
+  }
+  for (const name of ["medicine", "washing_machine", "laptop", "chair", "teddy_bear", "drill", "shirt", "drink", "makeup", "bicycle", "book", "tv"]) {
+    assert.match(html, new RegExp(`homepage/birmarket/product-cloud/${name}\\.png`));
   }
   assert.match(html, /homepage\/birmarket\/brand-billboard\.jpg/);
   assert.match(html, /Strengthening the brand’s presence/);

@@ -1,9 +1,9 @@
-.project { width: 100%; min-width: 0; padding: 80px 24px 40px; color: var(--color-text-primary); }
+.project { width: 100%; min-width: 0; padding: 80px 24px 0; color: var(--color-text-primary); }
 .content { width: min(1160px, 100%); margin-inline: auto; }
 .intro { display: flex; width: min(562px, 100%); flex-direction: column; align-items: center; margin-inline: auto; text-align: center; }
-.title { margin: 0; font-family: var(--font-family-serif); font-size: var(--type-heading-size); font-weight: var(--type-heading-weight); line-height: var(--type-heading-line-height); letter-spacing: var(--type-heading-letter-spacing); }
+.title { margin: 32px 0 0; font-family: var(--font-family-serif); font-size: var(--type-heading-size); font-weight: var(--type-heading-weight); line-height: var(--type-heading-line-height); letter-spacing: var(--type-heading-letter-spacing); }
 .description { margin: 16px 0 0; color: var(--color-text-secondary); font-family: var(--font-family-sans); font-size: var(--type-body-size); font-weight: var(--type-body-weight); line-height: var(--type-body-line-height); letter-spacing: var(--type-body-letter-spacing); }
-.grid { width: 100%; margin-top: 64px; }
+.grid { width: 100%; margin-top: 80px; }
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 8px; margin-top: 8px; }
 .placeholder { position: relative; min-width: 0; overflow: hidden; border-radius: 40px; corner-shape: var(--corner-shape); background: var(--color-panel); text-align: center; }
 .hero { aspect-ratio: 1160 / 652; }
@@ -23,9 +23,9 @@
 .playButton:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 6px; }
 
 @media (max-width: 1079px) {
-  .project { padding: 64px 24px 16px; }
+  .project { padding: 64px 24px 0; }
   .title { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
-  .grid { margin-top: 48px; }
+  .grid { margin-top: 80px; }
   .pair { grid-template-columns: minmax(0, 1fr); }
   .catalogImage { width: min(363px, calc(80% - 92px)); }
   .cart { aspect-ratio: auto; padding-bottom: 64px; }

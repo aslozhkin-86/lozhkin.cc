@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HoverTiltIcon } from "../HoverTiltIcon";
 
 import { VisionHeroVideo } from "./VisionHeroVideo";
 import { VisionVideo } from "./VisionVideo";
@@ -9,6 +10,7 @@ export function BirmarketVision() {
     <article className={styles.project} id="birmarket-2027" aria-labelledby="birmarket-2027-title">
       <div className={styles.content}>
         <div className={styles.intro}>
+          <HoverTiltIcon src="/homepage/project-pins/birmarket-concept.png" label="Birmarket concept" />
           <h2 className={styles.title} id="birmarket-2027-title">Rethinking Birmarket for 2027</h2>
           <p className={styles.description}>Based on our audit and user research, the mobile concept explores solutions to long-standing user problems. It gives stakeholders a shared vision and the product team a basis for rethinking the roadmap.</p>
         </div>

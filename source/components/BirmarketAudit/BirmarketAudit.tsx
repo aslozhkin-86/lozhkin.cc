@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { HoverTiltIcon } from "../HoverTiltIcon";
+import { ProjectAction } from "../ProjectAction/ProjectAction";
 
 import styles from "./BirmarketAudit.module.css";
 
@@ -6,9 +8,10 @@ export function BirmarketAudit() {
   return (
     <section className={styles.section} aria-labelledby="birmarket-audit-title">
       <div className={styles.intro}>
+        <HoverTiltIcon src="/homepage/project-pins/birmarket-audit.png" label="Birmarket audit" />
         <h2 className={styles.title} id="birmarket-audit-title">Birmarket: from audit to action</h2>
         <p className={styles.description}>We audited the main shopping journeys to see where people got stuck. Then we rebuilt the product roadmap, putting the problems most likely to affect unit economics first.</p>
-        <a className={styles.link} href="/projects/birmarket/breaking-the-inertia">Read the case</a>
+        <ProjectAction href="/projects/birmarket/breaking-the-inertia">Read the case</ProjectAction>
       </div>
       <div className={styles.media}>
         <Image

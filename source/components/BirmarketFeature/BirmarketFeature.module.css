@@ -1,7 +1,8 @@
 .section {
   position: relative;
   width: 100%;
-  padding: 80px 24px 93px;
+  padding: 0 24px;
+  overflow-x: clip;
   color: var(--color-text-primary);
 }
 
@@ -15,7 +16,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 32px 0 0;
   font-family: var(--font-family-serif);
   font-size: var(--type-heading-size);
   font-weight: var(--type-heading-weight);
@@ -36,17 +37,15 @@
   padding: 0;
   border: 0;
   background: none;
-  color: inherit;
+  color: var(--color-accent);
   font: inherit;
   letter-spacing: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.oldLogoTrigger:hover { color: var(--color-text-primary); }
-.oldLogoTrigger:focus-visible { outline: 2px solid var(--color-text-primary); outline-offset: 3px; }
+.oldLogoTrigger:hover { filter: brightness(1.4); }
+.oldLogoTrigger:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 
 .oldLogoDialog {
   position: fixed;
@@ -122,7 +121,7 @@
   width: min(1160px, 100%);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  margin: 64px auto 0;
+  margin: 80px auto 0;
 }
 
 .media,
@@ -141,43 +140,6 @@
 }
 
 .billboard { grid-column: 1 / -1; }
-
-.imagerySection { grid-column: 1 / -1; }
-
-.imagerySection h3 {
-  width: min(466px, 100%);
-  margin: 0 auto;
-  padding: 80px 0 46px;
-  font-family: var(--font-family-serif);
-  font-size: var(--type-subheading-size);
-  font-weight: 400;
-  line-height: var(--type-subheading-line-height);
-  text-align: center;
-}
-
-.imageryTiles {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.imageryTile {
-  min-width: 0;
-  overflow: hidden;
-  aspect-ratio: 284 / 194;
-  border-radius: 40px;
-  corner-shape: var(--corner-shape);
-  background: var(--color-panel);
-}
-
-.imageryTile:nth-child(9) { grid-column: 2; }
-
-.imageryTile img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .brandStack {
   display: grid;
@@ -297,14 +259,10 @@
 .comparisonVideo[hidden] { display: none; }
 
 @media (max-width: 1079px) {
-  .section { padding: 64px 24px 80px; }
+  .section { padding: 0 24px; }
   .title { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
-  .gallery { grid-template-columns: minmax(0, 1fr); margin-top: 48px; }
+  .gallery { grid-template-columns: minmax(0, 1fr); margin-top: 80px; }
   .billboard { grid-column: auto; }
-  .imagerySection { grid-column: auto; }
-  .imagerySection h3 { padding: 64px 0 32px; }
-  .imageryTiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .imageryTile:nth-child(9) { grid-column: auto; }
   .brandCard > p { bottom: 7%; font-size: clamp(12px, 3vw, 18px); }
   .comparison h3 { top: 5%; font-size: clamp(24px, 6.25vw, 36px); line-height: 1.15; }
   .comparisonControls { top: 16%; }

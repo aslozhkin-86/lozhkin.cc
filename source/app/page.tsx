@@ -14,8 +14,8 @@ export default function Home() {
       <DotParallax />
       <main>
         <WhiteboardHeader />
-        <HomepageHighlights showScope={false} />
         <ProjectList />
+        <HomepageHighlights showScope={false} />
         <CompanyHistory />
         <SpeakingSection />
         <OtherProjects />

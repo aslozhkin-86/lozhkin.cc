@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HoverTiltIcon } from "../HoverTiltIcon";
 
 import { ProjectPreviewVideo } from "./ProjectPreviewVideo";
 import { BirmarketVision } from "../BirmarketVision/BirmarketVision";
@@ -20,6 +21,7 @@ export function ProjectList() {
           <div className={styles.content}>
             <article className={styles.project} id="m10">
               <div className={styles.projectInfo}>
+                <HoverTiltIcon src="/homepage/project-pins/m10.png" label="m10" />
                 <h2 className={styles.projectTitle}>Digital wallet m10</h2>
                 <p className={styles.description}>I led m10’s design from day one, shaping its core flows, design system and visual language. The wallet reached 700K monthly active users in 18 months and later grew to 2M registered users.</p>
                 <a className={styles.projectLink} href="/projects/m10">About the project</a>
@@ -52,6 +54,7 @@ export function ProjectList() {
 
             <article className={styles.project} id="yandex-market">
               <div className={styles.projectInfo}>
+                <HoverTiltIcon src="/homepage/project-pins/market.png" label="Yandex Market" />
                 <h2 className={styles.projectTitle}>Yandex Market</h2>
                 <p className={styles.description}>I led the end-to-end purchase experience, from cart and checkout through delivery, tracking and returns. I created shared patterns that helped more than 10 product teams keep the journey consistent.</p>
               </div>

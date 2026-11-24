@@ -1,0 +1,81 @@
+/*
+ * The cloud is laid out on a 1920 × 620 design canvas centered in the viewport.
+ * --cloud-unit converts horizontal design pixels to screen pixels and shrinks faster than
+ * --cloud-scale (image size), so narrower screens pack the images closer and crop the edges.
+ */
+.section {
+  --cloud-unit: clamp(0.6px, 0.4px + 0.03125vw, 1px);
+  --cloud-scale: clamp(0.6px, 0.5px + 0.026042vw, 1px);
+  --cloud-top: 0;
+  --cloud-progress: 0.5;
+  position: relative;
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.section h3 {
+  position: absolute;
+  z-index: 30;
+  top: 70px;
+  left: 50%;
+  width: min(466px, calc(100% - 48px));
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: var(--type-subheading-size);
+  font-weight: 400;
+  line-height: var(--type-subheading-line-height);
+  text-align: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.viewport {
+  position: relative;
+  width: 100vw;
+  height: calc((620 - var(--cloud-top)) * var(--cloud-scale));
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  display: block;
+  top: calc((var(--icon-top) - var(--cloud-top)) * var(--cloud-scale));
+  left: calc(50% + (var(--icon-center) - 960) * var(--cloud-unit) - var(--icon-width) * var(--cloud-scale) / 2);
+  width: calc(var(--icon-width) * var(--cloud-scale));
+  height: calc(var(--icon-height) * var(--cloud-scale));
+  /* Scrolling down moves every image left to right; larger (nearer) images move faster. */
+  transform: translate3d(calc((var(--cloud-progress) - 0.5) * var(--cloud-travel) * var(--icon-speed) * var(--cloud-unit)), 0, 0);
+  will-change: transform;
+}
+
+.icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@media (max-width: 1079px) {
+  .section {
+    --cloud-unit: 0.6px;
+    --cloud-scale: 0.6px;
+    /* Starts the canvas just above the highest image so the cloud sits right under the heading. */
+    --cloud-top: 110;
+    grid-column: auto;
+  }
+  .section h3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(466px, 100%);
+    margin: 64px auto 24px;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon { transform: none; will-change: auto; }
+}

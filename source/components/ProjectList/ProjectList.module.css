@@ -12,12 +12,12 @@
   display: flex;
   width: min(1160px, 100%);
   flex-direction: column;
-  gap: 120px;
+  gap: 200px;
   margin-inline: auto;
 }
 
-.projects { width: 100%; }
-.projectItems { width: 100%; padding: 80px 24px; }
+.projects { display: flex; width: 100%; flex-direction: column; gap: 200px; }
+.projectItems { width: 100%; padding: 0 24px 80px; }
 
 .project {
   display: flex;
@@ -35,7 +35,7 @@
 }
 
 .projectTitle {
-  margin: 0;
+  margin: 32px 0 0;
   font-family: var(--font-family-serif);
   font-size: var(--type-heading-size);
   font-weight: var(--type-heading-weight);
@@ -54,7 +54,7 @@
 }
 
 .projectLink {
-  margin-top: 16px;
+  margin-top: 32px;
   color: var(--color-accent);
   font-family: var(--font-family-sans);
   font-size: var(--type-body-size);
@@ -70,7 +70,7 @@
 .projectMedia {
   display: block;
   width: 100%;
-  margin-top: 48px;
+  margin-top: 80px;
   aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: 40px;
@@ -83,7 +83,7 @@
   width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 48px;
+  margin-top: 80px;
 }
 
 .m10MediaGrid > .projectMedia { margin-top: 0; aspect-ratio: 1152 / 1224; }
@@ -102,7 +102,7 @@
   object-fit: cover;
 }
 
-.yandexContent { width: 100%; margin-top: 48px; }
+.yandexContent { width: 100%; margin-top: 80px; }
 .yandexTeaser { width: 100%; aspect-ratio: 1160 / 740; overflow: hidden; border-radius: 40px; corner-shape: var(--corner-shape); background: #e6f0f7; }
 .journey { position: relative; height: 120px; margin-top: 8px; overflow: hidden; border-radius: 40px; corner-shape: var(--corner-shape); color: var(--color-text-inverse); background: #fce000; }
 .journeyTrack { display: flex; width: max-content; height: 100%; align-items: center; animation: journey-scroll 22s linear infinite; }
@@ -129,9 +129,10 @@
 }
 
 @media (max-width: 1079px) {
-  .projectItems { padding: 64px 24px 72px; }
+  .projects { gap: 140px; }
+  .projectItems { padding: 0 24px 72px; }
   .projectTitle { font-size: var(--type-mobile-heading-size); line-height: var(--type-mobile-heading-line-height); }
-  .content { gap: 80px; }
+  .content { gap: 140px; }
   .projectMedia { aspect-ratio: 4 / 3; }
   .m10MediaGrid { grid-template-columns: minmax(0, 1fr); }
   .m10MediaGrid > .projectMedia { aspect-ratio: 1152 / 1224; }

@@ -1,0 +1,24 @@
+.action {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  border-radius: 18px;
+  background: var(--color-action-lime);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-sans);
+  font-size: var(--type-body-size);
+  font-weight: 600;
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+  text-decoration: none;
+  transition: filter 160ms ease;
+}
+
+.action:hover { filter: brightness(1.1); }
+.action:focus-visible { outline: 2px solid var(--color-text-primary); outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .action { transition: none; }
+}

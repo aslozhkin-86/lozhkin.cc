@@ -50,9 +50,8 @@
 
 .strengthTitle,
 .strengthDescription { margin: 0; }
-.strengthTitle { font-weight: var(--type-body-bold-weight); }
+.strengthTitle { font-weight: var(--type-body-weight); }
 .strengthDescription {
-  margin-top: 8px;
   color: var(--color-text-secondary);
   font-weight: var(--type-body-weight);
 }
